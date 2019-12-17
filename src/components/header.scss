@@ -1,0 +1,16 @@
+.headerWrapper {
+    margin: 0 auto;
+    padding: 1.45rem 3.0875rem;
+}
+
+@media only screen and (max-width: 678px) {
+    .headerWrapper {
+        padding: 1.05rem 2.0875rem;
+    }
+}
+
+@media only screen and (max-width: 478px) {
+    .headerWrapper {
+        padding: 0.95rem 1.0875rem;
+    }
+}
