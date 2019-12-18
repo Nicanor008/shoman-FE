@@ -21,11 +21,11 @@ function TabPanel(props) {
       component="div"
       role="tabpanel"
       hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+      id={`auth-${index}`}
+      aria-labelledby={`auth-${index}`}
       {...other}
     >
-      {value === index && <Box p={3}>{children}</Box>}
+      {value === index && <Box p={2}>{children}</Box>}
     </Typography>
   )
 }
@@ -38,8 +38,8 @@ TabPanel.propTypes = {
 
 function a11yProps(index) {
   return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
+    id: `auth-${index}`,
+    "aria-controls": `auth-${index}`,
   }
 }
 
@@ -69,7 +69,7 @@ export default function AuthPage() {
                 <Tabs
                   value={value}
                   onChange={handleChange}
-                  aria-label="simple tabs example"
+                  aria-label="Auth"
                 >
                   <Tab label="Login" {...a11yProps(0)} />
                   <Tab label="Sign Up" {...a11yProps(1)} />

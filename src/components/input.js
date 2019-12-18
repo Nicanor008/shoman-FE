@@ -46,7 +46,6 @@ const SInputComponents = (props) => {
       <BootstrapInput
         id="demo-customized-textbox"
         type={props.inputType}
-        autoComplete
       />
     </FormControl>
   )
