@@ -4,42 +4,12 @@ import InputLabel from "@material-ui/core/InputLabel"
 import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
-import InputComponent from "../input"
+import SInputComponents from "../input"
+import { BootstrapInput } from "../input"
+import ButtonComponent from "../commons/button"
+import { Link } from "@material-ui/core"
 
-// const BootstrapInput = withStyles(theme => ({
-//   root: {
-//     "label + &": {
-//       marginTop: theme.spacing(3),
-//     },
-//   },
-//   input: {
-//     borderRadius: 4,
-//     position: "relative",
-//     backgroundColor: theme.palette.background.paper,
-//     border: "1px solid #ced4da",
-//     fontSize: 16,
-//     padding: "10px 26px 10px 12px",
-//     transition: theme.transitions.create(["border-color", "box-shadow"]),
-//     // Use the system font instead of the default Roboto font.
-//     fontFamily: [
-//       "-apple-system",
-//       "BlinkMacSystemFont",
-//       '"Segoe UI"',
-//       "Roboto",
-//       '"Helvetica Neue"',
-//       "Arial",
-//       "sans-serif",
-//       '"Apple Color Emoji"',
-//       '"Segoe UI Emoji"',
-//       '"Segoe UI Symbol"',
-//     ].join(","),
-//     "&:focus": {
-//       borderRadius: 4,
-//       borderColor: "#80bdff",
-//       boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)",
-//     },
-//   },
-// }))(InputBase)
+import '../header.scss';
 
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -49,40 +19,47 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignUpComponent() {
   const classes = useStyles()
-  const [age, setAge] = React.useState("")
-  const handleChange = event => {
-    setAge(event.target.value)
-  }
+
   return (
-    <div>
-      <InputComponent classes={classes.margin}/>
+    <div className="authInputWrapper">
+      {/* email address */}
+      <SInputComponents
+        class={classes.margin}
+        label="Email Address"
+        inputType="email"
+      />
       <br />
-      <InputComponent classes={classes.margin}/>
-      {/* <FormControl className={classes.margin}>
-        <InputLabel htmlFor="demo-customized-textbox">Password</InputLabel>
-        <BootstrapInput
-          id="demo-customized-texftbox"
-          type="password"
-          fullWidth
-        />
-      </FormControl> */}
+
+      {/* Name */}
+      <SInputComponents
+        class={classes.margin}
+        label="Your Name"
+        inputType="text"
+      />
       <br />
-      <FormControl className={classes.margin}>
-        <InputLabel id="demo-customized-select-label">Age</InputLabel>
-        <Select
-          labelId="demo-customized-select-label"
-          id="demo-customized-select"
-          value={age}
-          onChange={handleChange}
-          input={<BootstrapInput />}
-        >
+
+      {/* path selection */}
+      <FormControl className={classes.margin} style={{ paddingRight: "150px" }}>
+        <InputLabel id="path">Path</InputLabel>
+        <Select labelId="path" id="path" value="" input={<BootstrapInput />}>
           <MenuItem value="">
-            <em>None</em>
+            <em>Path</em>
           </MenuItem>
           <MenuItem value="frontend">Frontend</MenuItem>
           <MenuItem value="backend">Backend</MenuItem>
         </Select>
       </FormControl>
+      <br />
+
+      {/* forgot password option */}
+      <Link href="#" variant="body2" style={{paddingRight:"80px"}}>
+        Forgot Password
+      </Link>
+      <br />
+      <br />
+
+      {/* submit button */}
+      <ButtonComponent buttonName="Sign Up" buttonColor="primary" />
     </div>
   )
 }

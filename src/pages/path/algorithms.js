@@ -3,8 +3,7 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CardComponent from "../../components/cards"
-import { Grid, Paper, StepIcon } from "@material-ui/core"
-import ListData from "../../components/cards/listData"
+import { Grid, Paper } from "@material-ui/core"
 
 const AlgorithmsPage = () => (
   <Layout>
