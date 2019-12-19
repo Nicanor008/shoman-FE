@@ -14,9 +14,9 @@ const Mission = () => {
         </Grid>
         <Grid item md={6} className="missionText">
           Shoman Codes is created, managed & facilitated by{" "}
-          <a href="http://offbeat-drug.surge.sh/">Nicanor</a> is a Software
-          Engineer running this programme with an{" "}
-          <b>aim to share what I know</b>.
+          <a href="http://offbeat-drug.surge.sh/">Nicanor</a>, a Software
+          Engineer, with an{" "}
+          <b>aim to share what he knows</b> in software development.
           <br />
           <br />
           <b>Shoman Codes Plans</b>

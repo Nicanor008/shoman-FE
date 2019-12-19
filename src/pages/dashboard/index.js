@@ -1,150 +1,238 @@
 import React from "react"
-import PropTypes from "prop-types"
-import AppBar from "@material-ui/core/AppBar"
-import CssBaseline from "@material-ui/core/CssBaseline"
-import Divider from "@material-ui/core/Divider"
+import clsx from "clsx"
+import { makeStyles, useTheme } from "@material-ui/core/styles"
 import Drawer from "@material-ui/core/Drawer"
-import Hidden from "@material-ui/core/Hidden"
-import IconButton from "@material-ui/core/IconButton"
-import InboxIcon from "@material-ui/icons/MoveToInbox"
+import CssBaseline from "@material-ui/core/CssBaseline"
+import AppBar from "@material-ui/core/AppBar"
+import Toolbar from "@material-ui/core/Toolbar"
 import List from "@material-ui/core/List"
+import Typography from "@material-ui/core/Typography"
+import Divider from "@material-ui/core/Divider"
+import IconButton from "@material-ui/core/IconButton"
+import MenuIcon from "@material-ui/icons/Menu"
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
+import ChevronRightIcon from "@material-ui/icons/ChevronRight"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import ListItemText from "@material-ui/core/ListItemText"
-import MailIcon from "@material-ui/icons/Mail"
-import MenuIcon from "@material-ui/icons/Menu"
-import Toolbar from "@material-ui/core/Toolbar"
-import Typography from "@material-ui/core/Typography"
-import { makeStyles, useTheme } from "@material-ui/core/styles"
+import ExitToAppIcon from "@material-ui/icons/ExitToApp"
+import AccountTreeIcon from "@material-ui/icons/AccountTree"
+import CodeIcon from "@material-ui/icons/Code"
+import CheckCircleIcon from "@material-ui/icons/CheckCircle"
+import HighlightOffIcon from "@material-ui/icons/HighlightOff"
 import SEO from "../../components/seo"
-import Layout from "../../components/layout"
+import { Link } from "gatsby"
 
-const drawerWidth = 240
+const drawerWidth = 280
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
   },
-  drawer: {
-    [theme.breakpoints.up("sm")]: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-  },
   appBar: {
-    [theme.breakpoints.up("sm")]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
+    backgroundColor: "rebeccapurple",
+    transition: theme.transitions.create(["margin", "width"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    transition: theme.transitions.create(["margin", "width"], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-    },
   },
-  toolbar: theme.mixins.toolbar,
+  iconButton: {
+    color: "white",
+  },
+  successIconButton: {
+    color: "lime",
+  },
+  hide: {
+    display: "none",
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: "rebeccapurple",
+    color: "white",
+  },
+  drawerHeader: {
+    display: "flex",
+    alignItems: "center",
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar,
+    color: "white",
+    justifyContent: "flex-end",
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: -drawerWidth,
+  },
+  contentShift: {
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
   },
 }))
 
-function ResponsiveDrawer(props) {
-  const { container } = props
+export default function PersistentDrawerLeft() {
   const classes = useStyles()
   const theme = useTheme()
-  const [mobileOpen, setMobileOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(true)
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen)
+  const handleDrawerOpen = () => {
+    setOpen(true)
   }
 
-  const drawer = (
-    <div>
-      <div className={classes.toolbar} />
-      <Divider />
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  )
+  const handleDrawerClose = () => {
+    setOpen(false)
+  }
 
   return (
-    <Layout>
+    // <Layout>
+    <>
       <SEO title="Dashboard" />
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar position="absolute" className={classes.appBar}>
+        <AppBar
+          position="absolute"
+          className={clsx(classes.appBar, {
+            [classes.appBarShift]: open,
+          })}
+        >
           <Toolbar>
             <IconButton
               color="inherit"
               aria-label="open drawer"
+              onClick={handleDrawerOpen}
               edge="start"
-              onClick={handleDrawerToggle}
-              className={classes.menuButton}
+              className={clsx(classes.menuButton, open && classes.hide)}
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap>
-              Responsive drawer
+            <Typography variant="h4" noWrap style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+              <Link to="/" style={{color: "white", textDecoration: "none", cursor: "pointer"}}>Shoman Codes</Link>
             </Typography>
           </Toolbar>
         </AppBar>
-        <nav className={classes.drawer} aria-label="mailbox folders">
-          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-          <Hidden smUp implementation="css">
-            <Drawer
-              container={container}
-              variant="temporary"
-              anchor={theme.direction === "rtl" ? "right" : "left"}
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-              ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
-              }}
+        <Drawer
+          className={classes.drawer}
+          variant="persistent"
+          anchor="left"
+          open={open}
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+        >
+          <div className={classes.drawerHeader}>
+            <IconButton
+              onClick={handleDrawerClose}
+              className={classes.iconButton}
             >
-              {drawer}
-            </Drawer>
-          </Hidden>
-          <Hidden xsDown implementation="css">
-            <Drawer
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-              variant="permanent"
-              open
-            >
-              {drawer}
-            </Drawer>
-          </Hidden>
-        </nav>
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
+              {theme.direction === "ltr" ? (
+                <ChevronLeftIcon />
+              ) : (
+                <ChevronRightIcon />
+              )}
+            </IconButton>
+          </div>
+          <List>
+            <ListItem button key={Math.random()}>
+              <ListItemIcon className={classes.iconButton}>
+                <CodeIcon />
+              </ListItemIcon>
+              <ListItemText primary="Learn" />
+            </ListItem>
+          </List>
+
+          <List style={{ paddingLeft: "80px", color: "yellow" }}>
+            <ListItem button>
+              <ListItemIcon className={classes.successIconButton}>
+                <CheckCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary="Content 1" />
+            </ListItem>
+
+            <ListItem button>
+              <ListItemIcon className={classes.successIconButton}>
+                <CheckCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary="Content 2" />
+            </ListItem>
+
+            <ListItem button>
+              <ListItemIcon className={classes.iconButton}>
+                <HighlightOffIcon />
+              </ListItemIcon>
+              <ListItemText primary="Content 3" />
+            </ListItem>
+          </List>
+
+          <List>
+            <ListItem button key={Math.random()}>
+              <ListItemIcon className={classes.iconButton}>
+                <AccountTreeIcon />
+              </ListItemIcon>
+              <ListItemText primary="Projects" />
+            </ListItem>
+          </List>
+
+          <List style={{ paddingLeft: "80px", color: "yellow" }}>
+            <ListItem button>
+              <ListItemIcon className={classes.successIconButton}>
+                <CheckCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary="Project 1" />
+            </ListItem>
+
+            <ListItem button>
+              <ListItemIcon className={classes.successIconButton}>
+                <CheckCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary="Project 2" />
+            </ListItem>
+
+            <ListItem button>
+              <ListItemIcon className={classes.iconButton}>
+                <HighlightOffIcon />
+              </ListItemIcon>
+              <ListItemText primary="Project 3" />
+            </ListItem>
+          </List>
+
+          <Divider />
+          <List>
+            <ListItem button key={Math.random()}>
+              <ListItemIcon className={classes.iconButton}>
+                <ExitToAppIcon />
+              </ListItemIcon>
+              <ListItemText primary="Logout" />
+            </ListItem>
+          </List>
+        </Drawer>
+        <main
+          className={clsx(classes.content, {
+            [classes.contentShift]: open,
+          })}
+        >
+          <div className={classes.drawerHeader} />
+          <br /><br />
           <Typography paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
@@ -177,18 +265,7 @@ function ResponsiveDrawer(props) {
           </Typography>
         </main>
       </div>
-    </Layout>
+    </>
+    //   </Layout>
   )
 }
-
-ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  container: PropTypes.instanceOf(
-    typeof Element === "undefined" ? Object : Element
-  ),
-}
-
-export default ResponsiveDrawer
