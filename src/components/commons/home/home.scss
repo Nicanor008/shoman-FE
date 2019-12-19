@@ -1,27 +1,67 @@
 $size: 900px;
+$backgroundColor: rebeccapurple;
 
 .homeDescriptionWrapper {
-  padding: 2.1rem 3.5rem;
+  padding: 2.1rem 5.5rem;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-//   justify-content: space-around;
 }
 .descriptionText {
-    width: 60%;
-    padding-top: 70px;
+  width: 60%;
+  padding-top: 70px;
 }
 .imageText {
-    margin-left: 50px !important;
+  margin-left: 50px !important;
+}
+.purposeWrapper {
+    background-color: $backgroundColor;
+    color: white
+}
+.purposeGridWrapper {
+  padding: 0 8.45rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 40px;
+  padding-bottom: 90px;
+}
+.homeGridWrapper {
+  background-color: $backgroundColor;
+  padding: 0 4.45rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 40px;
+  padding-bottom: 90px;
+  color: white;
+}
+.purposeTitleText {
+  padding-top: 80px;text-align: center;
+}
+.missionWrapper {
+    padding-top: 50px;
+}
+.missionText {
+    padding-top: 100px !important;
 }
 
 @media only screen and (max-width: 967px) {
-    .imageText {
-        display: none;
-    }
-    .descriptionText {
-        padding-top: 1px;
-        width: 100%;
-    }
+  .imageText,
+  .pathImageText {
+    display: none;
+  }
+  .descriptionText {
+    padding-top: 1px;
+    width: 100%;
+  }
+  .purposeGridWrapper {
+    padding: 0 2.85rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+  .purposeTitleText {
+    padding-top: 20px;
+  }
+  .missionText {
+    padding-top: 5px !important;
+}
 }
 #wave {
   position: relative;
@@ -52,70 +92,103 @@ $size: 900px;
   height: 70px;
   background-color: rebeccapurple;
   left: 0;
-    z-index: 1;
-    top: 54px;
+  z-index: 1;
+  top: 54px;
+}
+#start-wave-dot {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 10px;
+  height: 20px;
+  background-color: rgb(2, 238, 61);
+  top: -306px;
+  right: 97%;
+}
+#start-wave-dot-2 {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50% 50%;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(112, 230, 141);
+  top: -326px;
+  right: 77%;
+}
+#start-wave-dot-3 {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50% 50%;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(231, 253, 237);
+  top: -398px;
+  right: 67%;
 }
 #wave-dots {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 10px;
-    height: 20px;
-    background-color: rgb(2, 238, 61);
-    right: 30%;
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 10px;
+  height: 20px;
+  background-color: rgb(2, 238, 61);
+  right: 30%;
 }
 #wave-dot-3 {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 30px;
-    height: 15px;
-    background-color: rgb(61, 1, 48);
-    right: 60%;
-    top: 40px;
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 30px;
+  height: 15px;
+  background-color: rgb(61, 1, 48);
+  right: 60%;
+  top: 40px;
 }
 #internal-wave-dot {
-    content: "";
-    border-radius: 100% 50%;
-    width: 30px;
-    height: 5px;
-    background-color: rgb(255, 255, 255);
-    right: -5%;
+  content: "";
+  border-radius: 100% 50%;
+  width: 30px;
+  height: 5px;
+  background-color: rgb(255, 255, 255);
+  right: -5%;
 }
 #wave-dot-2 {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 5px;
-    height: 10px;
-    background-color: rgb(255, 255, 255);
-    right: 80%;
-    top: 10px;
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 5px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  right: 80%;
+  top: 10px;
 }
 #wave-dot-4 {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 15px;
-    height: 10px;
-    background-color: rgb(247, 252, 0);
-    right: 90%;
-    z-index: 3;
-    top: 40px;
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 15px;
+  height: 10px;
+  background-color: rgb(247, 252, 0);
+  right: 90%;
+  z-index: 3;
+  top: 40px;
 }
 #wave-dot-5:after {
-    z-index: 3;
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 50% 50%;
-    width: 10px;
-    height: 10px;
-    background-color: rgb(139, 235, 119);
-    right: 85%;
-    top: 76px;
+  z-index: 3;
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50% 50%;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(139, 235, 119);
+  right: 85%;
+  top: 76px;
 }

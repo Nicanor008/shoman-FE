@@ -9,11 +9,16 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
     maxWidth: 360,
-    backgroundColor: "lightgrey",
+    backgroundColor: "rebeccapurple",
+    color: "white",
     borderRadius: 5,
     position: "relative",
     overflow: "auto",
     maxHeight: 300,
+  },
+  subTitle: {
+    color: "rgb(228, 211, 60)",
+    fontWeight: "bold"
   },
   listSection: {
     backgroundColor: "inherit",
@@ -29,7 +34,7 @@ export default function ListData(props) {
 
   return (
     <List className={classes.root} dense>
-      <ListSubheader>{props.subTitle}</ListSubheader>
+      <ListSubheader className={classes.subTitle}>{props.subTitle}</ListSubheader>
       {props.data.length > 0 && props.data.map(item => (
         <ListItem key={item.id}>
           <ListItemText primary={item.content} />

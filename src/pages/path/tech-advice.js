@@ -8,6 +8,7 @@ import { Grid, Paper } from "@material-ui/core"
 const TechAdvice = () => (
   <Layout>
     <SEO title="Tech Advice" />
+    <div style={{padding: `2.504rem 5.4875rem 1.45rem`}}>
     <CardComponent
       hint="Essential skills and relevant advice"
       title="Tech Advice"
@@ -25,6 +26,7 @@ const TechAdvice = () => (
         </Paper>
       </Grid>
     </Grid>
+    </div>
   </Layout>
 )
 

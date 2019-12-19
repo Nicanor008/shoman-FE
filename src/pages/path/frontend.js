@@ -9,6 +9,7 @@ import ListData from "../../components/cards/listData"
 const HomePage = () => (
   <Layout>
     <SEO title="Path" />
+    <div style={{padding: `2.504rem 5.4875rem 1.45rem`}}>
     <CardComponent
       hint="UI/UX"
       title="Front-End"
@@ -61,6 +62,7 @@ const HomePage = () => (
         />
       </Grid>
     </Grid>
+    </div>
   </Layout>
 )
 

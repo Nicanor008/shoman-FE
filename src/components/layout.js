@@ -7,6 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import { Grid } from "@material-ui/core"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
@@ -29,15 +30,18 @@ const Layout = ({ children }) => {
       <div
         style={{
           margin: `0 auto`,
-          
-          paddingTop: 0,
-          
-          
         }}
       >
         <main>{children}</main>
-        <footer style={{margin: "30px"}}>
-          © {new Date().getFullYear()}, &nbsp;Shoman
+        <footer style={{margin: "20px"}}>
+          <Grid style={{ display:"flex", justifyContent: "space-between" }}>
+            <Grid item md={6}>
+              Back Me 
+            </Grid>
+            <Grid item md={6}>
+              Privacy &nbsp; | &nbsp; Terms & Conditions &nbsp; | &nbsp; © {new Date().getFullYear()}, &nbsp;Shoman
+            </Grid>
+          </Grid>
         </footer>
       </div>
     </>

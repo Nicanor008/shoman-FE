@@ -62,6 +62,8 @@ export default function AuthPage() {
     <Layout>
       <SEO title="Auth" />
       <div className={classes.root}>
+      <br />
+      <br />
         <center>
           <Grid>
             <Grid item xs={12} md={4}>

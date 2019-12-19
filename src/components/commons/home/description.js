@@ -1,19 +1,14 @@
 import React from "react"
 import "./home.scss"
-// import Image from "../../image"
 import PairProgramming from "../../../images/pairProgramming.svg"
 
-const HomeDescription = () => {
+const HomeDescription = (props) => {
   return (
     <div style={{ backgroundColor: "rebeccapurple", color: "white" }}>
       <div className="homeDescriptionWrapper">
         <div className="descriptionText">
-          <h3>Focused on Knowledge Sharing</h3>
-          <p>
-            An <b>Online mentorship 🤝 programme </b> focused on sharing tech Knowledge between mentor and mentees. 
-            We believe in the Knowledge we have and would like it to benefit others too. We currently focus on Web development(backend & Frontend).
-            Check back for other areas in the near future 🚀.  
-          </p>
+          <h3>{props.title}</h3>
+           {props.content}  
         </div>
         <div className="imageText">
           <center>

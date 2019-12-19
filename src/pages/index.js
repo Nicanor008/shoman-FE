@@ -5,14 +5,49 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CardComponent from "../components/cards"
 import HomeDescription from "../components/commons/home/description"
+import MentorshipPurpose from "../components/commons/home/purpose"
+import Mission from "../components/commons/home/mission"
+import { SubContent } from "../components/commons/home/subContent"
+
+const contentDesc = () => {
+  return (
+    <p>
+      An{" "}
+      <b>
+        Online mentorship{" "}
+        <span role="img" aria-label="Shake Hands">
+          🤝
+        </span>{" "}
+        program{" "}
+      </b>{" "}
+      focused on sharing tech Knowledge between mentor and mentees. We believe
+      in the Knowledge we have and would like it to benefit others too. We
+      currently focus on Web development(backend & Frontend). Check back for
+      other areas in the near future{" "}
+      <span role="img" aria-label="We Move">
+        🚀
+      </span>
+      .
+    </p>
+  )
+}
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Shoman" />
 
-    <HomeDescription  />
+    {/* description */}
+    <HomeDescription
+      title="Focused on Knowledge Sharing"
+      content={<SubContent />}
+    />
 
-    <div style={{padding: `2.504rem 2.4875rem 1.45rem`,}}>
+    <br />
+    <br />
+    <br />
+
+    {/* paths */}
+    <div style={{ padding: `2.504rem 5.4875rem 1.45rem` }}>
       <Grid container spacing={3}>
         <Grid item md={3}>
           <CardComponent
@@ -26,7 +61,7 @@ const IndexPage = () => (
         </Grid>
         <Grid item md={3}>
           <CardComponent
-            hint="business and data logic (REST | GraphQL)"
+            hint="Product Logic (REST | GraphQL)"
             title="Back-End"
             skills="JavaScript | Python"
             content="Work on the business and data logic of the project, with the interaction with the different databases."
@@ -56,6 +91,16 @@ const IndexPage = () => (
         </Grid>
       </Grid>
     </div>
+
+    <br />
+    <br />
+    <br />
+
+    {/* purpose */}
+    <MentorshipPurpose />
+
+    {/* mission */}
+    <Mission />
   </Layout>
 )
 
