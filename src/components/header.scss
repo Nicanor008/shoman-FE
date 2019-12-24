@@ -21,6 +21,13 @@
     background-color: rgb(104, 69, 139) !important;
     color: white !important;
 }
+.applyingText {
+    font-size: 13px;
+    color: #ece90f !important;
+}
+.applyingText:hover {
+    color: white !important;
+}
 @media only screen and (max-width: 678px) {
     .headerWrapper {
         padding: 1.05rem 2.0875rem;

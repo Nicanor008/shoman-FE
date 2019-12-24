@@ -1,0 +1,16 @@
+.applyWrapper {
+    padding: 1.9rem 2.4rem;
+}
+.formInput {
+    margin-bottom: 28px !important;
+}
+
+@media only screen and (max-width: 678px) {
+    .applyWrapper {
+        padding: 0.4rem 1.6rem;
+    }
+    .formInput {
+        margin-bottom: 19px !important;
+    }
+    
+}

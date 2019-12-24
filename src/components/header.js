@@ -46,6 +46,10 @@ const Header = ({ siteTitle }) => (
               <Link to="/auth" className="menuItem">
                 Join
               </Link>
+              <span className="menuItem">| </span>
+              <Link to="/apply" className="menuItem">
+                Apply <span className="applyingText">As a Mentee</span>
+              </Link>
             </div>
           </div>
         </Link>
