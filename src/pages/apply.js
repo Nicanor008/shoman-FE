@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import {
   FormControl,
   InputLabel,
@@ -16,25 +16,71 @@ import SEO from "../components/seo"
 import "../styles/apply.scss"
 
 function HomePage() {
-  const [age, setAge] = React.useState("")
-  const [experience, setExperience] = React.useState("")
-  const [open, setOpen] = React.useState(false)
-  const [experienceOpen, setExperienceOpen] = React.useState(false)
+//   const [path, setPath] = useState("")
+//   const [experience, setExperience] = useState("")
+//   const [open, setOpen] = useState(false)
+  const [experienceOpen, setExperienceOpen] = useState(false)
+  const [userData, setUserData] = useState({
+    open: false,
+    loading: false,
+    name: "",
+    path: "",
+    experience: "",
+    email: "",
+    occupation: "",
+  })
 
-  const handleChange = event => {
-    setAge(event.target.value)
+  const { open, name, email, path, experience, occupation } = userData;
+
+  const submitUserData = () => {
+    setUserData({loading: true})
+    fetch("http://localhost:3001/v1/auth/register", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+          name, email, path: path, password:"123455", codingLevel: experience, occupation
+      }),
+    })
+      .then(results => results.json())
+      .then(data => {
+        setUserData({
+          loading: false,
+        })
+        console.log(">>>>>>>>>>>>>", data)
+      })
+  }
+
+  const handleUserInputOnchange = (e) => {
+    //   if([e.target.name] === 'name') {
+        setUserData({ ...userData, [e.target.name]: e.target.value })
+    //   } else if([e.target.email] === 'email'){
+    //     setUserData({ email: e.target.value })
+    //   } else if([e.target.occupation] === 'occupation'){
+    //     setUserData({ occupation: e.target.value })
+    //   }
+  }
+
+  const handleChange = e => {
+    setUserData({...userData, [e.target.name]: e.target.value})
+    // setPath(event.target.value)
   }
 
   const handleClose = () => {
-    setOpen(false)
+    setUserData({ open: false })
+    // setOpen(false)
   }
 
   const handleOpen = () => {
-    setOpen(true)
+    setUserData({ open: true })
+    // setOpen(true)
   }
 
-  const handleChangeExperience = event => {
-    setExperience(event.target.value)
+  const handleChangeExperience = e => {
+    setUserData({...userData, [e.target.name]: e.target.value})
+    // setExperience(event.target.value)
   }
 
   const handleOpenExperience = () => {
@@ -45,9 +91,11 @@ function HomePage() {
     setExperienceOpen(false)
   }
 
+
   return (
     <Layout>
-      <SEO title="Shoman" />
+      <SEO title="Apply" />
+      {console.log(">>>>....?>>>>>>>>>...............", open)}
       <div className="applyWrapper">
         <Grid container>
           <Grid item md={3}></Grid>
@@ -56,7 +104,7 @@ function HomePage() {
               {/* name */}
               <FormControl size="medium" fullWidth className="formInput">
                 <InputLabel htmlFor="name">Name</InputLabel>
-                <Input required id="name" name="name" />
+                <Input required id="name" name="name" onChange={handleUserInputOnchange}/>
               </FormControl>
 
               {/* email address  */}
@@ -64,10 +112,11 @@ function HomePage() {
                 <InputLabel htmlFor="email">Email address</InputLabel>
                 <Input
                   required
-                  type="password"
+                //   type="email"
                   id="email"
                   name="email"
                   aria-describedby="email-helper-text"
+                  onChange={handleUserInputOnchange}
                 />
                 <FormHelperText id="email-helper-text">
                   We'll never share your email.
@@ -84,7 +133,7 @@ function HomePage() {
                   open={open}
                   onClose={handleClose}
                   onOpen={handleOpen}
-                  value={age}
+                  value={path}
                   onChange={handleChange}
                   required
                 >
@@ -103,7 +152,7 @@ function HomePage() {
                   What you currently doing
                   <occupation />
                 </InputLabel>
-                <Input required id="occupation" name="occupation" />
+                <Input required id="occupation" name="occupation" onChange={handleUserInputOnchange} />
               </FormControl>
 
               {/* Level of experience/coding level */}
@@ -131,9 +180,12 @@ function HomePage() {
                 </Select>
               </FormControl>
 
-              <br /><br />
+              <br />
+              <br />
 
-              <Button color="primary" variant="contained" disableElevation>Submit</Button>
+              <Button color="primary" variant="contained" disableElevation onClick={submitUserData}>
+                Submit
+              </Button>
             </form>
           </Grid>
         </Grid>
