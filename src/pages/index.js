@@ -24,9 +24,9 @@ const IndexPage = () => (
     <br />
 
     {/* paths */}
-    <div style={{ padding: `2.504rem 5.4875rem 1.45rem` }}>
-      <Grid container spacing={3}>
-        <Grid item md={3}>
+    <div className="homePageWrapper">
+      <Grid container spacing={10}>
+        <Grid item md={4}>
           <CardComponent
             hint="UI/UX"
             title="Front-End"
@@ -36,7 +36,7 @@ const IndexPage = () => (
             link="/path/frontend"
           />
         </Grid>
-        <Grid item md={3}>
+        <Grid item md={4}>
           <CardComponent
             hint="Product Logic (REST | GraphQL)"
             title="Back-End"
@@ -46,7 +46,7 @@ const IndexPage = () => (
             link="/path/backend"
           />
         </Grid>
-        <Grid item md={3}>
+        {/* <Grid item md={3}>
           <CardComponent
             hint="Algorithms and data structures"
             title="Algorithms"
@@ -55,8 +55,8 @@ const IndexPage = () => (
             actions=""
             link="/path/algorithms"
           />
-        </Grid>
-        <Grid item md={3}>
+        </Grid> */}
+        <Grid item md={4}>
           <CardComponent
             hint="Essential skills and relevant advice"
             title="Tech Advice"

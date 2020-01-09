@@ -19,7 +19,7 @@ const Mission = () => {
           <b>aim to share what he knows</b> in software development.
           <br />
           <br />
-          <b>Shoman Codes Plans</b>
+          <b>Shoman Codes Future Plans</b>
           <ul>
             <li>Accepting other mentors to join us anytime</li>
             <li>

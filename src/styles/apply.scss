@@ -1,16 +1,37 @@
 .applyWrapper {
-    padding: 1.9rem 2.4rem;
+  padding: 1.9rem 2.4rem;
 }
 .formInput {
-    margin-bottom: 28px !important;
+  margin-bottom: 28px !important;
+}
+.homePageWrapper {
+  padding: 2.504rem 5.4875rem 1.45rem;
+}
+
+.infoOnRequired {
+  margin-left: 20%;
+  background-color: rebeccapurple;
+  text-align: center;
+  width: 300px;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  font-family: Arial;
+  margin-top: 15px;
+  padding: 5px 15px;
 }
 
 @media only screen and (max-width: 678px) {
-    .applyWrapper {
-        padding: 0.4rem 1.6rem;
-    }
-    .formInput {
-        margin-bottom: 19px !important;
-    }
-    
+  .applyWrapper {
+    padding: 0.4rem 1.6rem;
+  }
+  .formInput {
+    margin-bottom: 19px !important;
+  }
+  .homePageWrapper {
+    padding: 0.504rem 2.4875rem 0.45rem;
+  }
+  .infoOnRequired {
+    margin-left: 0%;
+  }
 }

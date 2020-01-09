@@ -65,7 +65,7 @@ export default function AuthPage() {
       <br />
       <br />
         <center>
-          <Grid>
+          {/* <Grid>
             <Grid item xs={12} md={4}>
               <AppBar position="static">
                 <Tabs
@@ -78,14 +78,14 @@ export default function AuthPage() {
                 </Tabs>
               </AppBar>
             </Grid>
-          </Grid>
+          </Grid> */}
 
-          <TabPanel value={value} index={0}>
+          {/* <TabPanel value={value} index={0}> */}
             <LoginComponent />
-          </TabPanel>
+          {/* </TabPanel>
           <TabPanel value={value} index={1}>
             <SignUpComponent />
-          </TabPanel>
+          </TabPanel> */}
         </center>
       </div>
     </Layout>

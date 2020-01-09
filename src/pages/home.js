@@ -24,7 +24,7 @@ const HomePage = () => (
     <br />
 
     {/* paths */}
-    <div style={{ padding: `2.504rem 5.4875rem 1.45rem` }}>
+    <div className="homePageWrapper">
       <Grid container spacing={3}>
         <Grid item md={6}>
           <CardComponent

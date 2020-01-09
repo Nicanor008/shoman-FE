@@ -9,7 +9,7 @@ import ListData from "../../components/cards/listData"
 const HomePage = () => (
   <Layout>
     <SEO title="Path" />
-    <div style={{padding: `2.504rem 5.4875rem 1.45rem`}}>
+    <div className="homePageWrapper">
     <CardComponent
       hint="business and data logic (REST | GraphQL)"
       title="Back-End"
@@ -28,7 +28,7 @@ const HomePage = () => (
         <ListData
           subTitle="JavaScript"
           data={[
-            { id: Math.random() },
+            // { id: Math.random() },
             { content: "Version Control(git) - enhance teamwork" },
             {
               content:
@@ -65,7 +65,7 @@ const HomePage = () => (
         <ListData
           subTitle="Python"
           data={[
-            { id: Math.random() },
+            // { id: Math.random() },
             { content: "Version Control(git) - enhance teamwork" },
             {
               content:
@@ -94,7 +94,7 @@ const HomePage = () => (
         <ListData
           subTitle="Projects"
           data={[
-            { id: Math.random() },
+            // { id: Math.random() },
             {
               content:
                 "Simple & Scientific Calculator - understand the basics of programming",
@@ -120,7 +120,7 @@ const HomePage = () => (
         <ListData
           subTitle="What Success Looks Like."
           data={[
-            { id: Math.random() },
+            // { id: Math.random() },
             {
               content:
                 `Create good and workable data solutions to be used by Frontend engineers or customers. 

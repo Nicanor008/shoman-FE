@@ -9,7 +9,7 @@ import ListData from "../../components/cards/listData"
 const HomePage = () => (
   <Layout>
     <SEO title="Path" />
-    <div style={{padding: `2.504rem 5.4875rem 1.45rem`}}>
+    <div className="homePageWrapper">
     <CardComponent
       hint="UI/UX"
       title="Front-End"
@@ -25,7 +25,7 @@ const HomePage = () => (
         <ListData
           subTitle="Content"
           data={[
-            {id: Math.random()},
+            // {id: Math.random()},
             { content: "Version Control(git) - enhances teamwork" },
             { content: "HTML & HTML5 - markup language" },
             { content: "CSS & CSS3, FlexBox - let's style beautiful web pages" },
@@ -41,7 +41,7 @@ const HomePage = () => (
         <ListData
           subTitle="Projects"
           data={[
-            {id: Math.random()},
+            // {id: Math.random()},
             { content: "Simple & Scientific Calculator - understand the basics and advance concepts of JavaScript" },
             { content: "Gallery App - keep images on a beatifully made app(focuses on CSS proficiency)" },
             { content: "Todo App - Perfect ES6 skills & Test development" },
@@ -55,7 +55,7 @@ const HomePage = () => (
         <ListData
           subTitle="What Success Looks"
           data={[
-            {id: Math.random()},
+            // {id: Math.random()},
             { content: "Create good user interfaces that meets the required user experience. Follows the right coding conventions." },
             { content: "Work as a Frontend Engineer/developer, QA engineer, UI/UX designer, software engineer/developer jobs" },
           ]}

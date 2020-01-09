@@ -8,7 +8,7 @@ import { Grid, Paper } from "@material-ui/core"
 const AlgorithmsPage = () => (
   <Layout>
     <SEO title="Algorithms" />
-    <div style={{ padding: `2.504rem 5.4875rem 1.45rem` }}>
+    <div className="homePageWrapper">
       <CardComponent
         hint="Algorithms and data structures"
         title="Algorithms"

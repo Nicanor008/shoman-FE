@@ -32,7 +32,7 @@ export default function LoginComponent() {
       />
       <br />
       <div style={{ display: "inline-block"}}>
-        <Link href="#" variant="body2" style={{paddingLeft:"10px"}}>
+        <Link href="#" variant="body2">
           Forgot Password
         </Link>
         <Link href="#" variant="body2"  style={{paddingLeft:"100px"}}>
