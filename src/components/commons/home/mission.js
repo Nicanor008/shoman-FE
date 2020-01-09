@@ -8,8 +8,8 @@ const Mission = () => {
     <div className="missionWrapper">
       <br />
       <br />
-      <Grid container className="purposeGridWrapper" spacing={4}>
-        <Grid item md={6}>
+      {/* <Grid container className="purposeGridWrapper" spacing={4}> */}
+        {/* <Grid item md={6}>
           <img src={Nic} alt="df" width="700" className="" />
         </Grid>
         <Grid item md={6} className="missionText">
@@ -27,8 +27,11 @@ const Mission = () => {
               etc
             </li>
           </ul>
-        </Grid>
-      </Grid>
+        </Grid> */}
+        <center>
+          <h1>Inspiration</h1>
+        </center>
+      {/* </Grid> */}
       <br />
       <br />
       <br />

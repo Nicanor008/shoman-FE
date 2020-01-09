@@ -24,33 +24,33 @@ const Header = ({ siteTitle }) => (
           </Link>
           <div className="menuItemWrapper">
             {/* authorised user */}
-            <Link to="/home" className="menuItem">
+            {/* <Link to="/home" className="menuItem">
               Home
-            </Link>
-            <span className="menuItem">| </span>
-            <Link to="/dashboard" className="menuItem">
+            </Link> */}
+            {/* <span className="menuItem">| </span> */}
+            {/* <Link to="/dashboard" className="menuItem">
               Dashboard
-            </Link>
+            </Link> */}
 
             {/* for the authorised user */}
+            {/* <span className="menuItem">| </span> */}
+            <a href="https://docs.google.com/forms/d/1C0MMYr1dPG0n1wAao3FQqgkVJpUjZHJRb3eP3kPo2f8/edit" className="menuItem">
+              Apply
+            </a>
             <span className="menuItem">| </span>
-            <Link to="/mentees" className="menuItem">
-              Mentees
-            </Link>
-            <span className="menuItem">| </span>
-            <Link to="/" className="menuItem">
-              Discord
-            </Link>
-            <span className="menuItem">| </span>
+            <span to="/" className="menuItem">
+              Reach Out - <span style={{color:"yellow"}}>shoman@gmail.com</span>
+            </span>
+            {/* <span className="menuItem">| </span> */}
 
             {/* unathorised user */}
-            <Link to="/auth" className="menuItem">
+            {/* <Link to="/auth" className="menuItem">
               Login
             </Link>
             <span className="menuItem">| </span>
             <Link to="/apply" className="menuItem">
               Apply <span className="applyingText">As a Mentee</span>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </h1>

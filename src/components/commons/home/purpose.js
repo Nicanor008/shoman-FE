@@ -27,7 +27,7 @@ const MentorshipPurpose = () => {
             width="100"
             className="pathImageText"
           />
-          <h3>Select a Path</h3>
+          <h3>One Path at a Time</h3>
           <p>
             You Don't have to know everything. You going to work only on one
             path, preferably what you would like to do in your Career. Select
