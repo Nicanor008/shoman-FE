@@ -33,13 +33,13 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer style={{margin: "20px"}}>
-          <Grid style={{ display:"flex", justifyContent: "space-between" }}>
-            <Grid item md={6}>
-              Back Me 
+        <footer>
+          <Grid className="footerWrapper">
+            <Grid item md={8} className="footerItem">
+              Contact Us - shoman@gmail.com 
             </Grid>
-            <Grid item md={6}>
-              Privacy &nbsp; | &nbsp; Terms & Conditions &nbsp; | &nbsp; © {new Date().getFullYear()}, &nbsp;Shoman
+            <Grid item md={4} className="footerItem">
+              Privacy &nbsp; | &nbsp; © {new Date().getFullYear()}, &nbsp;Shoman
             </Grid>
           </Grid>
         </footer>

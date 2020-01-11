@@ -1,6 +1,9 @@
 import React from "react"
 import "./home.scss"
 import PairProgramming from "../../../images/pairProgramming.svg"
+import CodeTyping from "../../../images/code.svg"
+import Focus from "../../../images/focus.svg"
+import Collaborate from "../../../images/collaborate.svg"
 import { Grid } from "@material-ui/core"
 
 const MentorshipPurpose = () => {
@@ -22,9 +25,9 @@ const MentorshipPurpose = () => {
       >
         <Grid item md={4}>
           <img
-            src={PairProgramming}
+            src={CodeTyping}
             alt="df"
-            width="100"
+            width="150"
             className="pathImageText"
           />
           <h3>One Path at a Time</h3>
@@ -36,9 +39,9 @@ const MentorshipPurpose = () => {
         </Grid>
         <Grid item md={4}>
           <img
-            src={PairProgramming}
+            src={Focus}
             alt="df"
-            width="100"
+            width="200"
             className="pathImageText"
           />
           <h3>Focus</h3>
@@ -50,9 +53,9 @@ const MentorshipPurpose = () => {
         </Grid>
         <Grid item md={4}>
           <img
-            src={PairProgramming}
+            src={Collaborate}
             alt="df"
-            width="100"
+            width="200"
             className="pathImageText"
           />
           <h3>Collaborate & Execute</h3>

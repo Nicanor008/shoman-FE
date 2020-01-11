@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Shoman Codes`,
+    title: `Shoman`,
     description: `Kick start your career with the right mentorship opportunity. Focused on full stack developers, with more content on frontend development. Backend development is coming big soon`,
     author: `Nicanor Korir`,
   },

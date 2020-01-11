@@ -28,19 +28,20 @@ const Header = ({ siteTitle }) => (
               Home
             </Link> */}
             {/* <span className="menuItem">| </span> */}
-            {/* <Link to="/dashboard" className="menuItem">
-              Dashboard
-            </Link> */}
+            
 
             {/* for the authorised user */}
-            {/* <span className="menuItem">| </span> */}
             <a href="https://docs.google.com/forms/d/1C0MMYr1dPG0n1wAao3FQqgkVJpUjZHJRb3eP3kPo2f8/edit" className="menuItem">
               Apply
             </a>
-            <span className="menuItem">| </span>
-            <span to="/" className="menuItem">
+            <span className="menuItem" style={{color:"yellow"}}>| </span>
+            <Link to="/requirements" className="menuItem">
+              Requirements
+            </Link>
+            {/* <span className="menuItem">| </span> */}
+            {/* <span to="/" className="menuItem">
               Reach Out - <span style={{color:"yellow"}}>shoman@gmail.com</span>
-            </span>
+            </span> */}
             {/* <span className="menuItem">| </span> */}
 
             {/* unathorised user */}
