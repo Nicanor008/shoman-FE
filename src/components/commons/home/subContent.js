@@ -13,8 +13,7 @@ export const SubContent = () => {
       </b>{" "}
       focused on sharing tech Knowledge between mentor and mentees. We believe
       in the Knowledge we have and would like it to benefit others too. We
-      currently focus on Web development(backend & Frontend). Check back for
-      other areas in the near future{" "}
+      currently focus on Web development(backend & Frontend){" "}
       <span role="img" aria-label="We Move">
         🚀
       </span>

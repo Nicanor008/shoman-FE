@@ -16,7 +16,9 @@ const HomePage = () => (
             hint="UI/UX"
             title="Front-End"
             skills="HTML | CSS | JavaScript"
-            content="You enjoy creating and thinking like a user. We will create user innterfaces that attracts users"
+            content="You enjoy creating and thinking like a user. We will create user innterfaces that attracts users. You should be
+            inspired in design, both interactive and visual. Advice is to understand the core basics of the visual web(html-content, css-style,
+            javascript-interactivity). This will guide you and help you to build up more advanced front end web apps that satisfy clients needs."
             actions=""
             link="/path/frontend"
           />
