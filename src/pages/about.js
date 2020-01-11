@@ -10,6 +10,7 @@ import AddToQueueIcon from '@material-ui/icons/AddToQueue';
 import DirectionsWalkIcon from '@material-ui/icons/DirectionsWalk';
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import EmailIcon from '@material-ui/icons/Email';
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -67,6 +68,12 @@ export default function Requirements() {
             content="Email us - shomancodes@gmail.com "
             icon={<EmailIcon />}
         />
+        <SingleRequirement
+            title="Join as a mentor"
+            content="Yeah sure, we welcome mentors. Send us a mail, and we can add you up. Looking forward to meeting you mentor.
+                    The platform is currently under development."
+            icon={<LoyaltyIcon />}
+          />
     </List>
   </Layout>
   );
