@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
         <footer>
           <Grid className="footerWrapper">
             <Grid item md={8} className="footerItem">
-              Contact Us - shoman@gmail.com 
+              Contact Us - shomancodes@gmail.com 
             </Grid>
             <Grid item md={4} className="footerItem">
               Privacy &nbsp; | &nbsp; © {new Date().getFullYear()}, &nbsp;Shoman
