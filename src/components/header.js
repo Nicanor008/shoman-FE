@@ -31,12 +31,12 @@ const Header = ({ siteTitle }) => (
             
 
             {/* for the authorised user */}
-            <a href="https://docs.google.com/forms/d/1C0MMYr1dPG0n1wAao3FQqgkVJpUjZHJRb3eP3kPo2f8/edit" className="menuItem">
+            <a href="https://docs.google.com/forms/d/1C0MMYr1dPG0n1wAao3FQqgkVJpUjZHJRb3eP3kPo2f8/edit" target="blank" className="menuItem">
               Apply
             </a>
             <span className="menuItem" style={{color:"yellow"}}>| </span>
-            <Link to="/requirements" className="menuItem">
-              Requirements
+            <Link to="/about" className="menuItem">
+              About
             </Link>
             {/* <span className="menuItem">| </span> */}
             {/* <span to="/" className="menuItem">
