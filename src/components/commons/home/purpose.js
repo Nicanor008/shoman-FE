@@ -1,6 +1,6 @@
 import React from "react"
 import "./home.scss"
-import PairProgramming from "../../../images/pairProgramming.svg"
+// import PairProgramming from "../../../images/pairProgramming.svg"
 import CodeTyping from "../../../images/code.svg"
 import Focus from "../../../images/focus.svg"
 import Collaborate from "../../../images/collaborate.svg"

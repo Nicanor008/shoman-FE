@@ -146,7 +146,6 @@ function HomePage() {
                   name="email"
                   aria-describedby="email-helper-text"
                   onChange={handleUserInputOnchange}
-                  required
                   error={error && true}
                 />
                 <FormHelperText id="email-helper-text">

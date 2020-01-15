@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CardComponent from "../../components/cards"
-import { Grid, Paper, List, ListItem, ListItemText } from "@material-ui/core"
+import { Grid, List, ListItem, ListItemText } from "@material-ui/core"
 
 const ListItemLink = props => {
   return <ListItem button component="a" {...props} />

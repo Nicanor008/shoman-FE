@@ -1,7 +1,7 @@
 import React from "react"
 import "./home.scss"
-import Nic from "../../../images/nic.png"
-import { Grid } from "@material-ui/core"
+// import Nic from "../../../images/nic.png"
+// import { Grid } from "@material-ui/core"
 
 const Mission = () => {
   return (

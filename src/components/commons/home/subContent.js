@@ -11,13 +11,13 @@ export const SubContent = () => {
         </span>{" "}
         program{" "}
       </b>{" "}
-      focused on sharing tech Knowledge between mentor and mentees. We believe
-      in the Knowledge we have and would like it to benefit others too. We
+      focused on sharing tech Knowledge between to the mentees. A mentor is an experienced person, with trusted  
+      knowledge in a specific field. <br /><br />We believe in the Knowledge we have as mentors, and would like it to benefit others too. We
       currently focus on Web development(backend & Frontend){" "}
       <span role="img" aria-label="We Move">
         🚀
       </span>
-      .
+      .{" "}Other platforms might be available depending on the specisialization of the mentors joining.
     </p>
   )
 }

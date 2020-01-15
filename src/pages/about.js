@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,25 +12,24 @@ import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import EmailIcon from '@material-ui/icons/Email';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-  },
-  inline: {
-    display: 'inline',
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     width: '100%',
+//     maxWidth: 360,
+//     backgroundColor: theme.palette.background.paper,
+//   },
+//   inline: {
+//     display: 'inline',
+//   },
+// }));
 
 export default function Requirements() {
-  const classes = useStyles();
 
   return (
     <Layout>
     <SEO title="Requirements" />
     
-    <List className={classes.root} className="RequirementsWrapper">
+    <List className={`classes.root RequirementsWrapper`}>
         <h3>&nbsp;&nbsp;&nbsp;&nbsp;About Shoman | Shoman Codes</h3>
         <SingleRequirement 
             title="Not a class/lecture tutorials, It's a mentorship programme"
@@ -60,7 +59,7 @@ export default function Requirements() {
         />
         <SingleRequirement 
             title="Come With ..."
-            content="A positive and open mindset, lots of humor and positive energies. {{ Fun === working }} 🤝💪🏼."
+            content="A positive, an open mindset, lots of humor and positive energies. {{ Fun === Learning === working }} 🤝💪🏼."
             icon={<DirectionsWalkIcon />}
         />
         <SingleRequirement 
