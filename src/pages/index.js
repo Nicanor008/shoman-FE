@@ -11,7 +11,7 @@ import { SubContent } from "../components/commons/home/subContent"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Shoman" />
+    <SEO title="Home" />
 
     {/* description */}
     <HomeDescription

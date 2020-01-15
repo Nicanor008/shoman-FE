@@ -27,7 +27,7 @@ export default function Requirements() {
 
   return (
     <Layout>
-    <SEO title="Requirements" />
+    <SEO title="About" />
     
     <List className={`classes.root RequirementsWrapper`}>
         <h3>&nbsp;&nbsp;&nbsp;&nbsp;About Shoman | Shoman Codes</h3>
