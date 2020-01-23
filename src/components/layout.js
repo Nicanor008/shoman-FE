@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Grid } from "@material-ui/core"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
@@ -39,7 +39,8 @@ const Layout = ({ children }) => {
               Contact Us - shomancodes@gmail.com 
             </Grid>
             <Grid item md={4} className="footerItem">
-              Privacy &nbsp; | &nbsp; © {new Date().getFullYear()}, &nbsp;Shoman
+            <Link to="/privacy">
+              Privacy </Link> &nbsp; | &nbsp; © {new Date().getFullYear()}, &nbsp;Shoman
             </Grid>
           </Grid>
         </footer>
