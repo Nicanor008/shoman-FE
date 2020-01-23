@@ -142,6 +142,94 @@ const TechAdvice = () => (
             </ListItemLink>
           </List>
         </Grid>
+      
+      {/* Self-taught */}
+      <Grid item md={6}>
+          <List component="nav" style={{}} className="AdviceWrapper">
+            <h4 style={{ margin: 0, paddingLeft:15 }}>Self Taught Developers' Stories</h4>
+            <ListItemLink
+              href="https://www.youtube.com/watch?v=62tsiY5j4_0"
+              target="blank"
+            >
+              <ListItemTexts
+                primary="Andy Sterkowitz Story as a self-taught Software Developer"
+                secondary="You tube has a bunch of these stories, just search."
+              />
+            </ListItemLink>
+            <ListItemLink
+              href="https://www.freecodecamp.org/news/inspirational-success-stories-from-self-taught-web-developers-4f6f375cf17d/"
+              target="blank"
+            >
+              <ListItemTexts
+                primary="Lessons from 7 self-taught Coders"
+                secondary="Commit | Structure | Build | Be Bold | Network | Make it Work | What's in Store for you"
+              />
+            </ListItemLink>
+            <ListItemLink
+              href="https://www.fullstackpython.com/blog/become-successful-self-taught-software-developer.html"
+              target="blank"
+            >
+              <ListItemTexts
+                primary="How to become a Self-Taught Software Developer"
+                secondary="Relevant Advice from just passion to a job as a software developer"
+              />
+            </ListItemLink>
+            <ListItemLink
+              href="https://www.freecodecamp.org/news/what-ive-learned-six-months-into-my-first-job-as-a-self-taught-software-engineer-516b0703e86/"
+              target="blank"
+            >
+              <ListItemTexts
+                primary="Lessons learnt in 6 months into the 1st job as a self-taught Software Engineer"
+                secondary="Read on Austin Tackaberry Story and the lessons he learnt"
+              />
+            </ListItemLink>
+          </List>
+        </Grid>
+
+
+        {/* Misc */}
+        <Grid item md={6}>
+          <List component="nav" style={{}} className="AdviceWrapper">
+            <h4 style={{ margin: 0, paddingLeft:15 }}>Misc</h4>
+            <ListItemLink
+              href="https://www.giftegwuenu.com/the-art-of-googling/"
+              target="blank"
+            >
+              <ListItemTexts
+                primary="The Art Of Googling"
+                secondary="As a developer, you'll really on search engines a lot, you should master how to search what you looking for"
+              />
+            </ListItemLink>
+            <ListItemLink
+              href="https://dev.to/ladybug/three-tips-for-managing-impostor-syndrome-2f14"
+              target="blank"
+            >
+              <ListItemTexts
+                primary="3 tips to managing Imposter Syndrom"
+                secondary="Read on Dev.to or listen to Ladybug podcast"
+              />
+            </ListItemLink>
+            <ListItemLink
+              href="https://medium.com/learn-love-code/developers-how-to-overcome-imposter-syndrome-48edee803cf4"
+              target="blank"
+            >
+              <ListItemTexts
+                primary="Developers: How to Overcome Imposter Syndrome"
+                secondary="Get a Mentor | Peer Pair | Be curious| Practice | Accept"
+              />
+            </ListItemLink>
+            <ListItemLink
+              href="https://codingwithempathy.com/2016/04/26/the-proactive-software-developer/"
+              target="blank"
+            >
+              <ListItemTexts
+                primary="The Proactive Software Developer"
+                secondary="Why do you really need a proactive mindset. What's the difference between Proactive and Reactive Behaviour."
+              />
+            </ListItemLink>
+          </List>
+        </Grid>
+      
       </Grid>
     </div>
   </Layout>

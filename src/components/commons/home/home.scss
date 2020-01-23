@@ -48,6 +48,15 @@ li {
 .missionText {
     padding-top: 100px !important;
 }
+.cardContentWrapper:hover {
+  background-color: rgb(240, 239, 239);
+}
+.contentTitle {
+  color: rebeccapurple !important;
+}
+.contentTitle:hover {
+  color: rgb(58, 0, 116) !important;
+}
 
 @media only screen and (max-width: 967px) {
   .imageText,

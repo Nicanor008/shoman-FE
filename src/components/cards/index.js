@@ -20,6 +20,9 @@ const useStyles = makeStyles({
   title: {
     fontSize: 14,
   },
+  contentTitle: {
+    color: "rebeccapurple",
+  },
   pos: {
     marginBottom: 12,
   },
@@ -31,7 +34,7 @@ export default function CardComponent(props) {
   return (
     <Link to={props.link}>
       <Card className={classes.card}>
-        <CardContent>
+        <CardContent className="cardContentWrapper">
           <Typography
             className={classes.title}
             color="textSecondary"
@@ -39,7 +42,7 @@ export default function CardComponent(props) {
           >
             {props.hint}
           </Typography>
-          <Typography variant="h5" component="h2">
+          <Typography variant="h5" component="h2" className="contentTitle">
             {props.title}
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
@@ -49,19 +52,20 @@ export default function CardComponent(props) {
             {props.content}
           </Typography>
         </CardContent>
-        {props.actions && 
-        <CardActions>
-          <Button
-            size="small"
-            style={{
-              backgroundColor: "rebeccapurple",
-              color: "white",
-              fontWeight: "bold",
-            }}
-          >
-            {props.actions}
-          </Button>
-        </CardActions>}
+        {props.actions && (
+          <CardActions>
+            <Button
+              size="small"
+              style={{
+                backgroundColor: "rebeccapurple",
+                color: "white",
+                fontWeight: "bold",
+              }}
+            >
+              {props.actions}
+            </Button>
+          </CardActions>
+        )}
       </Card>
     </Link>
   )
