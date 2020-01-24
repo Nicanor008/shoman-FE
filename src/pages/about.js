@@ -40,7 +40,7 @@ export default function Requirements() {
         <SingleRequirement 
             title="Content"
             content="Web Programming. Frontend - HTML, CSS, Vanilla JS, React. ||--|| Backend - RESTFul, NodeJS, Express, Python<Flask />. NOTE: 
-                    Other specialization will depend on mentors availability. Send an application and we will advice "
+                    Other specialization areas will depend on the mentors availability. Send an application and we will advice "
             icon={<PlaylistAddCheckIcon />}
         />
         <SingleRequirement 

@@ -190,7 +190,7 @@ const TechAdvice = () => (
         {/* Misc */}
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15 }}>Misc</h4>
+            <h4 style={{ margin: 0, paddingLeft:15 }}>In One way or Another, You'll Need This</h4>
             <ListItemLink
               href="https://www.giftegwuenu.com/the-art-of-googling/"
               target="blank"

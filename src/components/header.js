@@ -29,11 +29,9 @@ const Header = ({ siteTitle }) => (
             </Link> */}
             {/* <span className="menuItem">| </span> */}
             
-
-            {/* for the authorised user */}
-            <a href="https://docs.google.com/forms/d/1C0MMYr1dPG0n1wAao3FQqgkVJpUjZHJRb3eP3kPo2f8/edit" target="blank" className="menuItem">
+            <Link to="/apply" className="menuItem">
               Apply
-            </a>
+            </Link>
             <span className="menuItem" style={{color:"yellow"}}>| </span>
             <Link to="/about" className="menuItem">
               About

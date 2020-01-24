@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
             </Grid>
             <Grid item md={4} className="footerItem">
             <Link to="/privacy">
-              Privacy </Link> &nbsp; | &nbsp; © {new Date().getFullYear()}, &nbsp;Shoman
+              Privacy </Link> &nbsp; | &nbsp; © {new Date().getFullYear()} &nbsp;Shoman
             </Grid>
           </Grid>
         </footer>
