@@ -1,6 +1,6 @@
 import React from "react"
 import "./home.scss"
-import PairProgramming from "../../../images/pairProgramming.svg"
+import Logo from "../../../images/Logo.svg"
 
 const HomeDescription = (props) => {
   return (
@@ -10,11 +10,17 @@ const HomeDescription = (props) => {
           <h3>{props.title}</h3>
            {props.content}  
         </div>
-        <div className="imageText">
+
           <center>
-            <img src={PairProgramming} alt="Pair Programming" width="400" />
-          </center>
+        <div className="imageText">
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+            <img src={Logo} alt="Pair Programming" width="450" />
         </div>
+          </center>
       </div>
       <div id="wave">
         <div id="wave-dots"></div>

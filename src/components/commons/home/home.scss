@@ -19,7 +19,7 @@ li {
   padding-top: 70px;
 }
 .imageText {
-  margin-left: 50px !important;
+  padding-top: 150px !important;
 }
 .purposeWrapper {
     background-color: $backgroundColor;
@@ -87,12 +87,17 @@ li {
 }
 
 @media only screen and (max-width: 967px) {
-  .imageText,
   .pathImageText {
     display: none;
   }
   .homeDescriptionWrapper {
-    padding: 2.1rem 1.1rem
+    padding: 2.1rem 1.1rem;
+    display: inline-block;
+  }
+  .imageText {
+    padding-top: 30px !important;
+    width: 340px !important;
+    align-content: center !important;
   }
   .privacyWrapper {
     padding: 2.1rem 1.1rem;
