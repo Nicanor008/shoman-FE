@@ -1,5 +1,4 @@
 import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,16 +11,6 @@ import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import EmailIcon from '@material-ui/icons/Email';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
 
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     width: '100%',
-//     maxWidth: 360,
-//     backgroundColor: theme.palette.background.paper,
-//   },
-//   inline: {
-//     display: 'inline',
-//   },
-// }));
 
 export default function Requirements() {
 
