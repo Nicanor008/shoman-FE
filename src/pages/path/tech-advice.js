@@ -5,6 +5,8 @@ import SEO from "../../components/seo"
 import CardComponent from "../../components/cards"
 import { Grid, List, ListItem, ListItemText } from "@material-ui/core"
 
+import "../../components/commons/path.scss"
+
 const ListItemLink = props => {
   return <ListItem button component="a" {...props} />
 }
@@ -43,10 +45,11 @@ const TechAdvice = () => (
       {/* feedback */}
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15 }}>Feedback</h4>
+            <h4 style={{ margin: 0, paddingLeft:15, fontWeight:"bolder" }}>Feedback</h4>
             <ListItemLink
               href="https://medium.com/the-andela-way/can-i-ask-you-something-e8c0a0f18bb7"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="ASK Feedback"
@@ -56,6 +59,7 @@ const TechAdvice = () => (
             <ListItemLink
               href="https://devblogs.microsoft.com/bharry/the-importance-of-feedback-in-software-development/"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="Importance of Feedback in Software Development"
@@ -68,10 +72,11 @@ const TechAdvice = () => (
         {/* growth */}
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15 }}>Growth</h4>
+            <h4 style={{ margin: 0, paddingLeft:15, fontWeight:"bolder" }}>Growth</h4>
             <ListItemLink
               href="https://www.youtube.com/watch?v=KUWn_TJTrnU"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="Growth vs Fixed mindset"
@@ -81,6 +86,7 @@ const TechAdvice = () => (
             <ListItemLink
               href="https://www.freecodecamp.org/news/how-to-become-an-effective-software-engineer-b2d25b588bc8/"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="How to become an effective software engineer"
@@ -96,10 +102,11 @@ const TechAdvice = () => (
       {/* feedback */}
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15 }}>Communication</h4>
+            <h4 style={{ margin: 0, paddingLeft:15, fontWeight:"bolder" }}>Communication</h4>
             <ListItemLink
               href="https://www.toolshero.com/communication-skills/7cs-of-communication/"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="The 7 C's of Communication"
@@ -109,6 +116,7 @@ const TechAdvice = () => (
             <ListItemLink
               href="https://hackernoon.com/communicating-in-software-development-f3434c52eb23"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="Communicating in Software Development"
@@ -125,6 +133,7 @@ const TechAdvice = () => (
             <ListItemLink
               href="https://steelkiwi.com/blog/collaboration-is-a-key-to-project-success/"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="Effective Collaboration"
@@ -134,6 +143,7 @@ const TechAdvice = () => (
             <ListItemLink
               href="https://www.youtube.com/watch?v=DYLSkySSF0I"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="How Designers, software engineers, project managers work together"
@@ -146,10 +156,11 @@ const TechAdvice = () => (
       {/* Self-taught */}
       <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15 }}>Self Taught Developers' Stories</h4>
+            <h4 style={{ margin: 0, paddingLeft:15, fontWeight:"bolder" }}>Self Taught Developers' Stories</h4>
             <ListItemLink
               href="https://www.youtube.com/watch?v=62tsiY5j4_0"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="Andy Sterkowitz Story as a self-taught Software Developer"
@@ -159,6 +170,7 @@ const TechAdvice = () => (
             <ListItemLink
               href="https://www.freecodecamp.org/news/inspirational-success-stories-from-self-taught-web-developers-4f6f375cf17d/"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="Lessons from 7 self-taught Coders"
@@ -168,6 +180,7 @@ const TechAdvice = () => (
             <ListItemLink
               href="https://www.fullstackpython.com/blog/become-successful-self-taught-software-developer.html"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="How to become a Self-Taught Software Developer"
@@ -177,6 +190,7 @@ const TechAdvice = () => (
             <ListItemLink
               href="https://www.freecodecamp.org/news/what-ive-learned-six-months-into-my-first-job-as-a-self-taught-software-engineer-516b0703e86/"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="Lessons learnt in 6 months into the 1st job as a self-taught Software Engineer"
@@ -190,10 +204,11 @@ const TechAdvice = () => (
         {/* Misc */}
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15 }}>In One way or Another, You'll Need This</h4>
+            <h4 style={{ margin: 0, paddingLeft:15, fontWeight:"bolder" }}>In One way or Another, You'll Need This</h4>
             <ListItemLink
               href="https://www.giftegwuenu.com/the-art-of-googling/"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="The Art Of Googling"
@@ -203,6 +218,7 @@ const TechAdvice = () => (
             <ListItemLink
               href="https://dev.to/ladybug/three-tips-for-managing-impostor-syndrome-2f14"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="3 tips to managing Imposter Syndrom"
@@ -212,6 +228,7 @@ const TechAdvice = () => (
             <ListItemLink
               href="https://medium.com/learn-love-code/developers-how-to-overcome-imposter-syndrome-48edee803cf4"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="Developers: How to Overcome Imposter Syndrome"
@@ -221,6 +238,7 @@ const TechAdvice = () => (
             <ListItemLink
               href="https://codingwithempathy.com/2016/04/26/the-proactive-software-developer/"
               target="blank"
+              className="techAdviceItemTitle"
             >
               <ListItemTexts
                 primary="The Proactive Software Developer"
@@ -229,7 +247,63 @@ const TechAdvice = () => (
             </ListItemLink>
           </List>
         </Grid>
-      
+
+        {/* Beginner sites resources */}
+        <Grid item md={6}>
+          <List component="nav" style={{}} className="AdviceWrapper">
+            <h4 style={{ margin: 0, paddingLeft:15 }}>Useful Sites To get You Started</h4>
+            <ListItemLink
+              href="https://www.freecodecamp.org/"
+              target="blank"
+              className="techAdviceItemTitle"
+            >
+              <ListItemTexts
+                primary="FreeCodeCamp.org"
+                secondary="Learn to Code | Build Projects | Earn a certification"
+              />
+            </ListItemLink>
+            <ListItemLink
+              href="https://www.w3schools.com/"
+              target="blank"
+              className="techAdviceItemTitle"
+            >
+              <ListItemTexts
+                primary="W3Schools"
+                secondary="Tutorials | References | Examples | Exercises - Try It Yourself"
+              />
+            </ListItemLink>
+            <ListItemLink
+              href="https://www.codecademy.com/"
+              target="blank"
+              className="techAdviceItemTitle"
+            >
+              <ListItemTexts
+                primary="Code Academy"
+                secondary="Access both free and premium courses"
+              />
+            </ListItemLink>
+            <ListItemLink
+              href="https://www.w3schools.com/"
+              target="blank"
+              className="techAdviceItemTitle"
+            >
+              <ListItemTexts
+                primary="Solo Learn"
+                secondary="Mobile App and Web based tutorials and code playground."
+              />
+            </ListItemLink>
+            <ListItemLink
+              className="techAdviceItemTitle"
+            >
+              <ListItemTexts
+                primary="Udemy, Udacity, Google Tech Guide, Tutorials Point, You tube"
+                secondary="There are quite a bunch of sites to get you started. Pick one and focus on it!!!"
+              className="techAdviceItemTitle"
+              />
+            </ListItemLink>
+          </List>
+        </Grid>
+
       </Grid>
     </div>
   </Layout>

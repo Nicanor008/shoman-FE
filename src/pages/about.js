@@ -64,8 +64,8 @@ export default function Requirements() {
             icon={<DirectionsWalkIcon />}
         />
         <SingleRequirement 
-            title="Contact Us"
-            content="Email us - shomancodes@gmail.com "
+            title="Chat With Us"
+            content="Send Us a Mail - shomancodes@gmail.com. We welcome a taste of humor"
             icon={<EmailIcon />}
         />
         <SingleRequirement

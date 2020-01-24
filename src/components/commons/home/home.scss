@@ -39,9 +39,6 @@ li {
   padding-bottom: 90px;
   color: white;
 }
-.purposeTitleText {
-  padding-top: 80px;text-align: center;
-}
 .missionWrapper {
     padding-top: 50px;
 }
@@ -79,9 +76,6 @@ li {
     padding-top: 5px;
     padding-bottom: 15px;
   }
-  .purposeTitleText {
-    padding-top: 20px;
-  }
   .missionText {
     padding-top: 5px !important;
 }
@@ -99,24 +93,24 @@ li {
   content: "";
   display: block;
   position: absolute;
-  border-radius: 100% 50%;
-  width: 400px;
-  height: 80px;
+  border-radius: 100% 80%;
+  width: 1320px;
+  height: 150px;
   background-color: white;
-  right: -15px;
-  top: 75px;
+  right: -8px;
+  top: 45px;
 }
 #wave:after {
   content: "";
   display: block;
   position: absolute;
-  border-radius: 100% 50%;
-  width: 200px;
+  border-radius: 100% 80%;
+  width: 235px;
   height: 70px;
   background-color: rebeccapurple;
-  left: 0;
+  left: -23px;
   z-index: 1;
-  top: 54px;
+  top: 40px;
 }
 #start-wave-dot {
   content: "";

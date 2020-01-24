@@ -9,15 +9,7 @@ import { Grid } from "@material-ui/core"
 const MentorshipPurpose = () => {
   return (
     <div className="purposeWrapper">
-      <div className="purposeTitleText">
-          <h2>
-            How It Works `Mentee`&nbsp;
-            <span role="img" aria-label="Edit">
-              🤝
-            </span>
-          </h2>
-      </div>
-
+    <br /><br /><br />
       <Grid
         container
         className="purposeGridWrapper"
