@@ -55,6 +55,37 @@ li {
   color: rgb(58, 0, 116) !important;
 }
 
+@media only screen and (max-width: 1370px) {
+  #wave:after {
+    display: none !important;
+  }
+  #wave:before {
+    width: 1420px !important;
+    right: -10px !important;
+  }
+  #wave-dot-5:after {
+    top: 26px !important;
+  }
+}
+
+@media only screen and (max-width: 887px) {
+  #wave:before {
+    width: 900px !important;
+    height: 110px !important;
+    right: -10px !important;
+    top: 40px !important;
+  }
+}
+
+@media only screen and (max-width: 678px) {
+  #wave:before {
+    width: 700px !important;
+    height: 110px !important;
+    right: -10px !important;
+    top: 40px !important;
+  }
+}
+
 @media only screen and (max-width: 967px) {
   .imageText,
   .pathImageText {
@@ -78,7 +109,10 @@ li {
   }
   .missionText {
     padding-top: 5px !important;
-}
+  }
+  #wave:after {
+    top: 0px !important;
+  }
 }
 #wave {
   position: relative;
@@ -95,22 +129,23 @@ li {
   position: absolute;
   border-radius: 100% 80%;
   width: 1320px;
-  height: 150px;
+  height: 170px;
   background-color: white;
-  right: -8px;
-  top: 45px;
+  right: -15px;
+  top: 35px;
+  overflow: hidden;
 }
 #wave:after {
   content: "";
   display: block;
   position: absolute;
   border-radius: 100% 80%;
-  width: 235px;
-  height: 70px;
+  width: 265px;
+  height: 75px;
   background-color: rebeccapurple;
-  left: -23px;
+  left: -40px;
   z-index: 1;
-  top: 40px;
+  top: 36px;
 }
 #start-wave-dot {
   content: "";
@@ -164,7 +199,7 @@ li {
   height: 15px;
   background-color: rgb(61, 1, 48);
   right: 60%;
-  top: 40px;
+  top: 20px;
 }
 #internal-wave-dot {
   content: "";
@@ -206,6 +241,6 @@ li {
   width: 10px;
   height: 10px;
   background-color: rgb(139, 235, 119);
-  right: 85%;
+  right: 98%;
   top: 76px;
 }
