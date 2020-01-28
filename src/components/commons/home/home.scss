@@ -28,8 +28,6 @@ li {
 .purposeGridWrapper {
   padding: 0 8.45rem;
   font-family: Arial, Helvetica, sans-serif;
-  padding-top: 40px;
-  padding-bottom: 90px;
 }
 .homeGridWrapper {
   background-color: $backgroundColor;
@@ -53,6 +51,22 @@ li {
 }
 .contentTitle:hover {
   color: rgb(58, 0, 116) !important;
+}
+.subTitleDescription {
+  font-size: 15px !important;
+  padding: 2px 6px !important;
+  background-color: yellow;
+  border-radius: 6px;
+  color: rebeccapurple;
+  margin-left: 3px;
+}
+.durationDescription {
+  background-color: yellow;
+  color: rebeccapurple;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 17px;
+  margin-left: 6px;
 }
 
 @media only screen and (max-width: 1370px) {
@@ -83,6 +97,10 @@ li {
     height: 110px !important;
     right: -10px !important;
     top: 40px !important;
+  }
+  .subTitleDescription {
+    font-size: 13px !important;
+    padding: 0 4px !important;
   }
 }
 

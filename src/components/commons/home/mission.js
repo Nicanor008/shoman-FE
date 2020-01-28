@@ -1,40 +1,29 @@
 import React from "react"
 import "./home.scss"
-// import Nic from "../../../images/nic.png"
-// import { Grid } from "@material-ui/core"
+import Nic from "../../../images/pairProgramming.svg"
+import { Grid } from "@material-ui/core"
 
 const Mission = () => {
   return (
     <div className="missionWrapper">
       <br />
       <br />
-      {/* <Grid container className="purposeGridWrapper" spacing={4}> */}
-        {/* <Grid item md={6}>
-          <img src={Nic} alt="df" width="700" className="" />
+      <Grid container className="purposeGridWrapper" spacing={4}>
+        <Grid item md={5}>
+          <img src={Nic} alt="df" width="400" className="" />
         </Grid>
-        <Grid item md={6} className="missionText">
-          Shoman Codes is created, managed & facilitated by{" "}
-          <a href="http://offbeat-drug.surge.sh/">Nicanor</a>, a Software
-          Engineer, with an{" "}
-          <b>aim to share what he knows</b> in software development.
+        <Grid item md={7} className="missionText">
+          {/* My Name is <a href="http://offbeat-drug.surge.sh/">Nicanor Korir</a>{" "}
+          and I was inspired to create this platform as a result of the
+          mentorship I received at Andela. <br />Mentorship Shaped my career path and
+          I would like to pass the knowledge.
+          <br /> */}
+          Free, accessible & dedicated mentorship program.
           <br />
           <br />
-          <b>Shoman Codes Future Plans</b>
-          <ul>
-            <li>Accepting other mentors to join us anytime</li>
-            <li>
-              Support every other path - Cloud Architect, Data science, AI, ML,
-              etc
-            </li>
-          </ul>
-        </Grid> */}
-        <center>
-          <h1>Inspiration</h1>
-        </center>
-      {/* </Grid> */}
-      <br />
-      <br />
-      <br />
+          <b>Mission:</b> To share Tech knowledge widely.
+        </Grid>
+      </Grid>
     </div>
   )
 }

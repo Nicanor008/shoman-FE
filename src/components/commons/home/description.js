@@ -7,7 +7,13 @@ const HomeDescription = (props) => {
     <div style={{ backgroundColor: "rebeccapurple", color: "white" }}>
       <div className="homeDescriptionWrapper">
         <div className="descriptionText">
-          <h3>{props.title}</h3>
+          <h3>
+            {props.title}
+            <span className="durationDescription">
+              {props.durationDescription}
+            </span>
+          
+          </h3>
            {props.content}  
         </div>
 

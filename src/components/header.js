@@ -31,6 +31,9 @@ const Header = ({ siteTitle }) => (
             
             <Link to="/apply" className="menuItem">
               Apply
+              <span className="subTitleDescription">
+              Open Now
+            </span>
             </Link>
             <span className="menuItem" style={{color:"yellow"}}>| </span>
             <Link to="/about" className="menuItem">
