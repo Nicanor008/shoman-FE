@@ -46,11 +46,17 @@ li {
 .cardContentWrapper:hover {
   background-color: rgb(240, 239, 239);
 }
+.cardContentWrapperWithBg {
+  color: white !important;
+}
 .contentTitle {
   color: rebeccapurple !important;
 }
 .contentTitle:hover {
   color: rgb(58, 0, 116) !important;
+}
+.contentTitleWithBg {
+  color: yellow;
 }
 .subTitleDescription {
   font-size: 15px !important;

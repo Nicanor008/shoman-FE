@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     maxHeight: 300,
   },
   subTitle: {
-    color: "rgb(228, 211, 60)",
+    color: "yellow",
     fontWeight: "bold"
   },
   listSection: {

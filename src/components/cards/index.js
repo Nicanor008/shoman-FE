@@ -9,8 +9,12 @@ import { Link } from "gatsby"
 
 const useStyles = makeStyles({
   card: {
-    minWidth: 275,
+    minWidth: 385,
     textDecoration: "none",
+  },
+  cardWithBg: {
+    backgroundColor: "rebeccapurple",
+    color: "white"
   },
   bullet: {
     display: "inline-block",
@@ -20,12 +24,18 @@ const useStyles = makeStyles({
   title: {
     fontSize: 14,
   },
+  titleWithBg: {
+    color: "white"
+  },
   contentTitle: {
     color: "rebeccapurple",
   },
   pos: {
     marginBottom: 12,
   },
+  posWithBg: {
+    color: "white"
+  }
 })
 
 export default function CardComponent(props) {
@@ -33,19 +43,19 @@ export default function CardComponent(props) {
 
   return (
     <Link to={props.link}>
-      <Card className={classes.card}>
-        <CardContent className="cardContentWrapper">
+      <Card className={props.hasBg ? classes.cardWithBg : classes.card}>
+        <CardContent className={!props.hasBg && "cardContentWrapper"}>
           <Typography
-            className={classes.title}
+            className={props.hasBg ? classes.titleWithBg : classes.title}
             color="textSecondary"
             gutterBottom
           >
             {props.hint}
           </Typography>
-          <Typography variant="h5" component="h2" className="contentTitle">
+          <Typography variant="h5" component="h2" className={props.hasBg ? "contentTitleWithBg" : "contentTitle"}>
             {props.title}
           </Typography>
-          <Typography className={classes.pos} color="textSecondary">
+          <Typography className={props.hasBg ? classes.posWithBg : classes.pos} color="textSecondary">
             {props.skills}
           </Typography>
           <Typography variant="body2" component="p">
