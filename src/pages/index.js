@@ -16,7 +16,7 @@ const IndexPage = () => (
     {/* description */}
     <HomeDescription
       title="FullStack Mentorship"
-      durationDescription="Starts 6th Feb"
+      durationDescription="Starts 12th Feb"
       content={<SubContent />}
     />
 

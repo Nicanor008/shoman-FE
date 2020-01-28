@@ -14,6 +14,10 @@
     font-weight: lighter;
     padding: 0 5px;
 }
+.disabledMenuItem {
+    cursor: auto !important;
+    
+}
 .menuItem:hover {
     color: rgb(220, 231, 63) !important;
 }

@@ -26,7 +26,7 @@ const HomePage = () => (
         </Grid>
 
         <Grid item md={6} style={{ paddingTop: "8%", paddingLeft: "9%" }}>
-          A day in life as a Backend engineer Video
+          <a href="https://youtu.be/pkdgVYehiTE?t=441">A day in life as a Backend Software Developer</a> 
         </Grid>
       </Grid>
 

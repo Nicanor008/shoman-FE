@@ -24,7 +24,7 @@ function HomePage() {
           <Grid item md={4} className="ApplyHereButtonWrapper">
             <center>
               <Link
-                href="https://docs.google.com/forms/d/1C0MMYr1dPG0n1wAao3FQqgkVJpUjZHJRb3eP3kPo2f8/edit"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdt-jOnDRaWqigLabe-TI9lsuhMvkewyy-LNeHzX9BIU-XzqQ/viewform"
                 rel="noopener"
                 target="_blank"
                 className="ApplyHereButton"

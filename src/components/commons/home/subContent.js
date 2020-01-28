@@ -11,7 +11,7 @@ export const SubContent = () => {
         </span>{" "}
         program{" "}
       </b>{" "}
-      focused on sharing tech Knowledge between to the mentees. A mentor is an
+      focused on sharing tech Knowledge and enhancing mentees learning curve. A mentor is an
       experienced person, with trusted knowledge in a specific field. <br />
       <br />
       We believe in the Knowledge we have as mentors, and would like it to
