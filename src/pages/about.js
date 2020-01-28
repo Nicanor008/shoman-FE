@@ -10,7 +10,7 @@ import DirectionsWalkIcon from '@material-ui/icons/DirectionsWalk';
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import EmailIcon from '@material-ui/icons/Email';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
-
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 export default function Requirements() {
 
@@ -35,6 +35,7 @@ export default function Requirements() {
         <SingleRequirement 
             title="Target Audience"
             content="Beginners/Novice. Anybody who wants to be a better software engineer and would like guidance/mentorship."
+            icon={<AccountCircleIcon />}
         />
         <SingleRequirement 
             title="Duration"

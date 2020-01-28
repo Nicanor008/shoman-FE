@@ -9,15 +9,17 @@ const SingleRequirement = ({ title, content, content2, content3, icon }) => {
   return (
     <div>
       <ListItem alignItems="flex-start">
+      {icon && 
         <ListItemAvatar>
           <Avatar alt="Icon">{icon}</Avatar>
         </ListItemAvatar>
+        }
         <ListItemText
           primary={title}
           secondary={content}
         />
       </ListItem>
-      <Divider variant="inset" component="li" />
+      <Divider variant="inset" component="li" /> 
     </div>
   )
 }

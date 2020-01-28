@@ -47,16 +47,6 @@ const IndexPage = () => (
             link="/path/backend"
           />
         </Grid>
-        {/* <Grid item md={3}>
-          <CardComponent
-            hint="Algorithms and data structures"
-            title="Algorithms"
-            skills="Arrays | Lists | Hash tables | etc"
-            content="Algorithms and data structures are the core requirements of every project. Also interview tips given."
-            actions=""
-            link="/path/algorithms"
-          />
-        </Grid> */}
         <Grid item md={4}>
           <CardComponent
             hint="Essential skills and relevant advice"

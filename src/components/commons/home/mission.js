@@ -13,11 +13,6 @@ const Mission = () => {
           <img src={Nic} alt="df" width="400" className="" />
         </Grid>
         <Grid item md={7} className="missionText">
-          {/* My Name is <a href="http://offbeat-drug.surge.sh/">Nicanor Korir</a>{" "}
-          and I was inspired to create this platform as a result of the
-          mentorship I received at Andela. <br />Mentorship Shaped my career path and
-          I would like to pass the knowledge.
-          <br /> */}
           Free, accessible & dedicated mentorship program.
           <br />
           <br />
