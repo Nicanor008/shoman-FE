@@ -42,7 +42,7 @@ const IndexPage = () => (
           <CardComponent
             hint="Android | PWA | IOS | Native"
             title="Mobile Developer"
-            skills="Android | iPhone"
+            skills="Android | iPhone | windows"
             // content="Solve user problems by creating mobile applications that meet mobile user experience."
             actions=""
             link="/path/mobile"
@@ -54,7 +54,7 @@ const IndexPage = () => (
             title="Quality Assuarance"
             skills="QA | Quality Control"
             actions=""
-            link="/path/backend"
+            link="/path/qa"
           />
         </Grid>
       </Grid>
@@ -69,7 +69,7 @@ const IndexPage = () => (
             title="Data Structures & Algorithms"
             skills="DSA"
             actions=""
-            link="/path/fullstack"
+            link="/path/algorithms"
           />
         </Grid>
         <Grid item md={4}>
@@ -88,7 +88,7 @@ const IndexPage = () => (
             title="Career Advice"
             skills="CV & Resume Coaching"
             actions=""
-            link="/path/backend"
+            link="/path/career-advice"
           />
         </Grid>
         </Grid>

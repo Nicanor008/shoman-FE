@@ -8,10 +8,6 @@ import Typography from "@material-ui/core/Typography"
 import { Link } from "gatsby"
 
 const useStyles = makeStyles({
-  card: {
-    minWidth: 385,
-    textDecoration: "none",
-  },
   cardWithBg: {
     backgroundColor: "rebeccapurple",
     color: "white"
@@ -43,7 +39,7 @@ export default function CardComponent(props) {
 
   return (
     <Link to={props.link}>
-      <Card className={props.hasBg ? classes.cardWithBg : classes.card}>
+      <Card className={props.hasBg ? classes.cardWithBg : "cardComponentWrapper"}>
         <CardContent className={!props.hasBg && "cardContentWrapper"}>
           <Typography
             className={props.hasBg ? classes.titleWithBg : classes.title}

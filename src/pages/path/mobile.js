@@ -18,7 +18,7 @@ const Mobile = () => (
             skills="Android | iPhone | All Phones actually"
             content="Creating Mobile user intefaces. Can also create the backend "
             actions=""
-            link="/path/frontend"
+            link="/path/mobile"
           />
         </Grid>
 
