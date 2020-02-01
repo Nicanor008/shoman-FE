@@ -39,10 +39,10 @@ const Layout = ({ children }) => {
               Let's Chat - shomancodes@gmail.com
             </Grid>
             <Grid item md={4} className="footerItem">
-              <Link to="/code-of-conduct" className="footerLink">Code Of Conduct </Link> &nbsp; | &nbsp;
+              <Link to="/code-of-conduct" className="footerLink">Code Of Conduct </Link> | &nbsp;
               <Link to="/privacy"  className="footerLink">Privacy </Link> 
-              &nbsp; | &nbsp; ©{" "}
-              {new Date().getFullYear()} &nbsp;Shoman
+              | ©
+              {new Date().getFullYear()}
             </Grid>
           </Grid>
         </footer>
