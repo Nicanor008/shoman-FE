@@ -36,11 +36,13 @@ const Layout = ({ children }) => {
         <footer>
           <Grid className="footerWrapper">
             <Grid item md={8} className="footerItem">
-              Let's Chat - shomancodes@gmail.com 
+              Let's Chat - shomancodes@gmail.com
             </Grid>
             <Grid item md={4} className="footerItem">
-            <Link to="/privacy">
-              Privacy </Link> &nbsp; | &nbsp; © {new Date().getFullYear()} &nbsp;Shoman
+              <Link to="/code-of-conduct" className="footerLink">Code Of Conduct </Link> | &nbsp;
+              <Link to="/privacy"  className="footerLink">Privacy </Link> 
+              | ©
+              {new Date().getFullYear()}
             </Grid>
           </Grid>
         </footer>

@@ -10,7 +10,7 @@ const Mission = () => {
       <br />
       <Grid container className="purposeGridWrapper" spacing={4}>
         <Grid item md={5}>
-          <img src={Nic} alt="df" width="400" className="" />
+          <img src={Nic} alt="df" width="400" />
         </Grid>
         <Grid item md={7} className="missionText">
           Free, accessible & dedicated mentorship program.

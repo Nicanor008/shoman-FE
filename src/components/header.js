@@ -18,7 +18,6 @@ const Header = ({ siteTitle }) => {
     >
       <div className="headerWrapper">
         <h1 style={{ margin: 0 }}>
-          {console.log(diffDays)}
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Link
               to="/"

@@ -6,28 +6,30 @@ export const SubContent = () => {
       An{" "}
       <b>
         Online mentorship{" "}
-        <span role="img" aria-label="Shake Hands" style={{fontSize: "23px"}}>
+        <span role="img" aria-label="Shake Hands" style={{ fontSize: "23px" }}>
           🤝
         </span>{" "}
         program{" "}
       </b>{" "}
-      focused on sharing tech Knowledge and enhancing mentees learning curve. A mentor is an
-      experienced person, with trusted knowledge in a specific field. <br />
+      focused on sharing tech Knowledge and enhancing mentees learning curve. A
+      mentor is an experienced person, with trusted knowledge in a specific
+      field. <br />
       <br />
       We believe in the Knowledge we have as mentors, and would like it to
-      benefit others too. We currently focus on Web development(backend &
-      Frontend){" "}
-      <span role="img" aria-label="We Move" style={{fontSize: "23px"}}>
+      benefit others too. Mentors share the knowledge they have by also
+      leveraging the experience in software field{" "}
+      <span role="img" aria-label="We Move" style={{ fontSize: "23px" }}>
         🚀
       </span>
       . Other platforms might be available depending on the specisialization of
       the mentors joining.
       <br />
       <br />
-      <b>Apply</b> . <b>Get Reviewed</b> . <b>Receive Invitation</b> . <b>Join Our Platform(Discord)</b> 
-      . <b>Learn</b> . <b>Ask a lot of questions</b> . <b>Get insights(a lot also)</b> . <b>Tell
-      your story to the world</b>{" "}&nbsp;
-      <span role="img" aria-label="win" style={{fontSize: "25px"}}>
+      <b>Apply</b> . <b>Get Reviewed</b> . <b>Receive Invitation</b> .{" "}
+      <b>Join Our Community</b>. <b>Learn</b> .{" "}
+      <b>Ask a lot of questions</b> . <b>Get insights(a lot also)</b> .{" "}
+      <b>Tell your story to the world</b> &nbsp;
+      <span role="img" aria-label="win" style={{ fontSize: "25px" }}>
         🙌
       </span>
     </p>

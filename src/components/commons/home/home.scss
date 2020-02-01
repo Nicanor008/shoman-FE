@@ -46,11 +46,17 @@ li {
 .cardContentWrapper:hover {
   background-color: rgb(240, 239, 239);
 }
+.cardContentWrapperWithBg {
+  color: white !important;
+}
 .contentTitle {
   color: rebeccapurple !important;
 }
 .contentTitle:hover {
   color: rgb(58, 0, 116) !important;
+}
+.contentTitleWithBg {
+  color: yellow;
 }
 .subTitleDescription {
   font-size: 15px !important;
@@ -68,6 +74,16 @@ li {
   font-size: 17px;
   margin-left: 6px;
 }
+.cardComponentWrapper {
+  min-width: 385px;
+  text-decoration: none;
+}
+.reportHereLink {
+  color: rgb(77, 77, 241);
+}
+.footerLink {
+  color: rgb(46, 45, 45);
+}
 
 @media only screen and (max-width: 1370px) {
   #wave:after {
@@ -82,12 +98,18 @@ li {
   }
 }
 
-@media only screen and (max-width: 887px) {
+@media only screen and (max-width: 952px) {
   #wave:before {
     width: 900px !important;
     height: 110px !important;
     right: -10px !important;
     top: 40px !important;
+  }
+  .cardComponentWrapper {
+    min-width: 315px;
+  }
+  .CareerProgressImg {
+    display: none !important;
   }
 }
 
@@ -101,6 +123,9 @@ li {
   .subTitleDescription {
     font-size: 13px !important;
     padding: 0 4px !important;
+  }
+  .cardComponentWrapper {
+    min-width: 295px;
   }
 }
 

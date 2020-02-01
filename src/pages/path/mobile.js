@@ -6,26 +6,24 @@ import CardComponent from "../../components/cards"
 import { Grid } from "@material-ui/core"
 import ListData from "../../components/cards/listData"
 
-const HomePage = () => (
+const Mobile = () => (
   <Layout>
-    <SEO title="Path" />
+    <SEO title="Mobile" />
     <div className="homePageWrapper">
       <Grid container spacing={4}>
         <Grid item md={6}>
           <CardComponent
-            hint="UI/UX"
-            title="Front-End"
-            skills="HTML | CSS | JavaScript"
-            content="You enjoy creating and thinking like a user. We will create user innterfaces that attracts users. You should be
-            inspired in design, both interactive and visual. Advice is to understand the core basics of the visual web(html-content, css-style,
-            javascript-interactivity). This will guide you and help you to build up more advanced front end web apps that satisfy clients needs."
+            hint="Android | PWA | IOS | Native"
+            title="Mobile Applications Developer"
+            skills="Android | iPhone | All Phones actually"
+            content="Creating Mobile user intefaces. Can also create the backend "
             actions=""
-            link="/path/frontend"
+            link="/path/mobile"
           />
         </Grid>
 
         <Grid item md={6} style={{paddingTop:"8%", paddingLeft:"9%"}}>
-          <a href="https://youtu.be/pkdgVYehiTE?t=123">A day in life as a FrontEnd Developer</a>
+          <a href="https://www.youtube.com/watch?v=ulSxrbaj5rs">A day in life as a Mobile Developer</a>
         </Grid>
       </Grid>
       <br />
@@ -37,28 +35,21 @@ const HomePage = () => (
             data={[
               // {id: Math.random()},
               { content: "Version Control(git) - enhances teamwork" },
-              { content: "HTML & HTML5 - markup language" },
+              { content: "Mobile Visual design" },
               {
-                content:
-                  "CSS & CSS3, FlexBox - let's style beautiful web pages",
+                content: "Styling mobile apps - XML",
+              },
+              {
+                content: "Interactional design & development<Logic />",
+              },
+              { content: "Executing http(s) call" },
+              {
+                content: "Utilizing mobile resources e.g. camera, location",
               },
               {
                 content:
-                  "JavaScript(Vanilla JS) - From syntax to Functional & OOP javascript programming",
-              },
-              { content: "Fetch API - http(s) call" },
-              {
-                content:
-                  "ES6 JS code - Async/await, arrow functions, hoisting, closures",
-              },
-              {
-                content:
-                  "Test Driven Development - Mocha, Chai, Jest, Jasmine, etc",
-              },
-              {
-                content:
-                  "Framework/library(optional) - React | Angular | VueJS | Svelte",
-              },
+                  "Test Driven Development",
+              }
             ]}
           />
         </Grid>
@@ -69,16 +60,16 @@ const HomePage = () => (
               // {id: Math.random()},
               {
                 content:
-                  "Simple & Scientific Calculator - understand the basics and advance concepts of JavaScript",
+                  "Simple & Scientific Calculator - understand the basics and advance concepts of mobile programming",
               },
               {
                 content:
                   "Gallery App - keep images on a beatifully made app(focuses on CSS proficiency)",
               },
-              { content: "Todo App - Perfect ES6 skills & Test development" },
+              { content: "Todo App -  Advanced Programming skills" },
               {
                 content:
-                  "Weather App - Perfect your JS & CSS skills while using Fetch API",
+                  "Weather App - Perfect your coding skills with HTTP calls",
               },
               {
                 content:
@@ -99,7 +90,7 @@ const HomePage = () => (
               },
               {
                 content:
-                  "Work as a Frontend Engineer/developer, QA engineer, UI/UX designer, software engineer/developer jobs",
+                  "Work as a Mobile designer, Mobile Apps Developer, Android/IOS/Native developer, QA engineer, UI/UX designer, software engineer/developer jobs",
               },
             ]}
           />
@@ -109,4 +100,4 @@ const HomePage = () => (
   </Layout>
 )
 
-export default HomePage
+export default Mobile
