@@ -26,7 +26,7 @@ const MentorshipPurpose = () => {
           <p>
             You Don't have to know everything. You going to work only on one
             path, preferably what you would like to do in your Career. Select
-            carefully. Follow you <b>passion</b>.
+            carefully. Follow your <b>passion</b>.
           </p>
         </Grid>
         <Grid item md={4}>
