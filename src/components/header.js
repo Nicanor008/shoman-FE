@@ -34,19 +34,19 @@ const Header = ({ siteTitle }) => {
               Home
             </Link> */}
               {/* <span className="menuItem">| </span> */}
-              {diffDays > 0 ? (
+              {/* {diffDays > 0 ? (
                 <Link to="/apply" className="menuItem">
                   Apply
                   <span className="subTitleDescription">
                     {diffDays} More Days
                   </span>
                 </Link>
-              ) : (
+              ) : ( */}
                 <Link className="menuItem disabledMenuItem">
                   Apply
                   <span className="subTitleDescription">Closed</span>
                 </Link>
-              )}
+              {/* )} */}
 
               <span className="menuItem" style={{ color: "yellow" }}>
                 |{" "}
