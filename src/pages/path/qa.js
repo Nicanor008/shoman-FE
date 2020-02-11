@@ -4,7 +4,6 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CardComponent from "../../components/cards"
 import { Grid } from "@material-ui/core"
-import ListData from "../../components/cards/listData"
 
 const QAPage = () => (
   <Layout>

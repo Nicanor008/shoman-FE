@@ -17,7 +17,7 @@ const IndexPage = () => (
     <HomeDescription
       title="Tech Mentorship"
       durationDescription="Starts 12th Feb"
-      startedDate="In Progress"
+      startedDate="Cohort 1 In Progress"
       content={<SubContent />}
     />
 

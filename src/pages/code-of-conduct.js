@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
-import Grid from "@material-ui/core/Grid"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -19,14 +18,6 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(4, 0, 2),
   },
 }))
-
-function generate(element) {
-  return [0, 1, 2].map(value =>
-    React.cloneElement(element, {
-      key: value,
-    })
-  )
-}
 
 function ListItemContent({ primaryText, secondaryText }) {
   return (

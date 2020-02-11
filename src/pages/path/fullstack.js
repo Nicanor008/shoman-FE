@@ -28,7 +28,7 @@ const FullStack = () => (
         </Grid>
       </Grid>
       <br />
-      <h4>You have to be really good in both of this <span role="img">🙄</span></h4>
+      <h4>You have to be really good in both of this <span role="img" aria-label="Surprised">🙄</span></h4>
       <Grid container spacing={10}>
         <Grid item md={6}>
           <CardComponent
