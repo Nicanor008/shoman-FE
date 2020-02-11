@@ -10,7 +10,7 @@ const HomeDescription = (props) => {
           <h2>
             {props.title}
             <span className="durationDescription">
-              {props.durationDescription}
+              {Date() < "Wed Feb 12 2020 23:59:59" ? props.durationDescription : props.startedDate}
             </span>
           
           </h2>
