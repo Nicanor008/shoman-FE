@@ -1,86 +1,93 @@
 .headerWrapper {
-    margin: 0 auto;
-    padding: 1.45rem 5.0875rem;
+  margin: 0 auto;
+  padding: 1.45rem 5.0875rem;
 }
 .authInputWrapper {
-    padding-right: 220px !important;
+  padding-right: 220px !important;
 }
 .menuItemWrapper {
-    padding-right: 120px !important;
+  padding-right: 120px !important;
 }
 .menuItem {
-    font-size: 17px !important;
-    color: white !important;
-    font-weight: lighter;
-    padding: 0 5px;
+  font-size: 17px !important;
+  color: white !important;
+  font-weight: lighter;
+  padding: 0 5px;
 }
 .disabledMenuItem {
-    cursor: auto !important;
-    
+  cursor: auto !important;
 }
 .menuItem:hover {
-    color: rgb(220, 231, 63) !important;
+  color: rgb(220, 231, 63) !important;
 }
 .pathWrapper {
-    background-color: rgb(104, 69, 139) !important;
-    color: white !important;
+  background-color: rgb(104, 69, 139) !important;
+  color: white !important;
 }
 .applyingText {
-    font-size: 13px;
-    color: #ece90f !important;
+  font-size: 13px;
+  color: #ece90f !important;
 }
 .applyingText:hover {
-    color: white !important;
+  color: white !important;
 }
 footer {
-    margin: 20px;
-    padding-left: 100px;
+  margin: 20px;
+  padding-left: 100px;
 }
 .footerWrapper {
-    display:flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .RequirementsWrapper {
-    padding: 2.1rem 15.3rem !important;
+  padding: 2.1rem 15.3rem !important;
 }
 .AdviceWrapper {
-    background-color:rgb(237, 233, 252); 
-    border-radius: 8px
+  background-color: rgb(237, 233, 252);
+  border-radius: 8px;
+}
+.donateButtons {
+  padding-top: 100px;
+}
+@media only screen and (max-width: 818px) {
+  .donateButtons {
+    padding-top: 0 !important;
+  }
 }
 @media only screen and (max-width: 678px) {
-    .headerWrapper {
-        padding: 1.05rem 2.0875rem;
-    }
-    .authInputWrapper {
-        padding-right: 50px !important;
-    }
-    .headerTitle {
-        padding-top: 17px !important;
-        font-size: 22px !important;
-    }
-    .menuItemWrapper {
-        padding-right: 10px !important;
-    }
-    .footerWrapper {
-        display: inline-block;
-    }
-    .footerItem {
-        padding-bottom: 10px;
-    }
-    footer {
-        margin: 10px;
-        padding-left: 10px;
-    }
-    .RequirementsWrapper {
-        padding: 1.1rem 0.3rem !important;
-    }
+  .headerWrapper {
+    padding: 1.05rem 2.0875rem;
+  }
+  .authInputWrapper {
+    padding-right: 50px !important;
+  }
+  .headerTitle {
+    padding-top: 17px !important;
+    font-size: 22px !important;
+  }
+  .menuItemWrapper {
+    padding-right: 10px !important;
+  }
+  .footerWrapper {
+    display: inline-block;
+  }
+  .footerItem {
+    padding-bottom: 10px;
+  }
+  footer {
+    margin: 10px;
+    padding-left: 10px;
+  }
+  .RequirementsWrapper {
+    padding: 1.1rem 0.3rem !important;
+  }
 }
 
 @media only screen and (max-width: 478px) {
-    .headerWrapper {
-        padding: 0.95rem 1.0875rem;
-    }
-    .authInputWrapper {
-        padding-right: 0px !important;
-    }
+  .headerWrapper {
+    padding: 0.95rem 1.0875rem;
+  }
+  .authInputWrapper {
+    padding-right: 0px !important;
+  }
 }

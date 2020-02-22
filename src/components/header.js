@@ -42,10 +42,16 @@ const Header = ({ siteTitle }) => {
                   </span>
                 </Link>
               ) : ( */}
+                <Link className="menuItem" to="/donate">
+                  Donate
+                </Link>
+                {/* <span className="menuItem" style={{ color: "yellow" }}>
+                |{" "}
+              </span>
                 <Link className="menuItem disabledMenuItem">
                   Apply
                   <span className="subTitleDescription">Closed</span>
-                </Link>
+                </Link> */}
               {/* )} */}
 
               <span className="menuItem" style={{ color: "yellow" }}>

@@ -16,6 +16,13 @@ const useStyles = makeStyles(theme => ({
     overflow: "auto",
     maxHeight: 300,
   },
+  donateRoot: {
+    width: "100%",
+    backgroundColor: "rebeccapurple",
+    color: "white",
+    borderRadius: 5,
+    position: "relative",
+  },
   subTitle: {
     color: "yellow",
     fontWeight: "bold"
@@ -33,7 +40,7 @@ export default function ListData(props) {
   const classes = useStyles()
 
   return (
-    <List className={classes.root} dense>
+    <List className={props.styleName ? classes.donateRoot : classes.root} dense>
       <ListSubheader className={classes.subTitle}>{props.subTitle}</ListSubheader>
       {props.data.length > 0 && props.data.map(item => (
         <ListItem key={item.id}>

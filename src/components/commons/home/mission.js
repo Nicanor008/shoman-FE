@@ -1,7 +1,7 @@
 import React from "react"
 import "./home.scss"
 import Nic from "../../../images/pairProgramming.svg"
-import { Grid } from "@material-ui/core"
+import { Grid, Button } from "@material-ui/core"
 
 const Mission = () => {
   return (
@@ -17,6 +17,21 @@ const Mission = () => {
           <br />
           <br />
           <b>Mission:</b> To share Tech knowledge widely.
+          <br />
+          <br />
+          Help us achive our mission{" "}
+          <a href="/donate"
+            style={{
+              backgroundColor: "yellow",
+              fontWeight: "bold",
+              border: "0.5px solid blue",
+              padding: "8px 15px",
+              borderRadius: "5px"
+            }}
+          >
+            Donate
+            <span className="subTitleDescription">(Target-$2370)</span>
+          </a>
         </Grid>
       </Grid>
     </div>
