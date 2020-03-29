@@ -304,6 +304,41 @@ const TechAdvice = () => (
           </List>
         </Grid>
 
+        <Grid item md={6}>
+          <List component="nav" style={{}} className="AdviceWrapper">
+            <h4 style={{ margin: 0, paddingLeft:15 }}>Learning Resources</h4>
+            <ListItemLink
+              href="https://www.frontendmentor.io/resources"
+              target="blank"
+              className="techAdviceItemTitle"
+            >
+              <ListItemTexts
+                primary="Frontend Mentor Resources"
+                secondary="A list of best learning resources(All Computer Science concepts)"
+              />
+            </ListItemLink>
+            <ListItemLink
+              href="https://github.com/Nicanor008/33-js-concepts"
+              target="blank"
+              className="techAdviceItemTitle"
+            >
+              <ListItemTexts
+                primary="33 JavaScript Concepts"
+                secondary="33 concepts every JS developer should know"
+              />
+            </ListItemLink>
+            <ListItemLink
+              href="https://github.com/Nicanor008/app-ideas"
+              target="blank"
+              className="techAdviceItemTitle"
+            >
+              <ListItemTexts
+                primary="Project ideas(Beginner, intermediate & advanced)"
+                secondary="Utilise the already created user stories to build your projects portfolio"
+              />
+            </ListItemLink>
+          </List>
+        </Grid>
       </Grid>
     </div>
   </Layout>
