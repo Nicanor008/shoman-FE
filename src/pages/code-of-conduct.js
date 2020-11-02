@@ -79,7 +79,7 @@ function CodeOfConduct() {
           <br />
           Those who experience mistreatment, unwelcoming or feel unsafe in some
           way should immediately
-          <a 
+          <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSeINhTK4HwYUU8u2uwz_ZW_3GgKhcE1Xipw-kW9BQlKjO8ynw/viewform?usp=pp_url&entry.903512528=Constant+communication+on+my+DM(nagging)&entry.289190096=Shoman"
             className="reportHereLink"
           >
@@ -91,4 +91,4 @@ function CodeOfConduct() {
   )
 }
 
-export default CodeOfConduct
+export default CodeOfConduct;

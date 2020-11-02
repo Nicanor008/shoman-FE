@@ -26,7 +26,9 @@ const QAPage = () => (
         </Grid>
 
         <Grid item md={6} style={{ paddingTop: "8%", paddingLeft: "9%" }}>
-          <a href="https://blog.devmountain.com/a-day-in-the-life-of-a-qa-engineer/">A day in life as a QA Engineer/Tester</a> 
+          <a href="https://blog.devmountain.com/a-day-in-the-life-of-a-qa-engineer/">
+            A day in life as a QA Engineer/Tester
+          </a>
         </Grid>
       </Grid>
     </div>

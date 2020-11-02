@@ -1,7 +1,7 @@
 import React from "react"
 import "./home.scss"
 import Nic from "../../../images/pairProgramming.svg"
-import { Grid, Button } from "@material-ui/core"
+import { Grid } from "@material-ui/core"
 
 const Mission = () => {
   return (
