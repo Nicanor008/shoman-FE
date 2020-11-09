@@ -17,10 +17,21 @@ A Mentorship program
 - Push your work back up to the fork/clone origin
 - Submit a Pull request so that we can review your changes
 
-## On Development
+### firing up the dev environment
 Make sure you've gatsby installed globally, `npm install -g gatsby-cli`.
 
 Start development environment, `gatsby develop` or `yarn run dev`
+
+## Pick, Assign & Work
+- Pick - Pick a task on the issues repo
+- Assign - Assign yourself that issue
+- Work - Create a new branch, work on the task, create a pull request.
+- Repeat
+
+## Resources
+- [Figma Designs](https://www.figma.com/file/YCNLFbPW3ON69RAkRy859w/Shoman-Dashboard?node-id=0%3A1)
+- [Features Overview Description](https://docs.google.com/document/d/15roz9VuUkSs5t30CXvKTmqOgg9-A3mmm_KRCdzzPC2A/edit?usp=sharing)
+- [All Shoman features MVP listing](https://mm.tt/1637781406?t=1EMu7kjBX9)
 
  ## License
  [MIT](https://github.com/Nicanor008/shoman-FE/blob/master/LICENSE)
