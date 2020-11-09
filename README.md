@@ -11,14 +11,15 @@ A Mentorship program
 ## How To Contribute
 - Fork this repo or just clone the project to your own machine
 - install dependencies, `yarn`
-- Work on your fork/clone, Create a new branch, make your changes and additions on your branch(Branch naming, e.g. feature/#issue-no-issue-name -> **feat/#12-mentor-side-dashboard**)
+- Work on your fork/clone, Create a new branch, make your changes and additions on your branch(Branch naming, e.g. issueType/#issue-name-issue-no -> **feat/mentor-side-dashboard-#12**)
 - Commit changes
 - Make sure you merge the latest from "upstream" and - resolve conflicts if there is any(on forks)
 - Push your work back up to the fork/clone origin
 - Submit a Pull request so that we can review your changes
 
 ## On Development
-Make sure you've gatsby installed globally, `npm install -g gatsby-cli`
+Make sure you've gatsby installed globally, `npm install -g gatsby-cli`.
+
 Start development environment, `gatsby develop` or `yarn run dev`
 
  ## License
