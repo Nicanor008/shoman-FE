@@ -61,5 +61,23 @@
   padding-right: 1rem;
 }
 .actionButton-link2 {
+  padding-left: 1rem;
+}
+
+@media (max-width: 467px) {
+  .loginInput {
+    display: none;
+  }
+  .authInputs {
+    width: 99%;
     padding-left: 1rem;
   }
+  .authInputWrapper {
+    display: inline;
+    padding: 0;
+    background-color: red;
+  }
+  .actionButtonWrapper {
+    width: 110%;
+  }
+}

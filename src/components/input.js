@@ -16,7 +16,7 @@ export const BootstrapInput = withStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     border: "1px solid #ced4da",
     fontSize: 16,
-    width: '300px',
+    width: "300px",
     padding: "10px 26px 10px 12px",
     transition: theme.transitions.create(["border-color", "box-shadow"]),
     // Use the system font instead of the default Roboto font.
@@ -29,7 +29,7 @@ export const BootstrapInput = withStyles(theme => ({
   },
 }))(InputBase)
 
-const InputComponents = (props) => {
+const InputComponents = props => {
   return (
     <FormControl className={props.class}>
       <InputLabel htmlFor="demo-customized-textbox">{props.label}</InputLabel>
@@ -43,3 +43,20 @@ const InputComponents = (props) => {
 }
 
 export default InputComponents
+
+// export const SelectInput = props => {
+//   return (
+    // <FormControl className={classes.formControl}>
+    //   <InputLabel id="demo-simple-select-label">Age</InputLabel>
+    //   <Select
+    //     labelId="demo-simple-select-label"
+    //     id="demo-simple-select"
+    //     value={age}
+    //     onChange={handleChange}
+    //   >
+    //     <MenuItem value={10}>Ten</MenuItem>
+    //     <MenuItem value={20}>Twenty</MenuItem>
+    //     <MenuItem value={30}>Thirty</MenuItem>
+    //   </Select>
+    // </FormControl>
+

@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import LoginComponent from "../../components/auth/login/login"
+import SignUpComponent from "../../components/auth/signup/signup"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,7 +19,7 @@ export default function AuthPage() {
     <Layout>
       <SEO title="Login" description="Login to Shoman" />
       <div className={classes.root}>
-        <LoginComponent />
+        <SignUpComponent />
       </div>
     </Layout>
   )

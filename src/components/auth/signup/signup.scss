@@ -1,0 +1,9 @@
+.signupImage {
+    margin-top: 6rem;
+    position: sticky;
+}
+@media (max-width: 467px) {
+    .signupImage {
+        display: none;
+    }
+}
