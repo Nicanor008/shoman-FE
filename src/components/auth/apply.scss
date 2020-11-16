@@ -1,0 +1,36 @@
+.MuiFormControl-root {
+  min-width: 100% !important;
+}
+.applyInputWrapper {
+  display: flex;
+  font-family: "Nunito", sans-serif;
+}
+.applyInputs {
+  padding: 0 4rem;
+  width: 50%;
+  background: linear-gradient(180deg, #663399 16.86%, rgba(243, 231, 255, 0) 95.99%);;
+  padding-top: 1.3rem;
+}
+.applyTitle {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  color: #ffffff;
+  margin-bottom: -2rem;
+  margin-block-end: 0;
+}
+.requirementsText {
+  margin-bottom: 0;
+  margin-block-end: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 18px;
+}
+.requirementsTextCheckbox {
+    color: #ffffff;
+}
+.otherRequirementsText {
+    color: #000000;
+}

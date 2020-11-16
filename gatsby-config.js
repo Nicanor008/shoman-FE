@@ -19,6 +19,12 @@ module.exports = {
         trackingId: "UA-156931240-1",
       },
     },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        sitemapSize: 100,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
