@@ -53,7 +53,6 @@ const Header = ({ siteTitle }) => {
                   <span className="subTitleDescription">Closed</span>
                 </Link> */}
               {/* )} */}
-
               <span className="menuItem" style={{ color: "yellow" }}>
                 |{" "}
               </span>
@@ -65,15 +64,14 @@ const Header = ({ siteTitle }) => {
               Reach Out - <span style={{color:"yellow"}}>shoman@gmail.com</span>
             </span> */}
               {/* <span className="menuItem">| </span> */}
-
-              {/* unathorised user */}
-              {/* <Link to="/auth" className="menuItem">
-              Login
-            </Link>
-            <span className="menuItem">| </span>
-            <Link to="/apply" className="menuItem">
-              Apply <span className="applyingText">As a Mentee</span>
-            </Link> */}
+              {/* unathorised user */}<span className="menuItem">| </span>
+              <Link to="/auth" className="menuItem">
+                Login
+              </Link>
+              <span className="menuItem">| </span>
+              <Link to="/apply" className="menuItem">
+                Apply <span className="applyingText">As a Mentee</span>
+              </Link>
             </div>
           </div>
         </h1>

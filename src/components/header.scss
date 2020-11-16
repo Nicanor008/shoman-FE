@@ -2,9 +2,6 @@
   margin: 0 auto;
   padding: 1.45rem 5.0875rem;
 }
-.authInputWrapper {
-  padding-right: 220px !important;
-}
 .menuItemWrapper {
   padding-right: 120px !important;
 }
@@ -58,9 +55,6 @@ footer {
   .headerWrapper {
     padding: 1.05rem 2.0875rem;
   }
-  .authInputWrapper {
-    padding-right: 50px !important;
-  }
   .headerTitle {
     padding-top: 17px !important;
     font-size: 22px !important;
@@ -86,8 +80,5 @@ footer {
 @media only screen and (max-width: 478px) {
   .headerWrapper {
     padding: 0.95rem 1.0875rem;
-  }
-  .authInputWrapper {
-    padding-right: 0px !important;
   }
 }

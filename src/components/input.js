@@ -20,18 +20,7 @@ export const BootstrapInput = withStyles(theme => ({
     padding: "10px 26px 10px 12px",
     transition: theme.transitions.create(["border-color", "box-shadow"]),
     // Use the system font instead of the default Roboto font.
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
+    fontFamily: ["Nunito"].join(","),
     "&:focus": {
       borderRadius: 4,
       borderColor: "#80bdff",
@@ -40,16 +29,17 @@ export const BootstrapInput = withStyles(theme => ({
   },
 }))(InputBase)
 
-const SInputComponents = (props) => {
+const InputComponents = (props) => {
   return (
     <FormControl className={props.class}>
       <InputLabel htmlFor="demo-customized-textbox">{props.label}</InputLabel>
       <BootstrapInput
         id="demo-customized-textbox"
         type={props.inputType}
+        placeholder={props.placeholder}
       />
     </FormControl>
   )
 }
 
-export default SInputComponents
+export default InputComponents
