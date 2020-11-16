@@ -13,7 +13,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function LoginComponent() {
   const classes = useStyles()
-  const height = window !== undefined && window.screen.availHeight-290;
+  let height;
+  if (typeof window !== 'undefined') {
+    height = window.innerHeight - 290
+  }
 
   return (
     <div className="authInputWrapper" style={{ minHeight: height }}>
