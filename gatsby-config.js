@@ -21,9 +21,6 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-sitemap',
-      options: {
-        sitemapSize: 100,
-      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
