@@ -57,11 +57,11 @@ export default function Apply() {
           <div>
             <center>
               <p className="applyTitle">Apply as a Mentee</p>
-              <span className="authSubTitle">Accelerate your learning</span>
+              <span className="authSubTitle applySubTitle">Accelerate your learning</span>
             </center>
           </div>
           <br />
-          <form validate autoComplete>
+          <form>
             <Grid container spacing={3}>
               {/* firstname */}
               <Grid item xs={12} md={6}>
@@ -124,7 +124,6 @@ export default function Apply() {
                   What are your goals during and after this mentorship?
                 </p>
                 <TextareaAutosize
-                  colsMin={4}
                   className={classes.textArea}
                   aria-label="goal"
                   placeholder="Be descriptive, we can take you to the moon, but can you handle our rocket?"
@@ -135,7 +134,6 @@ export default function Apply() {
                   Any Previous experience in software development?
                 </p>
                 <TextareaAutosize
-                  colsMin={4}
                   className={classes.textArea}
                   aria-label="experience"
                   placeholder="Technologies used, years of experience ..."

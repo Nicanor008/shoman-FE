@@ -35,7 +35,7 @@ export default function LoginComponent() {
           <p className="authTitle">
             Welcome Back <span className="authTitleEnd">:)</span>
           </p>
-          <span className="authSubTitle">Login to Continue</span>
+          <span className="authSubTitle authSubTitle-text">Login to Continue</span>
         </div>
         <InputComponents
           class={classes.margin}

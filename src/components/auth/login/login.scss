@@ -29,8 +29,13 @@
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
-  color: #69696b;
   padding-left: 2rem;
+}
+.authSubTitle-text {
+  color: #69696b;
+}
+.applySubTitle {
+  color: #e2e2e2;
 }
 .actionButtonWrapper {
   width: 48%;
@@ -62,6 +67,10 @@
 }
 .actionButton-link2 {
   padding-left: 1rem;
+}
+
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+  color: white;
 }
 
 @media (max-width: 467px) {

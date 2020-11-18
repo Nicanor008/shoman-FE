@@ -48,7 +48,7 @@ export default function SignUpComponent() {
             Welcome to Shoman Mentorship{" "}
             <span className="authTitleEnd">:)</span>
           </p>
-          <span className="authSubTitle">Register to Continue</span>
+          <span className="authSubTitle authSubTitle-text">Register to Continue</span>
         </div>
         {/* username */}
         <InputComponents
