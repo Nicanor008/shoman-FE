@@ -38,7 +38,7 @@
   color: #e2e2e2;
 }
 .actionButtonWrapper {
-  width: 48%;
+  width: 100%;
   padding-left: 0.5rem;
   padding-top: 0.5rem;
 }
@@ -69,13 +69,9 @@
   padding-left: 1rem;
 }
 
-.MuiInputLabel-outlined.MuiInputLabel-shrink {
-  color: white;
-}
-
-@media (max-width: 467px) {
+@media (max-width: 768px) {
   .loginInput {
-    display: none;
+    display: none !important;
   }
   .authInputs {
     width: 99%;
