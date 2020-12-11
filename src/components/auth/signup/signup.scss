@@ -1,0 +1,10 @@
+.signupImage {
+    position: sticky;
+    height: 100%;
+    align-self: center;
+}
+@media (max-width: 768px) {
+    .signupImage {
+        display: none;
+    }
+}

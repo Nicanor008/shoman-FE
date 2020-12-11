@@ -1,9 +1,9 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import InputComponents from "../input"
-import ButtonComponent from "../commons/button"
+import InputComponents from "../../input"
+import ButtonComponent from "../../commons/button"
 import "./login.scss"
-import "../header.scss"
+import "../../header.scss"
 
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -35,7 +35,7 @@ export default function LoginComponent() {
           <p className="authTitle">
             Welcome Back <span className="authTitleEnd">:)</span>
           </p>
-          <span className="authSubTitle">Login to Continue</span>
+          <span className="authSubTitle authSubTitle-text">Login to Continue</span>
         </div>
         <InputComponents
           class={classes.margin}
@@ -57,11 +57,11 @@ export default function LoginComponent() {
           {/* add remember me here */}
         </div>
         <div className="actionButtonWrapper">
-          <a href="" className="actionButton-link actionButton-link1">
+          <a href="/auth/register" className="actionButton-link actionButton-link1">
             Create Account
           </a>
           <span className="actionButton-link">|</span>
-          <a href="" className="actionButton-link actionButton-link2">
+          <a href="/auth/forgot-password" className="actionButton-link actionButton-link2">
             Forgot Password
           </a>
         </div>

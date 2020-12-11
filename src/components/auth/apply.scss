@@ -1,0 +1,40 @@
+.MuiFormControl-root {
+  min-width: 100% !important;
+}
+.applyInputWrapper {
+  display: flex;
+  font-family: "Nunito", sans-serif;
+}
+.applyInputs {
+  padding: 0 4rem;
+  width: 50%;
+  padding-top: 1.3rem;
+}
+.applyTitle {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  margin-bottom: -2rem;
+  margin-block-end: 0;
+}
+.requirementsText {
+  margin-bottom: 0;
+  margin-block-end: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 18px;
+}
+.applySubTitle {
+  color: #1f1e1e !important;
+}
+.MuiCheckbox-colorSecondary.Mui-checked {
+  color: rebeccapurple !important;
+}
+@media (max-width: 768px) {
+  .applyInputs {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+}

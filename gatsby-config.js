@@ -3,6 +3,7 @@ module.exports = {
     title: `Shoman`,
     description: `Kick start your career with the right mentorship opportunity. Focused on full stack developers, with more content on frontend development. Backend development is coming big soon`,
     author: `Nicanor Korir`,
+    siteUrl: `https://shoman.co.ke`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -17,6 +18,12 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-156931240-1",
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        sitemapSize: 1000,
       },
     },
     `gatsby-transformer-sharp`,

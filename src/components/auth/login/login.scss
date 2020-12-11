@@ -29,11 +29,16 @@
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
-  color: #69696b;
   padding-left: 2rem;
 }
+.authSubTitle-text {
+  color: #69696b;
+}
+.applySubTitle {
+  color: #e2e2e2;
+}
 .actionButtonWrapper {
-  width: 48%;
+  width: 100%;
   padding-left: 0.5rem;
   padding-top: 0.5rem;
 }
@@ -61,5 +66,23 @@
   padding-right: 1rem;
 }
 .actionButton-link2 {
+  padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .loginInput {
+    display: none !important;
+  }
+  .authInputs {
+    width: 99%;
     padding-left: 1rem;
   }
+  .authInputWrapper {
+    display: inline;
+    padding: 0;
+    background-color: red;
+  }
+  .actionButtonWrapper {
+    width: 110%;
+  }
+}

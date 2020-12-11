@@ -1,43 +1,29 @@
 import React from "react"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ApplyGuide from "../components/auth/apply/guide"
+import ApplyForm from "../components/auth/apply/applyForm"
+import "../components/auth/apply.scss"
 
-import "../styles/apply.scss"
-import { Link, Grid, List } from "@material-ui/core"
-import SingleRequirement from "../components/commons/requirements"
+export default function Apply() {
+  let height
+  if (typeof window !== "undefined") {
+    height = window.innerHeight - 290
+  }
 
-function HomePage() {
   return (
     <Layout>
-      <SEO title="Apply" />
-      <div className="applyWrapper">
-        <Grid container spacing={1}>
-          <Grid item md={6}>
-            <List>
-              <h3>&nbsp;&nbsp;&nbsp;&nbsp;What Should you Know</h3>
-              <SingleRequirement title="View Our About Page to understand Shoman Mentorship Program" />
-              <SingleRequirement title="This is a serious Program and you MUST be committed to it. If you would like to be mentored, this can be organised, 
-                                        send us an email" />
-            </List>
-          </Grid>
-          <Grid item md={4} className="ApplyHereButtonWrapper">
-            <center>
-              <Link
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdt-jOnDRaWqigLabe-TI9lsuhMvkewyy-LNeHzX9BIU-XzqQ/viewform"
-                rel="noopener"
-                target="_blank"
-                className="ApplyHereButton"
-                style={{ color: "white"}}
-              >
-                Apply Here
-              </Link>
-            </center>
-          </Grid>
-        </Grid>
+      <SEO title="Apply" description="Apply to Shoman mentorship program" />
+      <div className="applyInputWrapper" style={{ minHeight: height }}>
+        <div className="loginInput signupImage">
+          <br />
+          <br />
+          <ApplyGuide />
+        </div>
+        <div className="applyInputs">
+          <ApplyForm />
+        </div>
       </div>
     </Layout>
   )
 }
-
-export default HomePage
