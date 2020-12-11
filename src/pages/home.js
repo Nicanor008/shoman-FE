@@ -10,7 +10,7 @@ import ListData from "../components/cards/listData"
 import PairProgramming from "../images/pairProgramming.svg"
 
 const HomePage = () => (
-  <Layout>
+  <Layout requireAuth={false}>
     <SEO title="Shoman" />
 
     {/* description */}

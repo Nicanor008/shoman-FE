@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const PrivacyPage = () => (
-  <Layout>
+  <Layout requireAuth={false}>
     <SEO title="Home" />
     <div className="privacyWrapper">
       <h2>Privacy Policy</h2>
