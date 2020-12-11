@@ -10,10 +10,12 @@ import PropTypes from "prop-types"
 import { Grid } from "@material-ui/core"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
+import { UserContextProvider } from "../../state"
+import RequiresAuth from "../hoc/requiresAuth"
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, requireAuth = true,  inMain = true}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -32,20 +34,33 @@ const Layout = ({ children }) => {
           margin: `0 auto`,
         }}
       >
-        <main>{children}</main>
+        <UserContextProvider>
+          {requireAuth ? (
+            <RequiresAuth>
+              <main>{children}</main>
+            </RequiresAuth>
+          ) : (
+            <main>{children}</main>
+          )}
+        </UserContextProvider>
+        {inMain &&
         <footer>
           <Grid className="footerWrapper">
             <Grid item md={8} className="footerItem">
               Let's Chat - shomancodes@gmail.com
             </Grid>
             <Grid item md={4} className="footerItem">
-              <Link to="/code-of-conduct" className="footerLink">Code Of Conduct </Link> | &nbsp;
-              <Link to="/privacy"  className="footerLink">Privacy </Link> 
-              | ©
-              {new Date().getFullYear()}
+              <Link to="/code-of-conduct" className="footerLink">
+                Code Of Conduct{" "}
+              </Link>{" "}
+              | &nbsp;
+              <Link to="/privacy" className="footerLink">
+                Privacy{" "}
+              </Link>
+              | ©{new Date().getFullYear()}
             </Grid>
           </Grid>
-        </footer>
+        </footer>}
       </div>
     </>
   )

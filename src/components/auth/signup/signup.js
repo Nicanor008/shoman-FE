@@ -1,6 +1,10 @@
-import React from "react"
+//@ts-check
+import React, { useState } from "react"
 import { makeStyles } from "@material-ui/core/styles"
+import { CircularProgress } from "@material-ui/core"
 import InputComponents from "../../input"
+import { postData } from "../../../utils/services/api"
+import { toastNotification } from "../../../utils/helpers/toaster"
 import ButtonComponent from "../../commons/button"
 import "../login/login.scss"
 import "../../header.scss"
@@ -20,16 +24,65 @@ const useStyles = makeStyles(theme => ({
   },
   label: {
     paddingLeft: '0.5rem',
-  }
+  },
+  errorMessage: {
+    color: "red",
+  },
 }))
 
 export default function SignUpComponent() {
   const classes = useStyles()
+  const [loading, setLoading] = useState(false)
+
+  const [userEmail, setEmail] = useState("")
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [track, setTrack] = useState("")
+  const [pass, setPass] = useState("")
+
+  //api errors
+  const [emailErrors, setEmailErrors] = useState(null)
+  const [passErrors, setPassErrors] = useState(null)
   let height
   if (typeof window !== "undefined") {
     height = window.innerHeight - 290
   }
+  const authHandler = async () => {
+    try {
+      if ( password != pass ) {
+        return setPassErrors("Passwords do not match")
+      }
+      setLoading(true)
+      setEmailErrors(null)
+      setPassErrors(null)
+      const payload = await postData(
+        "/users/register",
+        { email: userEmail, password: password, Username: username, track: track },
+        false
+      )
+      if (payload?.message) {
+        window.location.href = "/auth/steps/"
+        
+      }
+      else {
+        setEmailErrors(payload?.email)
+        setPassErrors(payload?.password)
+        setLoading(false)
+        toastNotification('error', 'Authentication failed!')
+      }
+    } catch (err) {
+      setLoading(false)
+      toastNotification('error', 'Authentication failed!')
+    }
+  }
 
+  /**
+   * @param {{ preventDefault: () => void; }} e
+   */
+  const onSubmit = (e) => {
+    e.preventDefault()
+    authHandler()
+  }
   return (
     <div className="authInputWrapper" style={{ minHeight: height }}>
       <div className="loginInput signupImage">
@@ -56,6 +109,8 @@ export default function SignUpComponent() {
           label="Username"
           inputType="text"
           placeholder="JohnDoe1"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <br />
         {/* email */}
@@ -64,32 +119,50 @@ export default function SignUpComponent() {
           label="Email Address"
           inputType="email"
           placeholder="johndoe@example.com"
+          value={userEmail}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <br />
-
+        {emailErrors && <span className={classes.errorMessage}>{emailErrors}</span>}
         {/* password */}
         <InputComponents
           class={classes.margin}
           label="Password"
           inputType="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <br />
 
+        {/* confirm password */}
+        <InputComponents
+          class={classes.margin}
+          label="Confirm Password"
+          inputType="password"
+          value={pass}
+          onChange={(e) => setPass(e.target.value)}
+        />
+        <br />
+        {passErrors && <span className={classes.errorMessage}>{passErrors}</span>}
         {/* select track */}
         <FormControl className={classes.formControl}>
           <InputLabel id="demo-simple-select-label" className={classes.label}>Track</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-          >
-            <MenuItem value="Frontend">Frontend Design & Development</MenuItem>
-            <MenuItem value="Backend">Backend Development</MenuItem>
-            <MenuItem value="FullStack">FullStack - Frontend + Backend + DevOps</MenuItem>
-            <MenuItem value="FullStack">Mobile Dev(Android/iOS/Native)</MenuItem>
+            onChange={(e) => setTrack(e.target.value)}
+            >
+            <MenuItem value="frontend">Frontend Design & Development</MenuItem>
+            <MenuItem value="backend">Backend Development</MenuItem>
+            <MenuItem value="fullStack">FullStack - Frontend + Backend + DevOps</MenuItem>
+            <MenuItem value="mobile">Mobile Dev(Android/iOS/Native)</MenuItem>
           </Select>
         </FormControl>
         <div className="actionButtonWrapper">
-          <ButtonComponent buttonName="Login" class="authButton" />
+          <ButtonComponent buttonName="Sign Up" class="authButton" 
+          onClick={onSubmit}
+          loading={loading && <CircularProgress disableShrink />}
+          />
           {/* add remember me here */}
         </div>
         <div className="actionButtonWrapper">
@@ -97,7 +170,7 @@ export default function SignUpComponent() {
             href="/auth/login"
             className="actionButton-link actionButton-link1"
           >
-            Register
+            Login
           </a>
           <span className="actionButton-link">|</span>
           <a

@@ -31,7 +31,7 @@ function CodeOfConduct() {
   const classes = useStyles()
 
   return (
-    <Layout>
+    <Layout requireAuth={false}>
       <SEO title="Home" />
       <div className="privacyWrapper">
         At Shoman, we respect and value Each other. We understand that

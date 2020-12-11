@@ -6,7 +6,7 @@ import { Grid } from "@material-ui/core"
 import ListData from "../components/cards/listData"
 
 const DonatePage = () => (
-  <Layout>
+  <Layout requireAuth={false}>
     <SEO title="Home" />
     <div className="privacyWrapper">
       <Grid container spacing={2}>

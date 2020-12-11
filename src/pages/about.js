@@ -14,7 +14,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle"
 
 export default function Requirements() {
   return (
-    <Layout>
+    <Layout requireAuth={false}>
       <SEO title="About" />
 
       <List className={`classes.root RequirementsWrapper`}>

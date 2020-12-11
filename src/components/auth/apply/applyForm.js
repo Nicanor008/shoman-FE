@@ -64,7 +64,6 @@ export default function ApplyForm() {
   if (typeof window !== "undefined") {
     height = window.innerHeight - 290
   }
-  console.log(">>>>>>>........", process.env.GATSBY_API_URL)
 
   const onSelectChange = e => {
     setError(null)

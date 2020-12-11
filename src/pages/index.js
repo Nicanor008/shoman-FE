@@ -10,7 +10,7 @@ import Mission from "../components/commons/home/mission"
 import { SubContent } from "../components/commons/home/subContent"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout requireAuth={false}>
     <SEO title="Shoman Mentorship" />
 
     {/* description */}

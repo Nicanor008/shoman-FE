@@ -12,7 +12,7 @@ export default function Apply() {
   }
 
   return (
-    <Layout>
+    <Layout requireAuth={false}>
       <SEO title="Apply" description="Apply to Shoman mentorship program" />
       <div className="applyInputWrapper" style={{ minHeight: height }}>
         <div className="loginInput signupImage">

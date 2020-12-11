@@ -37,6 +37,7 @@ const InputComponents = props => {
         id="demo-customized-textbox"
         type={props.inputType}
         placeholder={props.placeholder}
+        onChange={props.onChange}
       />
     </FormControl>
   )
