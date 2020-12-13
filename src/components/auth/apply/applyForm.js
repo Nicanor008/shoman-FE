@@ -10,6 +10,7 @@ import {
   FormGroup,
   Grid,
   InputLabel,
+  Link,
   MenuItem,
   Select,
   TextareaAutosize,
@@ -19,8 +20,9 @@ import ButtonComponent from "../../../components/commons/button"
 import { CheckboxInput } from "../../../components/commons/inputs/checkbox"
 
 import "../apply.scss"
+import ApplyDateline from "./applyDateline"
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: "46%",
@@ -64,9 +66,8 @@ export default function ApplyForm() {
   if (typeof window !== "undefined") {
     height = window.innerHeight - 290
   }
-  console.log(">>>>>>>........", process.env.GATSBY_API_URL)
 
-  const onSelectChange = e => {
+  const onSelectChange = (e) => {
     setError(null)
     if (e.target.type === "checkbox") {
       setPayment("")
@@ -81,7 +82,7 @@ export default function ApplyForm() {
     })
   }
 
-  const OnSubmitApplication = e => {
+  const OnSubmitApplication = (e) => {
     setLoading(true)
     if (!data.understand_payment_is_required) {
       return setPayment("You must understand that payment is required!")
@@ -90,11 +91,11 @@ export default function ApplyForm() {
     //   proceed
     Axios.post(`${process.env.GATSBY_API_URL}mentees/apply`, data)
 
-      .then(res => {
+      .then((res) => {
         setLoading(false)
         setResponse(res.data)
       })
-      .catch(errorResponse => {
+      .catch((errorResponse) => {
         setLoading(false)
         setError(errorResponse)
       })
@@ -115,7 +116,9 @@ export default function ApplyForm() {
               <span className="authSubTitle applySubTitle">
                 Accelerate your learning
               </span>
+              <br />
             </center>
+            <ApplyDateline classname="applyForm-subtitle-text" />
           </div>
           <br />
           {error && (
@@ -136,7 +139,7 @@ export default function ApplyForm() {
               {/* firstname */}
               <Grid item xs={12} md={6}>
                 <TextField
-                  error={error && error.errors.find(e => e.firstname) && true}
+                  error={error && error.errors.find((e) => e.firstname) && true}
                   id="firstName"
                   label="First Name"
                   variant="outlined"
@@ -148,7 +151,7 @@ export default function ApplyForm() {
               {/* last name */}
               <Grid item xs={12} md={6}>
                 <TextField
-                  error={error && error.errors.find(e => e.lastname) && true}
+                  error={error && error.errors.find((e) => e.lastname) && true}
                   id="lastName"
                   label="Last Name"
                   variant="outlined"
@@ -160,7 +163,7 @@ export default function ApplyForm() {
               {/* email */}
               <Grid item xs={12} md={6}>
                 <TextField
-                  error={error && error.errors.find(e => e.email) && true}
+                  error={error && error.errors.find((e) => e.email) && true}
                   id="email"
                   label="Email"
                   variant="outlined"
@@ -173,7 +176,7 @@ export default function ApplyForm() {
               <Grid item xs={12} md={6}>
                 <FormControl
                   className={classes.formControl}
-                  error={error && error.errors.find(e => e.track) && true}
+                  error={error && error.errors.find((e) => e.track) && true}
                 >
                   <InputLabel
                     id="demo-simple-select-label"
@@ -228,9 +231,11 @@ export default function ApplyForm() {
                   What are your goals during and after this mentorship?
                 </p>
                 <TextareaAutosize
-                  className={`${error &&
-                    error.errors.find(e => e.goal) &&
-                    classes.textAreaError} ${classes.textArea}`}
+                  className={`${
+                    error &&
+                    error.errors.find((e) => e.goal) &&
+                    classes.textAreaError
+                  } ${classes.textArea}`}
                   aria-label="goal"
                   placeholder="Be descriptive, we can take you to the moon, but can you handle our rocket?"
                   onChange={onSelectChange}
@@ -242,9 +247,11 @@ export default function ApplyForm() {
                   Any Previous experience in software development?
                 </p>
                 <TextareaAutosize
-                  className={`${error &&
-                    error.errors.find(e => e.previous_experience) &&
-                    classes.textAreaError} ${classes.textArea}`}
+                  className={`${
+                    error &&
+                    error.errors.find((e) => e.previous_experience) &&
+                    classes.textAreaError
+                  } ${classes.textArea}`}
                   aria-label="experience"
                   placeholder="Technologies used, years of experience ..."
                   onChange={onSelectChange}
@@ -256,10 +263,11 @@ export default function ApplyForm() {
                 <FormGroup row>
                   {payment && <p className={classes.paymentError}>{payment}</p>}
                   <CheckboxInput
-                    label="You understand that you have to pay KSh. 1500 for this mentorship? Why?"
+                    label={`You understand that you have to pay KSh. 1500 for this mentorship.`}
                     name="understand_payment_is_required"
                     onChange={onSelectChange}
                   />
+                  <Link href="/donate" className="link-why" target="_blank">Why?</Link>
                 </FormGroup>
               </Grid>
             </Grid>

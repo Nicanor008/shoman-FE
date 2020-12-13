@@ -5,25 +5,34 @@ import SEO from "../../components/seo"
 import CardComponent from "../../components/cards"
 import { Grid } from "@material-ui/core"
 import ListData from "../../components/cards/listData"
+import VideoInLine from "../../components/paths/videoInLine"
 
 const Mobile = () => (
   <Layout>
-    <SEO title="Mobile" />
+    <SEO
+      title="Mobile"
+      description="Mobile apps are always fun and addictive. Like how many apps do you have in your phone? As a mobile Developer, 
+                    you'll create mobile friendly applications(User interface that looks appealing)."
+    />
     <div className="homePageWrapper">
       <Grid container spacing={4}>
-        <Grid item md={6}>
+        <Grid item md={6} className="pathDescription">
           <CardComponent
             hint="Android | PWA | IOS | Native"
             title="Mobile Applications Developer"
             skills="Android | iPhone | All Phones actually"
-            content="Creating Mobile user intefaces. Can also create the backend "
+            content="Mobile apps are always fun and addictive. Like how many apps do you have in your phone? As a mobile Developer, 
+                    you'll create mobile friendly applications(User interface that looks appealing)."
             actions=""
             link="/path/mobile"
           />
         </Grid>
 
-        <Grid item md={6} style={{paddingTop:"8%", paddingLeft:"9%"}}>
-          <a href="https://www.youtube.com/watch?v=ulSxrbaj5rs">A day in life as a Mobile Developer</a>
+        <Grid item md={6} style={{ paddingLeft: "9%" }}>
+          <VideoInLine
+            url="https://www.youtube.com/embed/ulSxrbaj5rs"
+            title="Mobile Developer"
+          />
         </Grid>
       </Grid>
       <br />
@@ -47,9 +56,8 @@ const Mobile = () => (
                 content: "Utilizing mobile resources e.g. camera, location",
               },
               {
-                content:
-                  "Test Driven Development",
-              }
+                content: "Test Driven Development",
+              },
             ]}
           />
         </Grid>

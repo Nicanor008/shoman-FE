@@ -32,9 +32,38 @@
 .MuiCheckbox-colorSecondary.Mui-checked {
   color: rebeccapurple !important;
 }
+.guideTitle {
+  margin-bottom: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.apply-subtitle-text {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: medium;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.MuiFormControlLabel-root {
+  margin-right: 0 !important;
+}
+.link-why {
+  align-self: center;
+  &:hover {
+    text-decoration: none !important; // overrides default material UI styles
+  }
+}
 @media (max-width: 768px) {
   .applyInputs {
     width: 100%;
     padding: 1rem 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .applyForm-subtitle-text {
+    display: none;
+    margin-bottom: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
   }
 }

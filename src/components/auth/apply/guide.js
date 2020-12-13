@@ -1,12 +1,14 @@
 import { Grid } from "@material-ui/core"
 import React from "react"
+import ApplyDateline from "./applyDateline"
 import "./guide.scss"
 
 function ApplyGuide() {
   return (
     <div>
       <center>
-        <h1 className="guideTitle">Application & Selection Criteria</h1>
+        <h1 className="guideTitle"><u>Application & Selection Criteria</u></h1>
+        <ApplyDateline classname="apply-subtitle-text" />
       </center>
       <br />
       <Grid container spacing={3} className="guideItems">
