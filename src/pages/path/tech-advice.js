@@ -6,8 +6,9 @@ import CardComponent from "../../components/cards"
 import { Grid, List, ListItem, ListItemText } from "@material-ui/core"
 
 import "../../components/commons/path.scss"
+import VideoInLine from "../../components/paths/videoInLine"
 
-const ListItemLink = props => {
+const ListItemLink = (props) => {
   return <ListItem button component="a" {...props} />
 }
 
@@ -17,7 +18,11 @@ const ListItemTexts = ({ primary, secondary }) => {
 
 const TechAdvice = () => (
   <Layout>
-    <SEO title="Tech Advice" />
+    <SEO
+      title="Tech Advice"
+      description="Everyday is a learning day in the career of a software engineers. Growth and adaptability is essential. Here, we 
+                    emphasize on the soft skills you should develop as a software engineer."
+    />
     <div className="homePageWrapper">
       <Grid container spacing={4}>
         <Grid item md={6}>
@@ -33,19 +38,23 @@ const TechAdvice = () => (
           />
         </Grid>
 
-        <Grid item md={6} style={{ paddingTop: "8%", paddingLeft: "9%" }}>
-          Why Soft skills are important in a work place - Video
+        <Grid item md={6} style={{ paddingLeft: "9%" }}>
+          <VideoInLine
+            url="https://www.youtube.com/embed/29jRESutBOk"
+            title="Soft Skills for software engineers"
+          />
         </Grid>
       </Grid>
 
       <br />
       {/* <h4>Activities</h4> */}
       <Grid container spacing={3}>
-
-      {/* feedback */}
+        {/* feedback */}
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15, fontWeight:"bolder" }}>Feedback</h4>
+            <h4 style={{ margin: 0, paddingLeft: 15, fontWeight: "bolder" }}>
+              Feedback
+            </h4>
             <ListItemLink
               href="https://medium.com/the-andela-way/can-i-ask-you-something-e8c0a0f18bb7"
               target="blank"
@@ -72,7 +81,9 @@ const TechAdvice = () => (
         {/* growth */}
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15, fontWeight:"bolder" }}>Growth</h4>
+            <h4 style={{ margin: 0, paddingLeft: 15, fontWeight: "bolder" }}>
+              Growth
+            </h4>
             <ListItemLink
               href="https://www.youtube.com/watch?v=KUWn_TJTrnU"
               target="blank"
@@ -98,11 +109,12 @@ const TechAdvice = () => (
       </Grid>
 
       <Grid container spacing={3}>
-
-      {/* feedback */}
+        {/* feedback */}
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15, fontWeight:"bolder" }}>Communication</h4>
+            <h4 style={{ margin: 0, paddingLeft: 15, fontWeight: "bolder" }}>
+              Communication
+            </h4>
             <ListItemLink
               href="https://www.toolshero.com/communication-skills/7cs-of-communication/"
               target="blank"
@@ -129,7 +141,7 @@ const TechAdvice = () => (
         {/* growth */}
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15 }}>Collaboration</h4>
+            <h4 style={{ margin: 0, paddingLeft: 15 }}>Collaboration</h4>
             <ListItemLink
               href="https://steelkiwi.com/blog/collaboration-is-a-key-to-project-success/"
               target="blank"
@@ -152,11 +164,13 @@ const TechAdvice = () => (
             </ListItemLink>
           </List>
         </Grid>
-      
-      {/* Self-taught */}
-      <Grid item md={6}>
+
+        {/* Self-taught */}
+        <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15, fontWeight:"bolder" }}>Self Taught Developers' Stories</h4>
+            <h4 style={{ margin: 0, paddingLeft: 15, fontWeight: "bolder" }}>
+              Self Taught Developers' Stories
+            </h4>
             <ListItemLink
               href="https://www.youtube.com/watch?v=62tsiY5j4_0"
               target="blank"
@@ -200,11 +214,12 @@ const TechAdvice = () => (
           </List>
         </Grid>
 
-
         {/* Misc */}
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15, fontWeight:"bolder" }}>In One way or Another, You'll Need This</h4>
+            <h4 style={{ margin: 0, paddingLeft: 15, fontWeight: "bolder" }}>
+              In One way or Another, You'll Need This
+            </h4>
             <ListItemLink
               href="https://www.giftegwuenu.com/the-art-of-googling/"
               target="blank"
@@ -251,7 +266,9 @@ const TechAdvice = () => (
         {/* Beginner sites resources */}
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15 }}>Useful Sites To get You Started</h4>
+            <h4 style={{ margin: 0, paddingLeft: 15 }}>
+              Useful Sites To get You Started
+            </h4>
             <ListItemLink
               href="https://www.freecodecamp.org/"
               target="blank"
@@ -292,13 +309,11 @@ const TechAdvice = () => (
                 secondary="Mobile App and Web based tutorials and code playground."
               />
             </ListItemLink>
-            <ListItemLink
-              className="techAdviceItemTitle"
-            >
+            <ListItemLink className="techAdviceItemTitle">
               <ListItemTexts
                 primary="Udemy, Udacity, Google Tech Guide, Tutorials Point, You tube"
                 secondary="There are quite a bunch of sites to get you started. Pick one and focus on it!!!"
-              className="techAdviceItemTitle"
+                className="techAdviceItemTitle"
               />
             </ListItemLink>
           </List>
@@ -306,7 +321,7 @@ const TechAdvice = () => (
 
         <Grid item md={6}>
           <List component="nav" style={{}} className="AdviceWrapper">
-            <h4 style={{ margin: 0, paddingLeft:15 }}>Learning Resources</h4>
+            <h4 style={{ margin: 0, paddingLeft: 15 }}>Learning Resources</h4>
             <ListItemLink
               href="https://www.frontendmentor.io/resources"
               target="blank"

@@ -3,14 +3,17 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CardComponent from "../../components/cards"
 import { Grid } from "@material-ui/core"
-import CareerProgress from "../../images/careerProgress.svg"
+import VideoInLine from "../../components/paths/videoInLine"
 
 const CareerAdvicePage = () => (
   <Layout>
-    <SEO title="Path" />
+    <SEO
+      title="Path"
+      description="Explore how to craft the right CV/Resume content | Skills Assessment | Help on job hunting"
+    />
     <div className="homePageWrapper">
       <Grid container spacing={4}>
-        <Grid item md={6}>
+        <Grid item md={6} className="pathDescription">
           <CardComponent
             hint="Overcome Interview fatigue"
             title="Career Advice"
@@ -21,10 +24,10 @@ const CareerAdvicePage = () => (
           />
         </Grid>
         <Grid item md={6} className="CareerProgressImg">
-          <br />
-          <center>
-            <img src={CareerProgress} alt="here" width="250" />
-          </center>
+          <VideoInLine
+            url="https://www.youtube.com/embed/_lJarNEjT94"
+            title="Career Advice"
+          />
         </Grid>
       </Grid>
     </div>

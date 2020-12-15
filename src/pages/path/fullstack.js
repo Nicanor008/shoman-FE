@@ -4,13 +4,19 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CardComponent from "../../components/cards"
 import { Grid } from "@material-ui/core"
+import VideoInLine from "../../components/paths/videoInLine"
 
 const FullStack = () => (
   <Layout>
-    <SEO title="Path" />
+    <SEO
+      title="FullStack"
+      description="A fullstack developer does both a frontend and backend software development. Sounds like a superhero, right?
+                    You implement the project logic on the backend and then implement the visual part as what the user will be 
+                    able to interact with"
+    />
     <div className="homePageWrapper">
       <Grid container spacing={4}>
-        <Grid item md={6}>
+        <Grid item md={6} className="pathDescription">
           <CardComponent
             hint="HTML | CSS | JavaScript | Python"
             title="FullStack Developer"
@@ -23,12 +29,20 @@ const FullStack = () => (
           />
         </Grid>
 
-        <Grid item md={6} style={{paddingTop:"8%", paddingLeft:"9%"}}>
-          <a href="https://youtu.be/pkdgVYehiTE">A day in life as a FullStack, FrontEnd or Backend Developer</a>
+        <Grid item md={6} style={{ paddingLeft: "9%" }}>
+          <VideoInLine
+            url="https://www.youtube.com/embed/pkdgVYehiTE"
+            title="FullStack Engineer"
+          />
         </Grid>
       </Grid>
       <br />
-      <h4>You have to be really good in both of this <span role="img" aria-label="Surprised">🙄</span></h4>
+      <h4>
+        You have to be really good in both of this{" "}
+        <span role="img" aria-label="Surprised">
+          🙄
+        </span>
+      </h4>
       <Grid container spacing={10}>
         <Grid item md={6}>
           <CardComponent
@@ -52,7 +66,7 @@ const FullStack = () => (
             link="/path/backend"
           />
         </Grid>
-        </Grid>
+      </Grid>
     </div>
   </Layout>
 )

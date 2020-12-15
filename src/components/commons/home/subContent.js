@@ -11,9 +11,8 @@ export const SubContent = () => {
         </span>{" "}
         program{" "}
       </b>{" "}
-      focused on sharing tech Knowledge and enhancing mentees learning curve. A
-      mentor is an experienced person, with trusted knowledge in a specific
-      field. <br />
+      focused on sharing tech Knowledge and enhancing mentees learning curve.{" "}
+      <br />
       <br />
       We believe in the Knowledge we have as mentors, and would like it to
       benefit others too. Mentors share the knowledge they have by also
@@ -26,9 +25,9 @@ export const SubContent = () => {
       <br />
       <br />
       <b>Apply</b> . <b>Get Reviewed</b> . <b>Receive Invitation</b> .{" "}
-      <b>Join Our Community</b>. <b>Learn</b> .{" "}
-      <b>Ask a lot of questions</b> . <b>Get insights(a lot also)</b> .{" "}
-      <b>Tell your story to the world</b> &nbsp;
+      <b>Join Our Community</b>. <b>Learn</b> . <b>Ask a lot of questions</b> .{" "}
+      <b>Get insights(a lot also)</b> . <b>Tell your story to the world</b>{" "}
+      &nbsp;
       <span role="img" aria-label="win" style={{ fontSize: "25px" }}>
         🙌
       </span>
