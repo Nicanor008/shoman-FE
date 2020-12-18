@@ -194,7 +194,7 @@ export default function ApplyForm() {
                   >
                     <MenuItem value="Frontend Development">Frontend</MenuItem>
                     <MenuItem value="Backend Development">Backend</MenuItem>
-                    <MenuItem value="FullStack Development">FullStack</MenuItem>
+                    <MenuItem value="FullStack Developer">FullStack</MenuItem>
                     <MenuItem value="Mobile Development">Mobile Dev</MenuItem>
                   </Select>
                 </FormControl>
