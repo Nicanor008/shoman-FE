@@ -192,15 +192,10 @@ export default function ApplyForm() {
                     onChange={onSelectChange}
                     name="track"
                   >
-                    <MenuItem value="Frontend track">Frontend</MenuItem>
-                    <MenuItem value="Backend track">Backend</MenuItem>
-                    <MenuItem value="FullStack track">FullStack</MenuItem>
-                    <MenuItem value="Mobile track">Mobile Dev</MenuItem>
-                    <MenuItem value="track">
-                      {" "}
-                      {/* solves bug from material ui */}
-                      <em></em>
-                    </MenuItem>
+                    <MenuItem value="Frontend Development">Frontend</MenuItem>
+                    <MenuItem value="Backend Development">Backend</MenuItem>
+                    <MenuItem value="FullStack Development">FullStack</MenuItem>
+                    <MenuItem value="Mobile Development">Mobile Dev</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>
