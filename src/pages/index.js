@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HomeDescription from "../components/commons/home/description"
 import MentorshipPurpose from "../components/commons/home/purpose"
-import Mission from "../components/commons/home/mission"
+// import Mission from "../components/commons/home/mission"
 import { SubContent } from "../components/commons/home/subContent"
 
 import '../components/css/landing_page.scss'
@@ -32,7 +32,7 @@ const IndexPage = () => (
     <MentorshipPurpose />
 
     {/* mission */}
-    <Mission />
+    {/* <Mission /> */}
   </Layout>
 )
 
