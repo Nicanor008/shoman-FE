@@ -85,7 +85,7 @@ export default function ApplyForm() {
   const OnSubmitApplication = (e) => {
     setLoading(true)
     if (!data.understand_payment_is_required) {
-      return setPayment("You must understand that payment is required!")
+      return setPayment("You must understand that payment is required! Read Why.")
     }
 
     //   proceed
@@ -208,14 +208,14 @@ export default function ApplyForm() {
                     label="Laptop"
                     onChange={onSelectChange}
                     name="laptop"
-                  />
+                  />&nbsp;&nbsp;
                   <CheckboxInput
                     label="Internet"
                     onChange={onSelectChange}
                     name="internet_access"
-                  />
+                  />&nbsp;&nbsp;
                   <CheckboxInput
-                    label="Available for 3 months, 4 hours a day"
+                    label="Available for 3 months, 4 hours a day?"
                     onChange={onSelectChange}
                     name="fully_available"
                   />
@@ -277,7 +277,7 @@ export default function ApplyForm() {
               {/* add remember me here */}
             </div>
           </form>
-          <div className="actionButtonWrapper">
+          {/* <div className="actionButtonWrapper">
             <a
               href="/auth/login"
               className="actionButton-link actionButton-link1"
@@ -291,8 +291,8 @@ export default function ApplyForm() {
             >
               Terms & Conditions
             </a>
-          </div>
-          <br />
+          </div> */}
+          {/* <br /> */}
         </div>
       </div>
     </div>
