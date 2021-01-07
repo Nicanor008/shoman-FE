@@ -1,12 +1,14 @@
 import { Grid } from "@material-ui/core"
 import React from "react"
+import ApplyDateline from "./applyDateline"
 import "./guide.scss"
 
 function ApplyGuide() {
   return (
     <div>
       <center>
-        <h1 className="guideTitle">Application & Selection Criteria</h1>
+        <h1 className="guideTitle"><u>Application & Selection Criteria</u></h1>
+        <ApplyDateline classname="apply-subtitle-text" />
       </center>
       <br />
       <Grid container spacing={3} className="guideItems">
@@ -32,7 +34,7 @@ function ApplyGuide() {
               height="60"
               width="60"
             />
-            <p>Apply</p>
+            <p>Application Review</p>
           </center>
         </Grid>
 
@@ -45,7 +47,7 @@ function ApplyGuide() {
               height="60"
               width="60"
             />
-            <p>Apply</p>
+            <p>Receive feedback</p>
           </center>
         </Grid>
 
@@ -53,12 +55,12 @@ function ApplyGuide() {
         <Grid item xs={12} md={4} className="guides">
           <center>
             <img
-              src="https://res.cloudinary.com/nicanor/image/upload/v1605546267/shoman-icon-4.svg"
+              src="https://res.cloudinary.com/nicanor/image/upload/v1605546267/shoman-icon-6.svg"
               alt="apply"
               height="60"
               width="60"
             />
-            <p>Apply</p>
+            <p>Make Payments</p>
           </center>
         </Grid>
 
@@ -71,7 +73,7 @@ function ApplyGuide() {
               height="60"
               width="60"
             />
-            <p>Apply</p>
+            <p>Receive Invitation</p>
           </center>
         </Grid>
 
@@ -79,12 +81,12 @@ function ApplyGuide() {
         <Grid item xs={12} md={4} className="guides">
           <center>
             <img
-              src="https://res.cloudinary.com/nicanor/image/upload/v1605546267/shoman-icon-6.svg"
+              src="https://res.cloudinary.com/nicanor/image/upload/v1605546267/shoman-icon-4.svg"
               alt="apply"
               height="60"
               width="60"
             />
-            <p>Apply</p>
+            <p>You one of us now</p>
           </center>
         </Grid>
       </Grid>

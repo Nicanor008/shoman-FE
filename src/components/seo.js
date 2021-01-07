@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import ShomanImage from '../images/ShomanImage.jpg'
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -57,7 +58,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: '@nicanor_nic',
+        },
+        {
+          name: `twitter:url`,
+          content: 'https://twitter.com/nicanor_nic' // till shoman account is created by marketing team, we use Nicanor's account
         },
         {
           name: `twitter:title`,
@@ -67,6 +72,18 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `og:image`,
+          content: ShomanImage
+        },
+        {
+          name: `og:site_name`,
+          content: 'Shoman - Software Development Mentorship'
+        },
+        {
+          name: `twitter:image`,
+          content: ShomanImage
+        }
       ].concat(meta)}
     />
   )

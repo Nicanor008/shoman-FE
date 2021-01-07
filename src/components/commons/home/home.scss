@@ -176,24 +176,12 @@ li {
   display: block;
   position: absolute;
   border-radius: 100% 80%;
-  width: 1320px;
+  width: 1880px;
   height: 170px;
   background-color: white;
   right: -15px;
   top: 35px;
   overflow: hidden;
-}
-#wave:after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 100% 80%;
-  width: 265px;
-  height: 75px;
-  background-color: rebeccapurple;
-  left: -40px;
-  z-index: 1;
-  top: 36px;
 }
 #start-wave-dot {
   content: "";
@@ -290,5 +278,5 @@ li {
   height: 10px;
   background-color: rgb(139, 235, 119);
   right: 98%;
-  top: 76px;
+  top: 16px;
 }

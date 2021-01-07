@@ -11,14 +11,22 @@ import PlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck"
 import EmailIcon from "@material-ui/icons/Email"
 import LoyaltyIcon from "@material-ui/icons/Loyalty"
 import AccountCircleIcon from "@material-ui/icons/AccountCircle"
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
 
 export default function Requirements() {
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="About" description="" />
 
       <List className={`classes.root RequirementsWrapper`}>
         <h3>&nbsp;&nbsp;&nbsp;&nbsp;About Shoman | Shoman Codes</h3>
+        <SingleRequirement
+          title="What will you gain"
+          content="Learn from the best with years of experience in the industry. You'll have one on one daily/weekly sessions with learning content created to fit 
+                  you. topics assignments and real world project to gauge and improve the learnt skills. The projects are the best we have in our platform and proof
+                  understanding of core programming concepts."
+          icon={<AccountTreeIcon />}
+        />
         <SingleRequirement
           title="Not a class/lecture tutorials, It's a mentorship programme"
           content="This is a mentorship program created to help you learn the required content very fast. You will work with a team of 
@@ -27,7 +35,7 @@ export default function Requirements() {
         />
         <SingleRequirement
           title="Content"
-          content="Web Programming. Frontend - HTML, CSS, Vanilla JS, React. ||--|| Backend - RESTFul, NodeJS, Express, Python<Flask />. NOTE: 
+          content="Web Programming. Frontend(HTML, CSS, Vanilla JS, React). Backend - (RESTFul, NodeJS, Express, Python). NOTE: 
                     Other specialization areas will depend on the mentors availability. Send an application and we will advice "
           icon={<PlaylistAddCheckIcon />}
         />
@@ -38,7 +46,7 @@ export default function Requirements() {
         />
         <SingleRequirement
           title="Duration"
-          content="Approximately 6 months for a complete beginner. Duration depends on individual initial skill, learning curve and availability."
+          content="Approximately 3 months for a complete beginner. Duration depends on individual initial skill, learning curve and availability."
           icon={<TimerIcon />}
         />
         <SingleRequirement

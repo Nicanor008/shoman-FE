@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Shoman`,
-    description: `Kick start your career with the right mentorship opportunity. Focused on full stack developers, with more content on frontend development. Backend development is coming big soon`,
+    description: `Kick start your career with the right mentorship opportunity. Focused on software development, right from beginner level to advanced, with one on one and group sessions interactions`,
     author: `Nicanor Korir`,
     siteUrl: `https://shoman.co.ke`,
   },
@@ -31,13 +31,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `showman-codes-mentorship`,
+        name: `showman--mentorship`,
         short_name: `shoman`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/Map-Learning.png`, // This path is relative to the root of the site.
+        icon: `src/images/Logo.jpg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`,

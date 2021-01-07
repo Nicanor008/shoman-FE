@@ -5,13 +5,19 @@ import SEO from "../../components/seo"
 import CardComponent from "../../components/cards"
 import { Grid } from "@material-ui/core"
 import ListData from "../../components/cards/listData"
+import VideoInLine from "../../components/paths/videoInLine"
 
 const HomePage = () => (
   <Layout>
-    <SEO title="Path" />
+    <SEO
+      title="Path"
+      description="Work on the business and data logic of the project, with the interaction with the different databases. 
+                  You'll only choose one language(JavaScript/Python). We will focus first on JavaScript then python. Understand the 
+                  language basics still applies here."
+    />
     <div className="homePageWrapper">
       <Grid container spacing={4}>
-        <Grid item md={6}>
+        <Grid item md={6} className="pathDescription">
           <CardComponent
             hint="business and data logic (REST | GraphQL)"
             title="Back-End"
@@ -25,8 +31,11 @@ const HomePage = () => (
           />
         </Grid>
 
-        <Grid item md={6} style={{ paddingTop: "8%", paddingLeft: "9%" }}>
-          <a href="https://youtu.be/pkdgVYehiTE?t=441">A day in life as a Backend Software Developer</a> 
+        <Grid item md={6} style={{ paddingLeft: "9%" }}>
+          <VideoInLine
+            url="https://www.youtube.com/embed/pkdgVYehiTE?start=441"
+            title="Backend Engineer"
+          />
         </Grid>
       </Grid>
 

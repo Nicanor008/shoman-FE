@@ -5,13 +5,18 @@ import SEO from "../../components/seo"
 import CardComponent from "../../components/cards"
 import { Grid } from "@material-ui/core"
 import ListData from "../../components/cards/listData"
+import VideoInLine from "../../components/paths/videoInLine"
 
 const HomePage = () => (
   <Layout>
-    <SEO title="Path" />
+    <SEO
+      title="Frontend"
+      description="You enjoy creating and thinking like a user. We will create user innterfaces that attracts users. You should be
+            inspired in design, both interactive and visual. Advice is to understand the core basics of the visual web"
+    />
     <div className="homePageWrapper">
       <Grid container spacing={4}>
-        <Grid item md={6}>
+        <Grid item md={6} className="pathDescription">
           <CardComponent
             hint="UI/UX"
             title="Front-End"
@@ -24,8 +29,11 @@ const HomePage = () => (
           />
         </Grid>
 
-        <Grid item md={6} style={{paddingTop:"8%", paddingLeft:"9%"}}>
-          <a href="https://youtu.be/pkdgVYehiTE?t=123">A day in life as a FrontEnd Developer</a>
+        <Grid item md={6} style={{ paddingLeft: "9%" }}>
+          <VideoInLine
+            url="https://www.youtube.com/embed/pkdgVYehiTE?start=124"
+            title="Frontend Engineer"
+          />
         </Grid>
       </Grid>
       <br />
