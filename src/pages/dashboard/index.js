@@ -3,12 +3,16 @@ import Typography from "@material-ui/core/Typography"
 import SEO from "../../components/seo"
 import DashboardLayout from "../../components/dashboard/layout/dashboard_layout"
 
-// 
+//
 // This is just an example
 // can be deleted later
-// 
+//
 
 export default function PersistentDrawerLeft() {
+  if (typeof window !== "undefined" && localStorage.getItem("user") === null) {
+    window.location.href = "/auth/login/"
+  }
+
   return (
     <>
       <SEO title="Dashboard" />

@@ -7,7 +7,7 @@ import "../components/css/404.scss"
 import { Container, Link } from "@material-ui/core"
 
 const NotFoundPage = () => (
-  <Layout>
+  <Layout requireAuth={false}>
     <SEO title="404: Not found" description="Sorry this page doesn't exist at Shoman. Go to the Homepage or use the browser tab to go back to the previous page."/>
     <Container className="NotFoundWrapper">
       <div>

@@ -39,9 +39,12 @@
   color: #e2e2e2;
 }
 .actionButtonWrapper {
-  width: 100%;
+  width: 53%;
   padding-left: 0.5rem;
   padding-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; // center vertically
 }
 .authButton {
   background-color: #663399 !important;
@@ -84,6 +87,16 @@
     background-color: red;
   }
   .actionButtonWrapper {
-    width: 110%;
+    width: 105%;
+  }
+}
+
+.MuiInputBase-formControl {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .MuiInputBase-formControl {
+    width: 100%;
   }
 }

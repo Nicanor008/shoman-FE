@@ -15,7 +15,7 @@ import AccountTreeIcon from '@material-ui/icons/AccountTree';
 
 export default function Requirements() {
   return (
-    <Layout>
+    <Layout requireAuth={false}>
       <SEO title="About" description="" />
 
       <List className={`classes.root RequirementsWrapper`}>

@@ -1,9 +1,20 @@
-import { List } from "@material-ui/core"
+import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core"
 import ExitToAppIcon from "@material-ui/icons/ExitToApp"
 import React from "react"
 import SidebarSingleMenuItems from "./sidebarSingleMenuItem"
+import { DashboardLayoutStyles } from "../../../../styles/dashboard_layout_styles"
+
 
 function SidebarMenuItems() {
+  const classes = DashboardLayoutStyles()
+
+  const handleLogout = () => {
+    if(typeof window !== 'undefined') { 
+      localStorage.clear()
+      return (window.location.href = "/auth/login")
+    }
+  }
+
   return (
     <div>
       <List>
@@ -23,11 +34,12 @@ function SidebarMenuItems() {
           url="/projects"
         />
         {/* TODO: work on logout after login is done */}
-        <SidebarSingleMenuItems
-          icon={<ExitToAppIcon />}
-          iconComponent={true}
-          menuText="Logout"
-        />
+        <ListItem button key={Math.random()} onClick={handleLogout}>
+          <ListItemIcon className={classes.iconButton}>
+            <ExitToAppIcon />
+          </ListItemIcon>
+          <ListItemText primary="Logout" />
+        </ListItem>
       </List>
     </div>
   )

@@ -1,10 +1,10 @@
 import React from "react"
 import { withStyles } from "@material-ui/core/styles"
-import InputLabel from "@material-ui/core/InputLabel"
 import FormControl from "@material-ui/core/FormControl"
 import InputBase from "@material-ui/core/InputBase"
+import { TextField } from "@material-ui/core"
 
-export const BootstrapInput = withStyles(theme => ({
+export const BootstrapInput = withStyles((theme) => ({
   root: {
     "label + &": {
       marginTop: theme.spacing(3),
@@ -29,15 +29,26 @@ export const BootstrapInput = withStyles(theme => ({
   },
 }))(InputBase)
 
-const InputComponents = props => {
+const InputComponents = (props) => {
   return (
-    <FormControl className={props.class}>
-      <InputLabel htmlFor="demo-customized-textbox">{props.label}</InputLabel>
+    <FormControl className={props.class} style={{maxWidth: '20%'}}>
+      <TextField
+        id="outlined-basic"
+        label={props.label}
+        variant="outlined"
+        type={props.inputType}
+        onChange={props.onChange}
+        size="small"
+        placeholder={props.placeholder}
+        fullWidth={false}
+      />
+      {/* <InputLabel htmlFor="demo-customized-textbox">{props.label}</InputLabel>
       <BootstrapInput
         id="demo-customized-textbox"
         type={props.inputType}
         placeholder={props.placeholder}
-      />
+        onChange={props.onChange}
+      /> */}
     </FormControl>
   )
 }
