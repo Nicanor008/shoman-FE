@@ -44,11 +44,11 @@ const Header = ({ siteTitle, dashboard }) => {
               {/* unathorised user */}
               {!dashboard && (
                 <>
-              <span className="menuItem">| </span>
-                  <Link to="/auth" className="menuItem">
-                    Login
-                  </Link>
                   <span className="menuItem">| </span>
+                  {/* <Link to="/auth" className="menuItem">
+                    Login
+                  </Link> */}
+                  {/* <span className="menuItem">| </span> */}
                   <Link to="/apply" className="menuItem">
                     Apply <span className="applyingText">As a Mentee</span>
                   </Link>

@@ -61,7 +61,7 @@ export default function LoginComponent() {
           )
 
         if (typeof window !== "undefined") {
-          localStorage.setItem("token", payload?.token)
+          localStorage.setItem("token", `Bearer ${payload?.token}`)
           document.cookie = `token=${payload?.token}; path=/;`
           // write user account details to localStorage for persistence
           localStorage.setItem("user", JSON.stringify(payload?.user, null, 2))
@@ -82,8 +82,7 @@ export default function LoginComponent() {
       })
       .catch((err) => {
         setLoading(false)
-        if (err.response)
-          toastNotification("error", "Authentication failed------!")
+        if (err.response) toastNotification("error", "Authentication failed")
       })
   }
 
