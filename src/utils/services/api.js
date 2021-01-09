@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { UserContext } from "../../state/users/user.context"
 
 
-const baseUrl = process.env.GATSBY_API_PROD_URL
+const baseUrl = process.env.GATSBY_API_URL
 
 /**
  * API Request handler

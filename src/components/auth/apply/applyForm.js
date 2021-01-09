@@ -89,7 +89,7 @@ export default function ApplyForm() {
     }
 
     //   proceed
-    Axios.post(`${process.env.GATSBY_API_PROD_URL}/mentees/apply`, data)
+    Axios.post(`${process.env.GATSBY_API_URL}/mentees/apply`, data)
 
       .then((res) => {
         setLoading(false)
@@ -258,11 +258,11 @@ export default function ApplyForm() {
                 <FormGroup row>
                   {payment && <p className={classes.paymentError}>{payment}</p>}
                   <CheckboxInput
-                    label={`You understand that you have to pay KSh 1500($14) for this mentorship.`}
+                    label={`You understand that you have to pay KSh. 1500 for this mentorship.`}
                     name="understand_payment_is_required"
                     onChange={onSelectChange}
                   />
-                  <Link href="/why-pay-ksh-1500" className="link-why" target="_blank">Why?</Link>
+                  <Link href="/donate" className="link-why" target="_blank">Why?</Link>
                 </FormGroup>
               </Grid>
             </Grid>
