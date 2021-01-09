@@ -1,19 +1,26 @@
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core"
 import ExitToAppIcon from "@material-ui/icons/ExitToApp"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import SidebarSingleMenuItems from "./sidebarSingleMenuItem"
 import { DashboardLayoutStyles } from "../../../../styles/dashboard_layout_styles"
 
-
 function SidebarMenuItems() {
+  const [userType, setUserType] = useState(null)
   const classes = DashboardLayoutStyles()
 
   const handleLogout = () => {
-    if(typeof window !== 'undefined') { 
+    if (typeof window !== "undefined") {
       localStorage.clear()
       return (window.location.href = "/auth/login")
     }
   }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const user = JSON.parse(localStorage.getItem("user"))
+      setUserType(user?.userType)
+    }
+  }, [])
 
   return (
     <div>
@@ -33,6 +40,13 @@ function SidebarMenuItems() {
           menuText="Projects"
           url="/projects"
         />
+        {userType === "admin" && (
+          <SidebarSingleMenuItems
+            icon="https://res.cloudinary.com/nicanor/image/upload/v1609864628/gridicons_multiple-users.svg"
+            menuText="Mentee Applications"
+            url="/apply/applications"
+          />
+        )}
         {/* TODO: work on logout after login is done */}
         <ListItem button key={Math.random()} onClick={handleLogout}>
           <ListItemIcon className={classes.iconButton}>

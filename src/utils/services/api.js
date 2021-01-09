@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { UserContext } from "../../state/users/user.context"
 
 
-const baseUrl = process.env.GATSBY_API_URL
+const baseUrl = process.env.GATSBY_API_PROD_URL
 
 /**
  * API Request handler
@@ -36,11 +36,9 @@ export const apiPostRequest = async (
 }
 
 export const GetData = async (url) => {
-  const userContext = useContext(UserContext)
+  const token = localStorage.getItem("token")
   const requestUrl = baseUrl + url
-  const { token } = userContext.state
-  const authHeader = `Bearer ${token}`
-  axios.defaults.headers.common["Authorization"] = authHeader
+  axios.defaults.headers.common["Authorization"] = token
   const response = await axios.get(requestUrl)
   const { data } = response
   return data

@@ -5,6 +5,7 @@ const drawerWidth = 230
 export const DashboardLayoutStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
   },
   appBar: {
     backgroundColor: "rebeccapurple",

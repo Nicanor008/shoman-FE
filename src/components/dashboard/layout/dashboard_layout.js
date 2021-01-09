@@ -24,7 +24,7 @@ function DashboardLayout({ children }) {
         handleDrawerClose={handleDrawerClose}
         open={open}
       />
-      <div>
+      <div style={{width: '100%'}}>
         <main
           className={clsx(classes.content, {
             [classes.contentShift]: open,

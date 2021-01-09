@@ -14,7 +14,7 @@ function Sidebar({ handleDrawerOpen, handleDrawerClose, open }) {
   const theme = useTheme()
  
   return (
-    <>
+    <div style={{backgroundColor: 'rebeccapurple'}}>
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, {
@@ -68,7 +68,7 @@ function Sidebar({ handleDrawerOpen, handleDrawerClose, open }) {
         <br />
         <SidebarMenuItems />
       </Drawer>
-    </>
+    </div>
   )
 }
 

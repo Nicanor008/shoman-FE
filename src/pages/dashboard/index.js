@@ -2,6 +2,7 @@ import React from "react"
 import Typography from "@material-ui/core/Typography"
 import SEO from "../../components/seo"
 import DashboardLayout from "../../components/dashboard/layout/dashboard_layout"
+import { UserContextProvider } from "../../state/users/user.context"
 
 //
 // This is just an example
@@ -14,7 +15,7 @@ export default function PersistentDrawerLeft() {
   }
 
   return (
-    <>
+    <UserContextProvider>
       <SEO title="Dashboard" />
       <DashboardLayout>
         <Typography paragraph>
@@ -47,6 +48,6 @@ export default function PersistentDrawerLeft() {
           posuere sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
       </DashboardLayout>
-    </>
+    </UserContextProvider>
   )
 }
