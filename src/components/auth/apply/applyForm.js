@@ -89,7 +89,7 @@ export default function ApplyForm() {
     }
 
     //   proceed
-    Axios.post(`${process.env.GATSBY_API_URL}mentees/apply`, data)
+    Axios.post(`${process.env.GATSBY_API_PROD_URL}/mentees/apply`, data)
 
       .then((res) => {
         setLoading(false)
