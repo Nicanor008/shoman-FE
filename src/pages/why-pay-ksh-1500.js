@@ -9,7 +9,7 @@ function WhyPay1500() {
     height = window.innerHeight - 170
   }
   return (
-    <Layout>
+    <Layout requireAuth={false}>
       <div style={{ minHeight: height, paddingTop: "10rem" }}>
         <Container>
           <ListData

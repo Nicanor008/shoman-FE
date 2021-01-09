@@ -12,7 +12,7 @@ import '../components/css/landing_page.scss'
 import AllPaths from "../components/paths/allPaths"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout requireAuth={false}>
     <SEO title="Shoman Mentorship" />
 
     {/* description */}
