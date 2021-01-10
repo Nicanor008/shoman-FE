@@ -5,7 +5,6 @@ import "../login/login.scss"
 import "../../header.scss"
 import "../signup/signup.scss"
 import {
-  CircularProgress,
   FormControl,
   FormGroup,
   Grid,
@@ -58,7 +57,7 @@ export const ApplyFormStyles = makeStyles((theme) => ({
 export default function ApplyForm() {
   const classes = ApplyFormStyles()
   const [data, setData] = useState({})
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [payment, setPayment] = useState("")
   const [response, setResponse] = useState(null)
   const [errorRes, setError] = useState(null)
@@ -85,15 +84,17 @@ export default function ApplyForm() {
   const OnSubmitApplication = (e) => {
     setLoading(true)
     if (!data.understand_payment_is_required) {
-      return setPayment("You must understand that payment is required! Read Why.")
+      setLoading(false)
+      return setPayment(
+        "You must understand that payment is required! Read Why."
+      )
     }
-
     //   proceed
-    Axios.post(`${process.env.GATSBY_API_URL}/mentees/apply`, data)
-
+    Axios.post(`${process.env.GATSBY_API_PROD_URL}/mentees/apply`, data)
       .then((res) => {
         setLoading(false)
         setResponse(res.data)
+        if(typeof window !== "undefined") window.location.href = "/apply/application-success"
       })
       .catch((errorResponse) => {
         setLoading(false)
@@ -208,12 +209,14 @@ export default function ApplyForm() {
                     label="Laptop"
                     onChange={onSelectChange}
                     name="laptop"
-                  />&nbsp;&nbsp;
+                  />
+                  &nbsp;&nbsp;
                   <CheckboxInput
                     label="Internet"
                     onChange={onSelectChange}
                     name="internet_access"
-                  />&nbsp;&nbsp;
+                  />
+                  &nbsp;&nbsp;
                   <CheckboxInput
                     label="Available for 3 months, 4 hours a day?"
                     onChange={onSelectChange}
@@ -262,7 +265,13 @@ export default function ApplyForm() {
                     name="understand_payment_is_required"
                     onChange={onSelectChange}
                   />
-                  <Link href="/donate" className="link-why" target="_blank">Why?</Link>
+                  <Link
+                    href="/why-pay-ksh-1500"
+                    className="link-why"
+                    target="_blank"
+                  >
+                    Why?
+                  </Link>
                 </FormGroup>
               </Grid>
             </Grid>
@@ -272,7 +281,7 @@ export default function ApplyForm() {
                 buttonName="Submit Application"
                 class="authButton"
                 onClick={OnSubmitApplication}
-                loading={loading && <CircularProgress disableShrink />}
+                loading={loading}
               />
               {/* add remember me here */}
             </div>

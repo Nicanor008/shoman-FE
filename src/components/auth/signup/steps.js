@@ -19,24 +19,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function getSteps() {
-  return ["Request Access", "Verify Email", "Proceed and Login"]
-}
-
-const StepsComponent = ({ props }) => {
+const StepsComponent = ({ props, steps }) => {
   const classes = useStyles()
-  const steps = getSteps()
+
 
   let height
   if (typeof window !== "undefined") {
     height = window.innerHeight - 200
   }
 
-
   return (
-    <div className={classes.root} style={{ minHeight: height, paddingTop: '10rem' }}>
+    <div
+      className={classes.root}
+      style={{ minHeight: height, paddingTop: "10rem" }}
+    >
       <Stepper activeStep={props} alternativeLabel>
-        {steps.map((label) => (
+        {steps && steps?.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
           </Step>
@@ -48,8 +46,8 @@ const StepsComponent = ({ props }) => {
             return (
               <section className={classes.instructions}>
                 <p>
-                  We have received your credentials. Kindly check your mail and verify the email you
-                  provided to proceed to the next step.
+                  We have received your credentials. Kindly check your mail and
+                  verify the email you provided to proceed to the next step.
                 </p>
               </section>
             )
@@ -57,7 +55,17 @@ const StepsComponent = ({ props }) => {
             return (
               <section className={classes.instructions}>
                 <p>
-                  Thank you for verifying your credentials. Kindly click on Login above and proceed.
+                  Thank you for verifying your credentials. Kindly click on
+                  Login above and proceed.
+                </p>
+              </section>
+            )
+          case 3:
+            return (
+              <section className={classes.instructions}>
+                <p>
+                  We have received your Application to be part of the Shoman Mentorship Programme.
+                  We've shared some more information in your email. You'll hear from us soon.
                 </p>
               </section>
             )

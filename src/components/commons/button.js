@@ -1,16 +1,36 @@
 import React from "react"
-import { Button } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
+import { Button, LinearProgress } from "@material-ui/core"
 
-const ButtonComponent = props => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    height: "10px",
+    "& > * + *": {
+      marginTop: theme.spacing(2),
+    },
+  },
+}))
+
+const ButtonComponent = (props) => {
+  const classes = useStyles()
   return (
-    <Button
-      variant="contained"
-      className={props.class}
-      type={props.type}
-      onClick={props.onClick}
-    >
-      {props.buttonName}
-    </Button>
+    <>
+      {props.loading ? (
+        <div className={classes.root}>
+          <LinearProgress />
+        </div>
+      ) : (
+        <Button
+          variant="contained"
+          className={props.class}
+          type={props.type}
+          onClick={props.onClick}
+        >
+          {props.buttonName}
+        </Button>
+      )}
+    </>
   )
 }
 
