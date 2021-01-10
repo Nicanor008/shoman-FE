@@ -9,7 +9,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import ChevronRightIcon from "@material-ui/icons/ChevronRight"
 import { DashboardLayoutStyles } from "../../../../styles/dashboard_layout_styles"
 
-function Sidebar({ handleDrawerOpen, handleDrawerClose, open }) {
+function Sidebar({ handleDrawerOpen, handleDrawerClose, open, userRole }) {
   const classes = DashboardLayoutStyles()
   const theme = useTheme()
  
@@ -36,7 +36,7 @@ function Sidebar({ handleDrawerOpen, handleDrawerClose, open }) {
               width: "100%",
             }}
           >
-            <Header siteTitle="" dashboard={true} />
+            <Header siteTitle="" dashboard={true} userRole={userRole} />
           </div>
         </Toolbar>
       </AppBar>
@@ -66,7 +66,7 @@ function Sidebar({ handleDrawerOpen, handleDrawerClose, open }) {
         </div>
 
         <br />
-        <SidebarMenuItems />
+        <SidebarMenuItems userRole={userRole} />
       </Drawer>
     </div>
   )

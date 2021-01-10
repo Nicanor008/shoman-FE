@@ -23,9 +23,17 @@ export default function LoginComponent() {
 
   useEffect(() => {
     // don't allow user to sign in if already signed in
-    if (localStorage.getItem("user")) {
-      window.location.href = "/dashboard/"
-    }
+    const user = JSON.parse(localStorage.getItem("user"))
+    if (typeof window !== "undefined" && user)
+      if (user?.userType === "mentee")
+        return (window.location.href = "/mentee/overview")
+      else if (user?.userType === "mentor" || user?.userType === "admin")
+        return (window.location.href = "/mentor/overview")
+      else
+        return toastNotification(
+          "warning",
+          "Your account doesn't have a user type. Contact Admin via email on shomancodes@gmail.com"
+        )
   })
 
   const [userEmail, setEmail] = useState("")
@@ -78,7 +86,18 @@ export default function LoginComponent() {
           },
         })
         if (typeof window !== "undefined")
-          return (window.location.href = "/dashboard/")
+          if (payload?.user?.userType === "mentee")
+            return (window.location.href = "/mentee/overview")
+          else if (
+            payload?.user?.userType === "mentor" ||
+            payload?.user?.userType === "admin"
+          )
+            return (window.location.href = "/mentor/overview")
+          else
+            return toastNotification(
+              "warning",
+              "Your account doesn't have a user type. Contact Admin via email on shomancodes@gmail.com"
+            )
       })
       .catch((err) => {
         setLoading(false)

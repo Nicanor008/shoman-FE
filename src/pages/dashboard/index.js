@@ -10,10 +10,6 @@ import { UserContextProvider } from "../../state/users/user.context"
 //
 
 export default function PersistentDrawerLeft() {
-  if (typeof window !== "undefined" && localStorage.getItem("user") === null) {
-    window.location.href = "/auth/login/"
-  }
-
   return (
     <UserContextProvider>
       <SEO title="Dashboard" />
