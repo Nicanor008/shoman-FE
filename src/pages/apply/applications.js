@@ -45,7 +45,7 @@ function Applications() {
         setLoading(false)
       })
       .catch((error) => {
-        if (error.response) setError(error.reponse)
+        if (error.response) setError(error.response)
         setLoading(false)
       })
     return null

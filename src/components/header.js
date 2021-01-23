@@ -4,7 +4,7 @@ import React from "react"
 
 import "./header.scss"
 
-const Header = ({ siteTitle, dashboard }) => {
+const Header = ({ siteTitle, dashboard, userRole }) => {
   // const oneDay = 24 * 60 * 60 * 1000
   // const currentDate = new Date()
   // const secondDate = new Date(2020, 1, 6)
@@ -33,9 +33,6 @@ const Header = ({ siteTitle, dashboard }) => {
               <Link className="menuItem" to="/donate">
                 Donate
               </Link> */}
-              <Link to="/about" className="menuItem">
-                About
-              </Link>
               {/* <span className="menuItem">| </span> */}
               {/* <span to="/" className="menuItem">
               Reach Out - <span style={{color:"yellow"}}>shoman@gmail.com</span>
@@ -44,16 +41,23 @@ const Header = ({ siteTitle, dashboard }) => {
               {/* unathorised user */}
               {!dashboard && (
                 <>
+                  <Link to={`${userRole === "mentee" ? '/mentee/overview' : '/mentor/overview'}`} className="menuItem">
+                    Dashboard
+                  </Link>
                   <span className="menuItem">| </span>
-                  {/* <Link to="/auth" className="menuItem">
+                  <Link to="/auth/login" className="menuItem">
                     Login
-                  </Link> */}
-                  {/* <span className="menuItem">| </span> */}
+                  </Link>
+                  <span className="menuItem">| </span>
                   <Link to="/apply" className="menuItem">
                     Apply <span className="applyingText">As a Mentee</span>
                   </Link>
+                  <span className="menuItem">| </span>
                 </>
               )}
+              <Link to="/about" className="menuItem">
+                About
+              </Link>
             </div>
           </div>
         </h1>

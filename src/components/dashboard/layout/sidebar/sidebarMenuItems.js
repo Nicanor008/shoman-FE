@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react"
 import SidebarSingleMenuItems from "./sidebarSingleMenuItem"
 import { DashboardLayoutStyles } from "../../../../styles/dashboard_layout_styles"
 
-function SidebarMenuItems() {
+function SidebarMenuItems({ userRole }) {
   const [userType, setUserType] = useState(null)
   const classes = DashboardLayoutStyles()
 
@@ -25,21 +25,48 @@ function SidebarMenuItems() {
   return (
     <div>
       <List>
-        <SidebarSingleMenuItems
-          icon="https://res.cloudinary.com/nicanor/image/upload/v1609864630/Time-icon.svg"
-          menuText="Overview"
-          url="/dashboard"
-        />
-        <SidebarSingleMenuItems
-          icon="https://res.cloudinary.com/nicanor/image/upload/v1609864192/octicon_project-16.svg"
-          menuText="Learning Content"
-          url="/learning-content"
-        />
-        <SidebarSingleMenuItems
-          icon="https://res.cloudinary.com/nicanor/image/upload/v1609864192/emojione-monotone_briefcase.svg"
-          menuText="Projects"
-          url="/projects"
-        />
+        {/* mentee menu */}
+        {userRole === "mentee" && (
+          <>
+            <SidebarSingleMenuItems
+              icon="https://res.cloudinary.com/nicanor/image/upload/v1609864630/Time-icon.svg"
+              menuText="Overview"
+              url="/mentee/overview"
+            />
+            <SidebarSingleMenuItems
+              icon="https://res.cloudinary.com/nicanor/image/upload/v1609864192/octicon_project-16.svg"
+              menuText="Learning Content"
+              url="/mentee/learning-content"
+            />
+            <SidebarSingleMenuItems
+              icon="https://res.cloudinary.com/nicanor/image/upload/v1609864192/emojione-monotone_briefcase.svg"
+              menuText="Projects"
+              url="/mentee/projects"
+            />
+          </>
+        )}
+
+        {/* mentor menu */}
+        {userRole === "mentor" && (
+          <>
+            <SidebarSingleMenuItems
+              icon="https://res.cloudinary.com/nicanor/image/upload/v1609864630/Time-icon.svg"
+              menuText="Overview"
+              url="/mentor/overview"
+            />
+            <SidebarSingleMenuItems
+              icon="https://res.cloudinary.com/nicanor/image/upload/v1609864192/octicon_project-16.svg"
+              menuText="Learning Content"
+              url="/mentor/learning-content"
+            />
+            <SidebarSingleMenuItems
+              icon="https://res.cloudinary.com/nicanor/image/upload/v1609864192/emojione-monotone_briefcase.svg"
+              menuText="Projects"
+              url="/mentor/projects"
+            />
+          </>
+        )}
+
         {userType === "admin" && (
           <SidebarSingleMenuItems
             icon="https://res.cloudinary.com/nicanor/image/upload/v1609864628/gridicons_multiple-users.svg"
