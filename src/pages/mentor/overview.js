@@ -36,23 +36,18 @@ export default function MentorOverview() {
       })
   }, [])
 
-  useEffect(async () => {
+  useEffect(() => {
     setLoadingMentee(true)
     const dd = []
     data &&
       data.menteesId &&
       data.menteesId.map((mentee) => {
-        GetData(`/users/${mentee}`)
-          .then((user) => {
-            dd.push(user.data)
-            setMentees(dd)
-            setLoadingMentee(false)
-          })
-          .catch(() => {
-            return setLoadingMentee(false)
-          })
+        GetData(`/users/${mentee}`).then((user) => {
+          dd.push(user.data)
+          setMentees(dd)
+        })
+        return setLoadingMentee(false)
       })
-    console.log(">>>>>>>>.....euse effe....", dd)
   }, [data])
 
   return (

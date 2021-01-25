@@ -46,8 +46,8 @@ function SidebarMenuItems({ userRole }) {
           </>
         )}
 
-        {/* mentor menu */}
-        {userRole === "mentor" && (
+        {/* Mentor/Admin menu */}
+        {(userRole === "mentor" || userRole === "admin") && (
           <>
             <SidebarSingleMenuItems
               icon="https://res.cloudinary.com/nicanor/image/upload/v1609864630/Time-icon.svg"
@@ -64,16 +64,17 @@ function SidebarMenuItems({ userRole }) {
               menuText="Projects"
               url="/mentor/projects"
             />
+            {userType === "admin" && (
+              <SidebarSingleMenuItems
+                icon="https://res.cloudinary.com/nicanor/image/upload/v1609864628/gridicons_multiple-users.svg"
+                menuText="Mentee Applications"
+                url="/apply/applications"
+              />
+            )}
           </>
         )}
 
-        {userType === "admin" && (
-          <SidebarSingleMenuItems
-            icon="https://res.cloudinary.com/nicanor/image/upload/v1609864628/gridicons_multiple-users.svg"
-            menuText="Mentee Applications"
-            url="/apply/applications"
-          />
-        )}
+        {/* all users */}
         {/* TODO: work on logout after login is done */}
         <ListItem button key={Math.random()} onClick={handleLogout}>
           <ListItemIcon className={classes.iconButton}>

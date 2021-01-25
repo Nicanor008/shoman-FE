@@ -71,7 +71,7 @@ function Applications() {
   const mobile = applicants?.filter((app) => app.track === "Mobile Development")
 
   return (
-    <DashboardLayout>
+    <DashboardLayout userRole="admin">
       <SEO title="Applications" />
       {loading ? (
         <center>

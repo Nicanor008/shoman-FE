@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Divider, makeStyles } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core"
 import "./mentee.scss"
 
 const useStyles = makeStyles(() => ({

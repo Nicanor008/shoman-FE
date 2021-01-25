@@ -1,7 +1,4 @@
 import axios from "axios"
-import { useContext } from "react"
-import { UserContext } from "../../state/users/user.context"
-
 
 const baseUrl = process.env.GATSBY_API_URL
 
@@ -45,10 +42,8 @@ export const GetData = async (url) => {
 }
 
 export const PostWithToken = async (url, method, data) => {
-  const userContext = useContext(UserContext)
-  const { token } = userContext.state
-  const authHeader = `Bearer ${token}`
-  const responseData = await apiPostRequest(url, method, data, true, authHeader)
+  const token = localStorage.getItem("token")
+  const responseData = await apiPostRequest(url, method, data, true, token)
   return responseData
 }
 

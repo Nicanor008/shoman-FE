@@ -46,6 +46,11 @@ footer {
 .donateButtons {
   padding-top: 100px;
 }
+h1, h2, h3, h4, h5, h6, p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-bottom: 1rem !important;
+}
 @media only screen and (max-width: 818px) {
   .donateButtons {
     padding-top: 0 !important;

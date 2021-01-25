@@ -37,7 +37,7 @@ export default function MentorOverview() {
   return (
     <UserContextProvider>
       <SEO title="Dashboard" />
-      <DashboardLayout userRole="mentor">
+      <DashboardLayout userRole="mentee">
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
             <Grid container>
