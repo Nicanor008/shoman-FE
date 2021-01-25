@@ -20,7 +20,7 @@ export const SubContent = () => {
       <span role="img" aria-label="We Move" style={{ fontSize: "23px" }}>
         🚀
       </span>
-      . Other platforms might be available depending on the specisialization of
+      . Other platforms might be available depending on the specialization of
       the mentors joining.
       <br />
       <br />
