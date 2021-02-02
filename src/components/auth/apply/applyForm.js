@@ -22,7 +22,7 @@ import { CheckboxInput } from "../../../components/commons/inputs/checkbox"
 import "../apply.scss"
 import ApplyDateline from "./applyDateline"
 
-const useStyles = makeStyles((theme) => ({
+export const ApplyFormStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: "46%",
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function ApplyForm() {
-  const classes = useStyles()
+  const classes = ApplyFormStyles()
   const [data, setData] = useState({})
   const [loading, setLoading] = useState(true)
   const [payment, setPayment] = useState("")

@@ -41,7 +41,14 @@ const Header = ({ siteTitle, dashboard, userRole }) => {
               {/* unathorised user */}
               {!dashboard && (
                 <>
-                  <Link to={`${userRole === "mentee" ? '/mentee/overview' : '/mentor/overview'}`} className="menuItem">
+                  <Link
+                    to={`${
+                      userRole === "mentee"
+                        ? "/mentee/overview"
+                        : "/mentor/overview"
+                    }`}
+                    className="menuItem"
+                  >
                     Dashboard
                   </Link>
                   <span className="menuItem">| </span>
@@ -53,11 +60,11 @@ const Header = ({ siteTitle, dashboard, userRole }) => {
                     Apply <span className="applyingText">As a Mentee</span>
                   </Link>
                   <span className="menuItem">| </span>
+                  <Link to="/about" className="menuItem">
+                    About
+                  </Link>
                 </>
               )}
-              <Link to="/about" className="menuItem">
-                About
-              </Link>
             </div>
           </div>
         </h1>
