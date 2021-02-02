@@ -7,7 +7,6 @@ import { DashboardLayoutStyles } from "../../../../styles/dashboard_layout_style
 function SidebarMenuItems({ userRole }) {
   const [userType, setUserType] = useState(null)
   const classes = DashboardLayoutStyles()
-
   const handleLogout = () => {
     if (typeof window !== "undefined") {
       localStorage.clear()
@@ -65,11 +64,18 @@ function SidebarMenuItems({ userRole }) {
               url="/mentor/projects"
             />
             {userType === "admin" && (
+              <>
+              <SidebarSingleMenuItems
+                icon="https://res.cloudinary.com/nicanor/image/upload/v1609864628/gridicons_multiple-users.svg"
+                menuText="Team"
+                url="/admin/team"
+              />
               <SidebarSingleMenuItems
                 icon="https://res.cloudinary.com/nicanor/image/upload/v1609864628/gridicons_multiple-users.svg"
                 menuText="Mentee Applications"
                 url="/apply/applications"
               />
+              </>
             )}
           </>
         )}

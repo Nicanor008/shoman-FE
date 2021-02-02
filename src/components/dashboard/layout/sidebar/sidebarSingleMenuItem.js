@@ -8,7 +8,7 @@ function SidebarSingleMenuItems({ icon, iconComponent, menuText, url }) {
 
   return (
     <ListItem button key={Math.random()}>
-      <Link to={url} className={classes.linkButton}>
+      <Link to={url} className={classes.linkButton} activeStyle={{ color: "lime", fontWeight: 'bolder' }}>
       <ListItemIcon className={classes.iconButton}>
         {iconComponent ? (
           icon

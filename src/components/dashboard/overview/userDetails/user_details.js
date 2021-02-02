@@ -36,7 +36,7 @@ function UserDetails({ height, teamDetails }) {
       })
   }, [])
 
-  console.error(error)
+  console.error(error !== null && error)
 
   return (
     <div className={classes.root} style={{ minHeight: height - 155 }}>

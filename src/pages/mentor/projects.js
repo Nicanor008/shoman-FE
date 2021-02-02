@@ -35,7 +35,7 @@ function MentorProject() {
       })
   }, [])
 
-  console.error(error)
+  console.error(error !== null && error)
 
   return (
     <UserContextProvider>

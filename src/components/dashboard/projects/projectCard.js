@@ -55,12 +55,16 @@ export function ProjectCard({
             )}
             {userType === "mentee" && (
               <div className={classes.time}>
-                <span className={classes.publicAccessStatus}>
-                  Approximate Duration {duration}
-                </span>
-                <span className={classes.publicAccessStatus}>
-                  Due Date {deadline}
-                </span>
+                {duration && (
+                  <span className={classes.publicAccessStatus}>
+                    Approximate Duration {duration}
+                  </span>
+                )}
+                {deadline && (
+                  <span className={classes.publicAccessStatus}>
+                    Due Date {deadline}
+                  </span>
+                )}
               </div>
             )}
           </div>
