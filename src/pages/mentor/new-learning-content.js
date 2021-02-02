@@ -47,7 +47,7 @@ function NewLearningContent() {
         category: team.data && team.data.track && team.data.track._id,
       })
     })
-  })
+  }, [])
 
   //   handle input change
   const handleInputChange = (e) => {

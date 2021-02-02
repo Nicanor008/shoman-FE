@@ -46,10 +46,12 @@ export const ProjectCardStyles = makeStyles((theme) => ({
   },
   editIcon: {
     color: "#663399",
+    cursor: 'pointer'
   },
   deleteIcon: {
     color: "red",
     marginLeft: "0.4rem",
+    cursor: 'pointer'
   },
   publicAccessStatus: {
     fontSize: "small",

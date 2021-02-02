@@ -1,5 +1,6 @@
 import { CircularProgress } from "@material-ui/core"
 import React, { useState, useEffect } from "react"
+import axios from "axios"
 import { Link } from "gatsby"
 
 import DashboardLayout from "../../components/dashboard/layout/dashboard_layout"
@@ -8,7 +9,8 @@ import { UserContextProvider } from "../../state/users/user.context"
 import { GetData } from "../../utils/services/api"
 import { ProjectCard } from "../../components/dashboard/projects/projectCard"
 import { CommonDashboardStyles } from "../../styles/common_dashboard_styles"
-
+import { toastNotification } from "../../utils/helpers/toaster"
+import { baseUrl } from "../../utils/services/api"
 
 function MentorLearningContent() {
   const classes = CommonDashboardStyles()
@@ -40,11 +42,26 @@ function MentorLearningContent() {
   useEffect(() => {
     // get current user category, if available
     GetData("/teams/current-user").then((team) => {
-      setCurrentUserTeam(
-        team.data && team.data.team_name,
-      )
+      setCurrentUserTeam(team.data && team.data.team_name)
     })
   }, [])
+
+  // delete learning content
+  const HandleDeleteLearningContent = (id) => {
+    const token = localStorage.getItem("token")
+    axios.defaults.headers.common["Authorization"] = token
+    axios
+      .delete(`${baseUrl}/contents/${id}`)
+      .then((deletedContent) => {
+        toastNotification("success", deletedContent.message)
+        setTimeout(() => {
+          window.location.reload()
+        }, 2000)
+      })
+      .catch((error) => {
+        toastNotification("error", error.response.data.message)
+      })
+  }
 
   console.error(error !== null && error)
 
@@ -59,7 +76,10 @@ function MentorLearningContent() {
           ) : (
             <>
               <div className={classes.topBar}>
-                <Link className={classes.button} to="/mentor/new-learning-content">
+                <Link
+                  className={classes.button}
+                  to="/mentor/new-learning-content"
+                >
                   New Learning Content
                 </Link>
               </div>
@@ -73,10 +93,13 @@ function MentorLearningContent() {
                     content={content?.content}
                     category={content?.track?.name}
                     author={content?.author}
-                    publicAccess={content?.focusGroup === "shoman" ? true : false}
+                    publicAccess={
+                      content?.focusGroup === "shoman" ? true : false
+                    }
                     duration={content?.estimatedDuration}
                     deadline={content?.deadline}
                     team={currentUserTeam}
+                    deleteItem={HandleDeleteLearningContent}
                   />
                 ))}
                 {contents === null && <h4>No Projects Available</h4>}

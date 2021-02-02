@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import EditIcon from "@material-ui/icons/Edit"
 import DeleteSweepIcon from "@material-ui/icons/DeleteSweep"
 import { ProjectCardStyles } from "../../../styles/common_dashboard_styles"
 import { Link } from "gatsby"
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@material-ui/core"
 
 export function ProjectCard({
   title,
@@ -16,13 +17,34 @@ export function ProjectCard({
   id,
   author,
   pageType,
+  deleteItem
 }) {
   const classes = ProjectCardStyles()
   const user = JSON.parse(localStorage.getItem("user"))._id
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div className={classes.root}>
-      <Link
+        {/* header */}
+        <div className={classes.header}>
+          <p className={classes.categoryHeader}>{category}</p>
+          {userType !== "mentee" && author === user && (
+            <div className={classes.icons}>
+              <EditIcon className={classes.editIcon} />
+              <DeleteSweepIcon className={classes.deleteIcon} onClick={handleOpen} />
+            </div>
+          )}
+        </div>
+
+        <Link
         to={
           pageType === "project"
             ? `/dashboard/project/${id}`
@@ -30,17 +52,6 @@ export function ProjectCard({
         }
         className={classes.link}
       >
-        {/* header */}
-        <div className={classes.header}>
-          <p className={classes.categoryHeader}>{category}</p>
-          {userType !== "mentee" && author === user && (
-            <div className={classes.icons}>
-              <EditIcon className={classes.editIcon} />
-              <DeleteSweepIcon className={classes.deleteIcon} />
-            </div>
-          )}
-        </div>
-
         {/* body */}
         <div className={classes.body}>
           <h3>{title}</h3>
@@ -69,7 +80,31 @@ export function ProjectCard({
             )}
           </div>
         </div>
+
       </Link>
+
+      {/* modal/pop up */}
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Are you sure you want to delete this?"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            This will give access to Shoman Admin to manipulate this learning. You won't view this item again
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={() => deleteItem(id)} color="primary">
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   )
 }
