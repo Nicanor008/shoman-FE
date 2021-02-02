@@ -9,7 +9,6 @@ import { GetData } from "../../utils/services/api"
 import { ProjectCard } from "../../components/dashboard/projects/projectCard"
 import { CommonDashboardStyles } from "../../styles/common_dashboard_styles"
 
-
 function MentorProject() {
   const classes = CommonDashboardStyles()
 
@@ -60,6 +59,8 @@ function MentorProject() {
                 {projects?.map((project) => (
                   <ProjectCard
                     key={project?._id}
+                    id={project?._id}
+                    pageType="project"
                     title={project?.topic}
                     content={project?.projectDescription}
                     category={project?.track?.name}
@@ -68,7 +69,7 @@ function MentorProject() {
                     author={project?.author}
                   />
                 ))}
-                {projects ===null && <h4>No Projects Available</h4>}
+                {projects === null && <h4>No Projects Available</h4>}
               </div>
             </>
           )}

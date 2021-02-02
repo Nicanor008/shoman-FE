@@ -60,4 +60,7 @@ export const ProjectCardStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
   },
+  link: {
+    color: 'black !important',
+  }
 }))

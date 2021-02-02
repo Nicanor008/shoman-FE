@@ -67,6 +67,8 @@ function MentorLearningContent() {
                 {contents?.map((content) => (
                   <ProjectCard
                     key={content?._id}
+                    id={content?._id}
+                    pageType="learning content"
                     title={content?.topic}
                     content={content?.content}
                     category={content?.track?.name}

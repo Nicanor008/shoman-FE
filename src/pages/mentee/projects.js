@@ -1,31 +1,15 @@
-import { CircularProgress, makeStyles } from "@material-ui/core"
+import { CircularProgress } from "@material-ui/core"
 import React, { useState, useEffect } from "react"
 import DashboardLayout from "../../components/dashboard/layout/dashboard_layout"
 import SEO from "../../components/seo"
 import { UserContextProvider } from "../../state/users/user.context"
 import { GetData } from "../../utils/services/api"
 import { ProjectCard } from "../../components/dashboard/projects/projectCard"
+import { CommonDashboardStyles } from "../../styles/common_dashboard_styles"
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: "#DED5EA",
-  },
-  topBar: {},
-  secondBar: {
-    backgroundColor: "white",
-    borderRadius: 5,
-    padding: "2rem",
-    display: "flex",
-    flexWrap: "wrap",
-  },
-  button: {
-    margin: theme.spacing(2),
-    backgroundColor: "rebeccapurple",
-    color: "white",
-  },
-}))
+
 function MentorProject() {
-  const classes = useStyles()
+  const classes = CommonDashboardStyles()
 
   let height
   if (typeof window !== "undefined") {
@@ -65,6 +49,8 @@ function MentorProject() {
               {projects?.map((project) => (
                 <ProjectCard
                   key={project?._id}
+                  id={project?._id}
+                  pageType="project"
                   title={project?.topic}
                   content={project?.projectDescription}
                   category={project?.track?.name}
