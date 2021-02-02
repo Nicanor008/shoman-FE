@@ -25,6 +25,9 @@ function MentorLearningContent() {
   const [error, setError] = useState(null)
   const [currentUserTeam, setCurrentUserTeam] = useState(null)
 
+  let user = JSON.parse(localStorage.getItem("user"))
+  user = user && user.userType
+
   useEffect(() => {
     setLoading(true)
     const data = GetData("/contents")
@@ -82,6 +85,14 @@ function MentorLearningContent() {
                 >
                   New Learning Content
                 </Link>
+                {user === "admin" && (
+                  <Link
+                    className={classes.button}
+                    to="/mentor/new-learning-content"
+                  >
+                    View Archived
+                  </Link>
+                )}
               </div>
               <div className={classes.secondBar}>
                 {contents?.map((content) => (
