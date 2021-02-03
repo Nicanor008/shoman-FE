@@ -62,6 +62,9 @@ function ArchivedLearningContent() {
                     View Archived
                   </Link>
                 )}
+                <Link className={classes.button} to="#">
+                  View Done Projects
+                </Link>
               </div>
               <div className={classes.secondBar}>
                 {contents?.map((project) => (

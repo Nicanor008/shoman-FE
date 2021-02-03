@@ -30,6 +30,8 @@ export const DashboardLayoutStyles = makeStyles((theme) => ({
   },
   imgIcon: {
     marginBottom: 0,
+    height: '30px',
+    alignSelf: 'center'
   },
   titleWrapper: {
     display: "flex",
