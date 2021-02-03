@@ -8,23 +8,39 @@ import TableHead from "@material-ui/core/TableHead"
 import TableRow from "@material-ui/core/TableRow"
 import Paper from "@material-ui/core/Paper"
 import { CircularProgress } from "@material-ui/core"
+import axios from "axios"
 
 import DashboardLayout from "../../components/dashboard/layout/dashboard_layout"
 import SEO from "../../components/seo"
-import { GetData } from "../../utils/services/api"
+import { baseUrl, GetData } from "../../utils/services/api"
 import {
   StyledTableCellStyles,
   StyledTableRowStyles,
 } from "../../styles/tableStyles"
-import { CommonDashboardStyles, ProjectCardStyles } from "../../styles/common_dashboard_styles"
+import {
+  CommonDashboardStyles,
+  ProjectCardStyles,
+} from "../../styles/common_dashboard_styles"
 import { Link } from "gatsby"
+import { DeleteDialog } from "../../components/dashboard/projects/projectCard"
 
 function ShomanTeam() {
   const [teams, setData] = useState(null)
+  const [teamId, setTeamId] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const classes = ProjectCardStyles()
   const commonStyles = CommonDashboardStyles()
+  const [open, setOpen] = useState(false)
+
+  const handleOpen = (id) => {
+    setTeamId(id)
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
 
   useEffect(() => {
     setLoading(true)
@@ -45,6 +61,18 @@ function ShomanTeam() {
       window.location.href = "/login"
     }
   }, [teams])
+
+  const HandleDeleteTeam = (id) => {
+    const token = localStorage.getItem("token")
+    axios.defaults.headers.common["Authorization"] = token
+    axios
+      .delete(`${baseUrl}/teams/${id}`)
+      .then(() => {
+        setTimeout(() => {
+          window.location.reload()
+        }, 1000)
+      })
+  }
 
   console.log(error)
 
@@ -97,7 +125,7 @@ function ShomanTeam() {
                     </StyledTableCellStyles>
                     <StyledTableCellStyles>
                       <EditIcon className={classes.editIcon} />
-                      <DeleteSweepIcon className={classes.deleteIcon} />
+                      <DeleteSweepIcon className={classes.deleteIcon} onClick={() => handleOpen(team?._id)} />
                     </StyledTableCellStyles>
                   </StyledTableRowStyles>
                 ))}
@@ -106,6 +134,9 @@ function ShomanTeam() {
           </TableContainer>
         </>
       )}
+
+      {/* delete team modal */}
+      <DeleteDialog handleClose={handleClose} open={open} deleteItem={HandleDeleteTeam} id={teamId} />
     </DashboardLayout>
   )
 }
