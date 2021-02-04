@@ -26,7 +26,7 @@ export default function MentorOverview() {
     GetData("/teams/current-user")
       .then((team) => {
         setLoading(false)
-        setData(team.data)
+        setData(team)
       })
       .catch((error) => {
         if (error.response) setError(error.response.data)
@@ -42,12 +42,12 @@ export default function MentorOverview() {
           <Grid item xs={12} md={8}>
             <Grid container>
               {/* learning progress or roadmap */}
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={7}>
                 <MenteeLearningProgressOverview />
               </Grid>
 
               {/* mentee team */}
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={5}>
                 <UserTeamDetails
                   classes={classes}
                   data={data}

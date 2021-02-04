@@ -113,7 +113,7 @@ function NewTeam() {
 
       <div className={classes.root} style={{ minHeight: height }}>
         <DashboardLayout userRole="admin">
-          <h3 className={classes.title}>New Learning Content</h3>
+          <h3 className={classes.title}>New Team</h3>
           <div className={classes.body}>
             <FormControl className={externalClasses.formControl}>
               <Select
@@ -211,7 +211,7 @@ function NewTeam() {
               startIcon={<AddIcon />}
               onClick={submitProject}
             >
-              Create Project
+              Create a New TEAM
             </Button>
           </div>
         </DashboardLayout>

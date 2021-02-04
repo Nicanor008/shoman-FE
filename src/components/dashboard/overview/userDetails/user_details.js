@@ -56,7 +56,7 @@ function UserDetails({ height, teamDetails }) {
             <UserDetailsText labelText="Email:-" labelValue={data?.email} />
             <UserDetailsText
               labelText="Team Name:"
-              labelValue={teamDetails?.team_name}
+              labelValue={teamDetails?.data?.team_name}
             />
             <UserDetailsText
               labelText="Team No."

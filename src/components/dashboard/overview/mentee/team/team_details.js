@@ -2,9 +2,10 @@ import { CircularProgress, List } from "@material-ui/core"
 import React from "react"
 import CardTitle from "../card_title"
 import LearningProgressItem from "../learning_progress_item"
+import MentorIcon from "../../../../../images/dashboard/mentorIcon.svg"
+import MenteeIcon from "../../../../../images/dashboard/menteeIcon.svg"
 
-const UserTeamDetails = ({ classes, data, loading, error, mentees }) => {
-  // console.log(">>>>>>>>>>..........", mentees)
+const UserTeamDetails = ({ classes, data, loading, error }) => {
 
   return (
     <div>
@@ -18,18 +19,18 @@ const UserTeamDetails = ({ classes, data, loading, error, mentees }) => {
           {/* team details */}
           {data && (
             <List className={`${classes.root}  learningProgressWrapper`}>
-              <CardTitle title={data.team_name} />
-              {data.mentor && (
+              <CardTitle title={data?.data?.team_name} />
+              {data?.data?.mentor && (
                 <LearningProgressItem
-                  icon="https://res.cloudinary.com/nicanor/image/upload/v1611155831/numbering/number1.svg"
-                  stack={data.mentor?.userType}
-                  title={data.mentor?.Username}
+                  icon={MentorIcon}
+                  stack={data?.data?.mentor?.userType}
+                  title={data?.data?.mentor?.Username}
                 />
               )}
 
-              {mentees?.map((mentee) => (
+              {data?.mentees?.map((mentee) => (
                 <LearningProgressItem
-                  icon="https://res.cloudinary.com/nicanor/image/upload/v1611155831/numbering/number1.svg"
+                  icon={MenteeIcon}
                   stack={mentee?.userType}
                   title={mentee?.Username}
                   key={mentee?._id}

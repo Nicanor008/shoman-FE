@@ -20,35 +20,19 @@ export default function MentorOverview() {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
-  const [mentees, setMentees] = useState([])
-  const [loadingMentee, setLoadingMentee] = useState(true)
 
   useEffect(() => {
     setLoading(true)
     GetData("/teams/current-user")
       .then((team) => {
         setLoading(false)
-        setData(team.data)
+        setData(team)
       })
       .catch((error) => {
         if (error.response) setError(error.response.data)
         setLoading(false)
       })
   }, [])
-
-  useEffect(() => {
-    setLoadingMentee(true)
-    const dd = []
-    data &&
-      data.menteesId &&
-      data.menteesId.map((mentee) => {
-        GetData(`/users/${mentee}`).then((user) => {
-          dd.push(user.data)
-          setMentees(dd)
-        })
-        return setLoadingMentee(false)
-      })
-  }, [data])
 
   return (
     <UserContextProvider>
@@ -69,8 +53,6 @@ export default function MentorOverview() {
                   data={data}
                   loading={loading}
                   error={error}
-                  mentees={mentees}
-                  loadingMentee={loadingMentee}
                 />
               </Grid>
             </Grid>

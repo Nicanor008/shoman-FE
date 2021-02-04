@@ -9,6 +9,7 @@ import OverviewIcon from "../../../../images/dashboard/overview.svg"
 import ContentIcon from "../../../../images/dashboard/content.svg"
 import ProjectsIcon from "../../../../images/dashboard/projects.svg"
 import TeamsIcon from "../../../../images/dashboard/teams.svg"
+import TrackIcon from "../../../../images/dashboard/track.svg"
 import ApplicationsIcon from "../../../../images/dashboard/applications.svg"
 
 function SidebarMenuItems({ userRole }) {
@@ -76,6 +77,11 @@ function SidebarMenuItems({ userRole }) {
                   icon={TeamsIcon}
                   menuText="Team"
                   url="/admin/team"
+                />
+                <SidebarSingleMenuItems
+                  icon={TrackIcon}
+                  menuText="Tracks"
+                  url="/admin/tracks"
                 />
                 <SidebarSingleMenuItems
                   icon={ApplicationsIcon}
