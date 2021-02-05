@@ -25,7 +25,8 @@ export function ProjectCard({
   author,
   pageType,
   deleteItem,
-  archivedItem
+  archivedItem,
+  editLink
 }) {
   const classes = ProjectCardStyles()
   const user = JSON.parse(localStorage.getItem("user"))._id
@@ -34,7 +35,7 @@ export function ProjectCard({
   const handleOpen = () => {
     setOpen(true)
   }
-
+console.log(">>>>>>>>>>>>>........", editLink);
   const handleClose = () => {
     setOpen(false)
   }
@@ -46,7 +47,7 @@ export function ProjectCard({
         <p className={classes.categoryHeader}>{category}</p>
         {(userType !== "mentee" && author === user || archivedItem) && (
           <div className={classes.icons}>
-            <EditIcon className={classes.editIcon} />
+            <Link to={editLink}><EditIcon className={classes.editIcon} /></Link>
             <DeleteSweepIcon
               className={classes.deleteIcon}
               onClick={handleOpen}

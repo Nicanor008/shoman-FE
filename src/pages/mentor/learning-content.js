@@ -100,6 +100,7 @@ function MentorLearningContent() {
                     deadline={content?.deadline}
                     team={currentUserTeam}
                     deleteItem={HandleDeleteLearningContent}
+                    editLink={`/mentor/edit/learning-content/${content?._id}`}
                   />
                 ))}
                 {contents === null && <h4>No Projects Available</h4>}

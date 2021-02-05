@@ -86,7 +86,7 @@ function NewProject() {
         toastNotification("success", response.message)
         setTimeout(() => {
           window.location.href = "/mentor/projects"
-        }, 4000)
+        }, 2000)
       })
       .catch((error) => {
         if (error.response) {

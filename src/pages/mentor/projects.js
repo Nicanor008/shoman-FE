@@ -99,6 +99,7 @@ function MentorProject() {
                     team={project?.team?.team_name}
                     author={project?.author}
                     deleteItem={HandleDeleteProject}
+                    editLink={`/mentor/edit/project/${project?._id}`}
                   />
                 ))}
                 {projects === null && <h4>No Projects Available</h4>}

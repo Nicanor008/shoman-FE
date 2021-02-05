@@ -21,7 +21,7 @@ export const apiPostRequest = async (
     if (useAuth) {
       axios.defaults.headers.common["Authorization"] = authHeader
     }
-    const response = await axios.post(requestUrl, bodyParams)
+    const response = method === 'post' ? await axios.post(requestUrl, bodyParams) : await axios.patch(requestUrl, bodyParams)
     const { data } = response
     return data
   } catch (error) {
