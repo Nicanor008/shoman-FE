@@ -68,7 +68,7 @@ function NewLearningContent() {
         toastNotification("success", response.message)
         setTimeout(() => {
           window.location.href = "/mentor/learning-content"
-        }, 4000)
+        }, 2000)
       })
       .catch((error) => {
         if (error.response) {

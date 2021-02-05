@@ -58,7 +58,7 @@ function NewProject() {
       })
       setCurrentUserTeam(team.data)
     })
-  })
+  }, [])
 
   useEffect(() => {
     GetData("/teams").then((team) => {

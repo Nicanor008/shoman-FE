@@ -43,7 +43,7 @@ export const GetData = async (url) => {
 
 export const PostWithToken = async (url, method, data) => {
   const token = localStorage.getItem("token")
-  const authHeader = `Bearer ${token}`
+  const authHeader = token
   const responseData = await apiPostRequest(url, method, data, true, authHeader)
   return responseData
 }
