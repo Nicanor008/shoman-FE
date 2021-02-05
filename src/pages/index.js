@@ -19,7 +19,7 @@ const IndexPage = () => (
     <HomeDescription
       title="Software Development Mentorship"
       durationDescription="Cohort 2 in Progress."
-      startedDate="Cohort 2 applications open"
+      startedDate={new Date("2021-02-05T21:00:00.000+00:00") > new Date() ? 'Cohort 2 applications open' : 'Applications closed. Application in review. Cohort 2 starts 15th Feb 2021' }
       content={<SubContent />}
     />
 

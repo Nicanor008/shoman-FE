@@ -4,12 +4,11 @@ import React from "react"
 
 import "./header.scss"
 
-const Header = ({ siteTitle, dashboard, userRole }) => {
-  // const oneDay = 24 * 60 * 60 * 1000
-  // const currentDate = new Date()
-  // const secondDate = new Date(2020, 1, 6)
+const Header = ({ siteTitle }) => {
+  const applicationDeadline = new Date("2021-02-05T21:00:00.000+00:00")
+  const currentDate = new Date()
+  const diffDays = applicationDeadline - currentDate
 
-  // const diffDays = Math.round(Math.abs((secondDate - currentDate) / oneDay))
   return (
     <header
       style={{
@@ -39,7 +38,7 @@ const Header = ({ siteTitle, dashboard, userRole }) => {
             </span> */}
               {/* <span className="menuItem">| </span> */}
               {/* unathorised user */}
-              {!dashboard && (
+              {diffDays > 0 && (
                 <>
                   <Link
                     to={`${
