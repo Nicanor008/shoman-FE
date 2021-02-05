@@ -12,17 +12,18 @@ import { CommonDashboardStyles } from "../../styles/common_dashboard_styles"
 function ArchivedLearningContent() {
   const classes = CommonDashboardStyles()
 
-  let height
+  let height, user
   if (typeof window !== "undefined") {
     height = window.innerHeight
+    user = JSON.parse(localStorage.getItem("user"))
+    user = user && user.userType
   }
 
   const [contents, setContent] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  let user = JSON.parse(localStorage.getItem("user"))
-  user = user && user.userType
+  
 
   useEffect(() => {
     setLoading(true)

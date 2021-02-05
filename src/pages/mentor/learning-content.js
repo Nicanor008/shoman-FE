@@ -48,7 +48,10 @@ function MentorLearningContent() {
 
   // delete learning content
   const HandleDeleteLearningContent = (id) => {
-    const token = localStorage.getItem("token")
+    let token
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("token")
+    }
     axios.defaults.headers.common["Authorization"] = token
     axios
       .delete(`${baseUrl}/contents/${id}`)

@@ -36,7 +36,10 @@ function SingleProject(props) {
   const [content, setContent] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const user = JSON.parse(localStorage.getItem("user")).userType
+  let user
+  if (typeof window !== "undefined") {
+    user = JSON.parse(localStorage.getItem("user")).userType
+  }
   const projectId = props.params.projectId
 
   useEffect(() => {

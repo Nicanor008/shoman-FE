@@ -29,13 +29,16 @@ export function ProjectCard({
   editLink
 }) {
   const classes = ProjectCardStyles()
-  const user = JSON.parse(localStorage.getItem("user"))._id
+  let user
+  if (typeof window !== "undefined") {
+    user = JSON.parse(localStorage.getItem("user"))._id
+  }
   const [open, setOpen] = useState(false)
 
   const handleOpen = () => {
     setOpen(true)
   }
-console.log(">>>>>>>>>>>>>........", editLink);
+
   const handleClose = () => {
     setOpen(false)
   }

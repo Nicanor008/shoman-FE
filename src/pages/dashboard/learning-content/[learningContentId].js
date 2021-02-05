@@ -36,7 +36,10 @@ function SingleLearningContent(props) {
   const [content, setContent] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const user = JSON.parse(localStorage.getItem("user")).userType
+  let user
+  if (typeof window !== "undefined") {
+    user = JSON.parse(localStorage.getItem("user")).userType
+  }
   const learningContentId = props.params.learningContentId
 
   useEffect(() => {

@@ -24,7 +24,10 @@ function MentorProject() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  let user = JSON.parse(localStorage.getItem("user"))
+  let user
+  if (typeof window !== "undefined") {
+    user = JSON.parse(localStorage.getItem("user"))
+  }
   user = user && user.userType
 
   useEffect(() => {
@@ -43,7 +46,10 @@ function MentorProject() {
 
   // handle delete/archive project
   const HandleDeleteProject = (id) => {
-    const token = localStorage.getItem("token")
+    let token
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("token")
+    }
     axios.defaults.headers.common["Authorization"] = token
     axios
       .delete(`${baseUrl}/projects/${id}`)
