@@ -33,9 +33,9 @@ export const apiPostRequest = async (
 }
 
 export const GetData = async (url) => {
-  // let token
+  let token
   // if (typeof window !== "undefined") {
-  //   token = localStorage.getItem("token")
+  token = localStorage.getItem("token")
   // }
   const requestUrl = baseUrl + url
   axios.defaults.headers.common["Authorization"] = token
@@ -45,9 +45,9 @@ export const GetData = async (url) => {
 }
 
 export const PostWithToken = async (url, method, data) => {
-  // let token
+  let token
   // if (typeof window !== "undefined") {
-  //   token = localStorage.getItem("token")
+  token = localStorage.getItem("token")
   // }
   const authHeader = token
   const responseData = await apiPostRequest(url, method, data, true, authHeader)
