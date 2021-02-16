@@ -8,13 +8,14 @@ import MenuIcon from "@material-ui/icons/Menu"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import ChevronRightIcon from "@material-ui/icons/ChevronRight"
 import { DashboardLayoutStyles } from "../../../../styles/dashboard_layout_styles"
+import { Link } from "gatsby"
 
 function Sidebar({ handleDrawerOpen, handleDrawerClose, open, userRole }) {
   const classes = DashboardLayoutStyles()
   const theme = useTheme()
- 
+
   return (
-    <div style={{backgroundColor: 'rebeccapurple'}}>
+    <div style={{ backgroundColor: 'rebeccapurple' }}>
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, {
@@ -29,7 +30,10 @@ function Sidebar({ handleDrawerOpen, handleDrawerClose, open, userRole }) {
             edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
           >
-            <MenuIcon /> <h2 className={classes.siteTitle}>Shoman</h2>
+            <MenuIcon />
+            <Link to="/" className={classes.titleLink}>
+              <h2 className={classes.siteTitle}>Shomannn</h2>
+            </Link>
           </IconButton>
           <div
             style={{
@@ -50,7 +54,9 @@ function Sidebar({ handleDrawerOpen, handleDrawerClose, open, userRole }) {
         }}
       >
         <div className={classes.titleWrapper}>
-          <h2 className={classes.siteTitle}>Shoman</h2>
+          <Link to="/" className={classes.titleLink}>
+            <h2 className={classes.siteTitle}>Shoman</h2>
+          </Link>
           <div className={classes.drawerHeader}>
             <IconButton
               onClick={handleDrawerClose}
@@ -59,8 +65,8 @@ function Sidebar({ handleDrawerOpen, handleDrawerClose, open, userRole }) {
               {theme.direction === "ltr" ? (
                 <ChevronLeftIcon />
               ) : (
-                <ChevronRightIcon />
-              )}
+                  <ChevronRightIcon />
+                )}
             </IconButton>
           </div>
         </div>

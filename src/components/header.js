@@ -4,10 +4,18 @@ import React from "react"
 
 import "./header.scss"
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, userRole, dashboard }) => {
   const applicationDeadline = new Date("2021-02-05T21:00:00.000+00:00")
   const currentDate = new Date()
   const diffDays = applicationDeadline - currentDate
+
+  let userLoggedIn = "";
+
+  if (typeof window !== "undefined") {
+    userLoggedIn = localStorage.getItem('token')
+  }
+
+  console.log(">>>>>>>>>>>.....", dashboard)
 
   return (
     <header
@@ -28,42 +36,41 @@ const Header = ({ siteTitle }) => {
               <div className="headerTitle">{siteTitle}</div>
             </Link>
             <div className="menuItemWrapper">
-              {/* <span className="menuItem">| </span>
-              <Link className="menuItem" to="/donate">
-                Donate
-              </Link> */}
-              {/* <span className="menuItem">| </span> */}
-              {/* <span to="/" className="menuItem">
-              Reach Out - <span style={{color:"yellow"}}>shoman@gmail.com</span>
-            </span> */}
-              {/* <span className="menuItem">| </span> */}
-              {/* unathorised user */}
-              {diffDays > 0 && (
-                <>
-                  <Link
-                    to={`${
-                      userRole === "mentee"
+              {!dashboard && <>
+                {userLoggedIn !== null &&
+                  <>
+                    <Link
+                      to={`${userRole === "mentee"
                         ? "/mentee/overview"
                         : "/mentor/overview"
-                    }`}
-                    className="menuItem"
-                  >
-                    Dashboard
+                        }`}
+                      className="menuItem"
+                    >
+                      Dashboard
                   </Link>
-                  <span className="menuItem">| </span>
-                  <Link to="/auth/login" className="menuItem">
-                    Login
-                  </Link>
-                  <span className="menuItem">| </span>
-                  <Link to="/apply" className="menuItem">
-                    Apply <span className="applyingText">As a Mentee</span>
-                  </Link>
-                  <span className="menuItem">| </span>
-                  <Link to="/about" className="menuItem">
-                    About
-                  </Link>
-                </>
-              )}
+                    <span className="menuItem">| </span>
+                  </>
+                }
+                {userLoggedIn === null && 
+                  <>
+                    <Link to="/auth/login" className="menuItem">
+                      Login
+                    </Link>
+                    <span className="menuItem">| </span>
+                  </>
+                }
+                {diffDays > 0 && (
+                  <>
+                    <Link to="/apply" className="menuItem">
+                      Apply <span className="applyingText">As a Mentee</span>
+                    </Link>
+                    <span className="menuItem">| </span>
+                  </>
+                )}
+                <Link to="/about" className="menuItem">
+                  About
+              </Link>
+              </>}
             </div>
           </div>
         </h1>

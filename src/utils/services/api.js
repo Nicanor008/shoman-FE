@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const baseUrl = process.env.GATSBY_API_URL
+export const baseUrl = process.env.GATSBY_API_PROD_URL
 
 /**
  * API Request handler

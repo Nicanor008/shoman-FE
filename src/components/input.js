@@ -42,13 +42,6 @@ const InputComponents = (props) => {
         placeholder={props.placeholder}
         fullWidth={false}
       />
-      {/* <InputLabel htmlFor="demo-customized-textbox">{props.label}</InputLabel>
-      <BootstrapInput
-        id="demo-customized-textbox"
-        type={props.inputType}
-        placeholder={props.placeholder}
-        onChange={props.onChange}
-      /> */}
     </FormControl>
   )
 }

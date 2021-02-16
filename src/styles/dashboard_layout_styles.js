@@ -84,4 +84,8 @@ export const DashboardLayoutStyles = makeStyles((theme) => ({
     display: "flex",
     color: "white",
   },
+  titleLink: {
+    color: 'white',
+    cursor: 'pointer'
+  },
 }))
