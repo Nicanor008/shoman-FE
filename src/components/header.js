@@ -4,7 +4,7 @@ import React from "react"
 
 import "./header.scss"
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, userRole }) => {
   const applicationDeadline = new Date("2021-02-05T21:00:00.000+00:00")
   const currentDate = new Date()
   const diffDays = applicationDeadline - currentDate
@@ -38,32 +38,31 @@ const Header = ({ siteTitle }) => {
             </span> */}
               {/* <span className="menuItem">| </span> */}
               {/* unathorised user */}
+              <Link
+                to={`${userRole === "mentee"
+                  ? "/mentee/overview"
+                  : "/mentor/overview"
+                  }`}
+                className="menuItem"
+              >
+                Dashboard
+              </Link>
+              <span className="menuItem">| </span>
+              <Link to="/auth/login" className="menuItem">
+                Login
+              </Link>
               {diffDays > 0 && (
                 <>
-                  <Link
-                    to={`${
-                      userRole === "mentee"
-                        ? "/mentee/overview"
-                        : "/mentor/overview"
-                    }`}
-                    className="menuItem"
-                  >
-                    Dashboard
-                  </Link>
-                  <span className="menuItem">| </span>
-                  <Link to="/auth/login" className="menuItem">
-                    Login
-                  </Link>
                   <span className="menuItem">| </span>
                   <Link to="/apply" className="menuItem">
                     Apply <span className="applyingText">As a Mentee</span>
                   </Link>
-                  <span className="menuItem">| </span>
-                  <Link to="/about" className="menuItem">
-                    About
-                  </Link>
                 </>
               )}
+              <span className="menuItem">| </span>
+              <Link to="/about" className="menuItem">
+                About
+              </Link>
             </div>
           </div>
         </h1>
