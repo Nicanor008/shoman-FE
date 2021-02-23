@@ -38,6 +38,7 @@ export default function SignUpComponent() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [track, setTrack] = useState("")
+  const [userRole, setUserRole] = useState("")
   const [pass, setPass] = useState("")
 
   //api errors
@@ -70,6 +71,7 @@ export default function SignUpComponent() {
           password: password,
           Username: username,
           track: track,
+          userType: userRole,
           passwordConfirm: pass,
         },
         false
@@ -161,6 +163,23 @@ export default function SignUpComponent() {
         {passErrors && (
           <span className={classes.errorMessage}>{passErrors}</span>
         )}
+
+        {/* userType */}
+        <FormControl className={classes.formControl}>
+          <InputLabel id="demo-simple-select-label" className={classes.label}>
+            User
+          </InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            onChange={(e) => setUserRole(e.target.value)}
+          >
+            <MenuItem value="mentee">Mentee</MenuItem>
+            <MenuItem value="mentor">Mentor</MenuItem>
+          </Select>
+        </FormControl>
+
+
         {/* select track */}
         <FormControl className={classes.formControl}>
           <InputLabel id="demo-simple-select-label" className={classes.label}>
