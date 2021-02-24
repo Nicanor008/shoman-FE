@@ -9,6 +9,7 @@ import TableRow from "@material-ui/core/TableRow"
 import Paper from "@material-ui/core/Paper"
 import { CircularProgress } from "@material-ui/core"
 import axios from "axios"
+import { Link } from "gatsby"
 
 import DashboardLayout from "../../components/dashboard/layout/dashboard_layout"
 import SEO from "../../components/seo"
@@ -21,10 +22,10 @@ import {
   CommonDashboardStyles,
   ProjectCardStyles,
 } from "../../styles/common_dashboard_styles"
-import { Link } from "gatsby"
 import { DeleteDialog } from "../../components/dashboard/projects/projectCard"
 
-function ShomanTeam() {
+
+function ShomanTeamsPage() {
   const [teams, setData] = useState(null)
   const [teamId, setTeamId] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -55,12 +56,6 @@ function ShomanTeam() {
       })
     return null
   }, [])
-
-  useEffect(() => {
-    if (teams && teams.length === 0) {
-      window.location.href = "/login"
-    }
-  }, [teams])
 
   const HandleDeleteTeam = (id) => {
     let token
@@ -144,4 +139,4 @@ function ShomanTeam() {
   )
 }
 
-export default ShomanTeam
+export default ShomanTeamsPage

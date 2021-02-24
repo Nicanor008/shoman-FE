@@ -76,7 +76,7 @@ function SidebarMenuItems({ userRole }) {
                 <SidebarSingleMenuItems
                   icon={TeamsIcon}
                   menuText="Team"
-                  url="/admin/team"
+                  url="/admin/teams"
                 />
                 <SidebarSingleMenuItems
                   icon={TrackIcon}

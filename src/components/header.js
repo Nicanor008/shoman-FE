@@ -15,8 +15,6 @@ const Header = ({ siteTitle, userRole, dashboard }) => {
     userLoggedIn = localStorage.getItem('token')
   }
 
-  console.log(">>>>>>>>>>>.....", dashboard)
-
   return (
     <header
       style={{
