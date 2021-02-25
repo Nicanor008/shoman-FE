@@ -29,9 +29,8 @@ const RequiresAuth = ({ children }) => {
     // it's good to note that this component wraps all components that requires users to be authenticated,
     // and logic in here runs for every page reload or every page navigation
     // it will only update the context if no user exists
-    if (!userContext.state?.user?._id) {
-      document.cookie = `token=${localStorage.getItem("token")}; path=/;`
-
+    if (!userContext.state?.user?._id && typeof window !== "undefined") {
+      window.document.cookie = `token=${localStorage.getItem("token")}; path=/;`
       return userContext.dispatch({
         type: "SIGNIN_USER",
         payload: {

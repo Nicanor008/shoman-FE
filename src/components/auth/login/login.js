@@ -70,7 +70,7 @@ export default function LoginComponent() {
 
         if (typeof window !== "undefined") {
           localStorage.setItem("token", `Bearer ${payload?.token}`)
-          document.cookie = `token=${payload?.token}; path=/;`
+          window.document.cookie = `token=${payload?.token}; path=/;`
           // write user account details to localStorage for persistence
           localStorage.setItem("user", JSON.stringify(payload?.user, null, 2))
         }
