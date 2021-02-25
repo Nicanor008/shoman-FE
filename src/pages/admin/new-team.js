@@ -86,7 +86,7 @@ function NewTeam() {
     PostWithToken(
       "/teams",
       "post",
-      Object.assign({}, data, { trackId: currentTrack })
+      Object.assign({}, data, { trackId: currentTrack === null ? currentTrack : data.trackId })
     )
       .then((response) => {
         if (response.status === "error") {
@@ -95,7 +95,7 @@ function NewTeam() {
         }
         toastNotification("success", response.message)
         setTimeout(() => {
-          window.location.href = "/admin/team"
+          window.location.href = "/admin/teams"
         }, 4000)
       })
       .catch((error) => {

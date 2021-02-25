@@ -5,13 +5,11 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  TextareaAutosize,
   TextField,
 } from "@material-ui/core"
 import AddIcon from "@material-ui/icons/Add"
 import React, { useState, useEffect } from "react"
-import FroalaEditorComponent from 'react-froala-wysiwyg';
-import 'froala-editor/css/froala_style.min.css';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
 import DashboardLayout from "../../components/dashboard/layout/dashboard_layout"
 import SEO from "../../components/seo"
 import { UserContextProvider } from "../../state/users/user.context"
@@ -19,7 +17,6 @@ import { ApplyFormStyles } from "../../components/auth/apply/applyForm"
 import { NewProjectStyles } from "../../components/dashboard/projects/styles/new-project-styles"
 import { toastNotification } from "../../utils/helpers/toaster"
 import { GetData, PostWithToken } from "../../utils/services/api"
-
 
 function NewLearningContent() {
   const classes = NewProjectStyles()
@@ -54,17 +51,9 @@ function NewLearningContent() {
 
   //   handle input change
   const handleInputChange = (e) => {
-    setData({
+    return setData({
       ...data,
       [e.target.name]: e.target.value,
-    })
-  }
-
-  // textarea/Quill input
-  const handleTextAreaOnChange = (model) => {
-    setData({
-      ...data,
-      content: model
     })
   }
 
@@ -200,10 +189,14 @@ function NewLearningContent() {
               </Grid>
             </Grid>
             <FormControl>
-              <FroalaEditorComponent
-                tag='textarea'
+              <TextareaAutosize
+                aria-label="Learning Content Description"
+                rowsMin={3}
+                placeholder="Learning Content Description"
+                className={classes.textArea}
                 name="content"
-                onModelChange={handleTextAreaOnChange} 
+                onChange={handleInputChange}
+                required
               />
             </FormControl>
 

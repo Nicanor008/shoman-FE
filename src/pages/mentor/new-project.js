@@ -5,13 +5,11 @@ import {
   Grid,
   MenuItem,
   Select,
+  TextareaAutosize,
   TextField,
 } from "@material-ui/core"
 import AddIcon from "@material-ui/icons/Add"
 import React, { useState, useEffect } from "react"
-import FroalaEditorComponent from 'react-froala-wysiwyg';
-import 'froala-editor/css/froala_style.min.css';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
 import DashboardLayout from "../../components/dashboard/layout/dashboard_layout"
 import SEO from "../../components/seo"
 import { UserContextProvider } from "../../state/users/user.context"
@@ -20,7 +18,6 @@ import { CheckboxInput } from "../../components/commons/inputs/checkbox"
 import { NewProjectStyles } from "../../components/dashboard/projects/styles/new-project-styles"
 import { toastNotification } from "../../utils/helpers/toaster"
 import { GetData, PostWithToken } from "../../utils/services/api"
-
 
 function NewProject() {
   const classes = NewProjectStyles()
@@ -98,14 +95,6 @@ function NewProject() {
         } else if (error.request)
           return toastNotification("error", "Connection Broken. Try again.")
       })
-  }
-
-  // textarea/Quill input
-  const handleTextAreaOnChange = (model) => {
-    setData({
-      ...data,
-      projectDescription: model
-    })
   }
 
   return (
@@ -213,11 +202,14 @@ function NewProject() {
               </Grid>
             </Grid>
             <FormControl>
-              <FroalaEditorComponent
-                tag='textarea'
+              <TextareaAutosize
+                aria-label="project description"
+                rowsMin={3}
                 placeholder="Project Description"
+                className={classes.textArea}
                 name="projectDescription"
-                onModelChange={handleTextAreaOnChange}
+                onChange={handleInputChange}
+                required
               />
             </FormControl>
 

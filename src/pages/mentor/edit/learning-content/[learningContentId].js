@@ -1,123 +1,113 @@
 import {
-  Button,
-  CircularProgress,
-  FormControl,
-  Grid,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextareaAutosize,
-  TextField,
-} from "@material-ui/core"
-import AddIcon from "@material-ui/icons/Add"
-import React, { useState, useEffect } from "react"
-import FroalaEditorComponent from 'react-froala-wysiwyg';
-import 'froala-editor/css/froala_style.min.css';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
-import SEO from "../../../../components/seo"
-import { UserContextProvider } from "../../../../state/users/user.context"
-import { ApplyFormStyles } from "../../../../components/auth/apply/applyForm"
-import { NewProjectStyles } from "../../../../components/dashboard/projects/styles/new-project-styles"
-import { toastNotification } from "../../../../utils/helpers/toaster"
-import { GetData, PostWithToken } from "../../../../utils/services/api"
-import DashboardLayout from "../../../../components/dashboard/layout/dashboard_layout"
+    Button,
+    CircularProgress,
+    FormControl,
+    Grid,
+    InputLabel,
+    MenuItem,
+    Select,
+    TextareaAutosize,
+    TextField,
+  } from "@material-ui/core"
+  import AddIcon from "@material-ui/icons/Add"
+  import React, { useState, useEffect } from "react"
+  import SEO from "../../../../components/seo"
+  import { UserContextProvider } from "../../../../state/users/user.context"
+  import { ApplyFormStyles } from "../../../../components/auth/apply/applyForm"
+  import { NewProjectStyles } from "../../../../components/dashboard/projects/styles/new-project-styles"
+  import { toastNotification } from "../../../../utils/helpers/toaster"
+  import { GetData, PostWithToken } from "../../../../utils/services/api"
+  import DashboardLayout from "../../../../components/dashboard/layout/dashboard_layout"
+  
+  function NewLearningContent(props) {
+    const classes = NewProjectStyles()
+    const externalClasses = ApplyFormStyles()
+    const [tracks, setTracks] = useState(null)
+    const [learningContent, setLearningContent] = useState(null)
+    const [loading, setLoading] = useState(null)
+    const [data, setData] = useState({
+      focusGroup: "",
+      category: "",
+    })
+    const [error, setPostErrors] = useState(null)
+  
+    let height
+    if (typeof window !== "undefined") {
+      height = window.innerHeight
+    }
 
-function NewLearningContent(props) {
-  const classes = NewProjectStyles()
-  const externalClasses = ApplyFormStyles()
-  const [tracks, setTracks] = useState(null)
-  const [learningContent, setLearningContent] = useState(null)
-  const [loading, setLoading] = useState(null)
-  const [data, setData] = useState({
-    focusGroup: "",
-    category: "",
-  })
-  const [error, setPostErrors] = useState(null)
+    const learningContentId = props.params.learningContentId
 
-  let height
-  if (typeof window !== "undefined") {
-    height = window.innerHeight
-  }
+    useEffect(() => {
+        setLoading(true)
+        GetData(`/contents/${learningContentId}`).then(content => {
+            if(content.status === "error") window.location.href = "/mentor/learning-content"
+            setLoading(false)
+            setLearningContent(content.data)
+            setData({
+                ...data,
+                focusGroup: content.data.focusGroup,
+                category: content.data.category,
+                topic: content.data.topic,
+                estimatedDuration: content.data.estimatedDuration,
+                deadline:content.data.deadline,
+                content: content.data.content
+            })
+        }).catch(error => {
+            setLoading(false)
+            if(error) window.location.href = "/mentor/learning-content"
 
-  const learningContentId = props.params.learningContentId
-
-  useEffect(() => {
-    setLoading(true)
-    GetData(`/contents/${learningContentId}`).then(content => {
-      if (content.status === "error") window.location.href = "/mentor/learning-content"
-      setLoading(false)
-      setLearningContent(content.data)
-      setData({
+        })
+        return null
+    }, [])
+  
+    useEffect(() => {
+      GetData("/tracks").then((tracks) => {
+        setTracks(tracks.tracks)
+      })
+    }, [])
+  
+    //   handle input change
+    const handleInputChange = (e) => {
+      return setData({
         ...data,
-        focusGroup: content.data.focusGroup,
-        category: content.data.category,
-        topic: content.data.topic,
-        estimatedDuration: content.data.estimatedDuration,
-        deadline: content.data.deadline,
-        content: content.data.content
+        [e.target.name]: e.target.value,
       })
-    }).catch(error => {
-      setLoading(false)
-      if (error) window.location.href = "/mentor/learning-content"
+    }
+  
+    //   submit data
+    const submitProject = () => {
+      PostWithToken(`/contents/${learningContentId}`, "patch", data)
+        .then((response) => {
+          if (response.status === "error") {
+            setPostErrors(response.errors)
+            return toastNotification("error", response.message)
+          }
+          toastNotification("success", response.message)
+          setTimeout(() => {
+            window.location.href = "/mentor/learning-content"
+          }, 2000)
+        })
+        .catch((error) => {
+          if (error.response) {
+            setPostErrors(error.response.data)
+            return toastNotification("error", error.response.data.message)
+          } else if (error.request)
+            return toastNotification("error", "Connection Broken. Try again.")
+        })
+    }
+  
+    const focusGroup = ["my mentees", "shoman"]
 
-    })
-    return null
-  }, [])
-
-  useEffect(() => {
-    GetData("/tracks").then((tracks) => {
-      setTracks(tracks.tracks)
-    })
-  }, [])
-
-  //   handle input change
-  const handleInputChange = (e) => {
-    return setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  const handleTextAreaOnChange = (model) => {
-    setData({
-      ...data,
-      content: model
-    })
-  }
-
-  //   submit data
-  const submitProject = () => {
-    PostWithToken(`/contents/${learningContentId}`, "patch", data)
-      .then((response) => {
-        if (response.status === "error") {
-          setPostErrors(response.errors)
-          return toastNotification("error", response.message)
-        }
-        toastNotification("success", response.message)
-        setTimeout(() => {
-          window.location.href = "/mentor/learning-content"
-        }, 2000)
-      })
-      .catch((error) => {
-        if (error.response) {
-          setPostErrors(error.response.data)
-          return toastNotification("error", error.response.data.message)
-        } else if (error.request)
-          return toastNotification("error", "Connection Broken. Try again.")
-      })
-  }
-
-  const focusGroup = ["my mentees", "shoman"]
-
-  console.log(learningContent);
-
-  return (
-    <UserContextProvider>
-      <SEO title="Dashboard" />
-
-      <div className={classes.root} style={{ minHeight: height }}>
-        <DashboardLayout userRole="mentor">
-          {loading ? <CircularProgress /> : <>
+    console.log(learningContent);
+  
+    return (
+      <UserContextProvider>
+        <SEO title="Dashboard" />
+  
+        <div className={classes.root} style={{ minHeight: height }}>
+          <DashboardLayout userRole="mentor">
+              {loading ? <CircularProgress /> : <>
             <h3 className={classes.title}>Edit Learning Content</h3>
             <div className={classes.body}>
               <FormControl className={externalClasses.formControl}>
@@ -145,7 +135,7 @@ function NewLearningContent(props) {
               </FormControl>
               <br />
               <br />
-
+  
               {/* topic */}
               <FormControl>
                 <TextField
@@ -159,7 +149,7 @@ function NewLearningContent(props) {
                   error={error && error.topic && true}
                 />
               </FormControl>
-
+  
               <Grid className={classes.groupedInputs}>
                 {/* Estimated Duration */}
                 <Grid item xs={12} md={4}>
@@ -168,15 +158,15 @@ function NewLearningContent(props) {
                       id="duration"
                       label="Estimated Duration"
                       variant="outlined"
-                      value={data?.estimatedDuration}
-                      onChange={handleInputChange}
+                  value={data?.estimatedDuration}
+                  onChange={handleInputChange}
                       name="estimatedDuration"
                       required
                       error={error && error.duration && true}
                     />
                   </FormControl>
                 </Grid>
-
+  
                 <Grid item xs={12} md={3}>
                   <FormControl className={classes.container} noValidate>
                     <TextField
@@ -193,7 +183,7 @@ function NewLearningContent(props) {
                     />
                   </FormControl>
                 </Grid>
-
+  
                 <Grid item xs={12} md={5}>
                   {/* team */}
                   <FormControl className={externalClasses.formControl}>
@@ -222,14 +212,18 @@ function NewLearningContent(props) {
                 </Grid>
               </Grid>
               <FormControl>
-                <FroalaEditorComponent
-                  tag='textarea'
+                <TextareaAutosize
+                  aria-label="Learning Content Description"
+                  rowsMin={3}
                   placeholder="Learning Content Description"
+                  className={classes.textArea}
                   name="content"
-                  onModelChange={handleTextAreaOnChange}
+                  value={data?.content}
+                  onChange={handleInputChange}
+                  required
                 />
               </FormControl>
-
+  
               {/* submit button */}
               <Button
                 variant="contained"
@@ -242,10 +236,11 @@ function NewLearningContent(props) {
               </Button>
             </div>
           </>}
-        </DashboardLayout>
-      </div>
-    </UserContextProvider>
-  )
-}
-
-export default NewLearningContent
+          </DashboardLayout>
+        </div>
+      </UserContextProvider>
+    )
+  }
+  
+  export default NewLearningContent
+  
