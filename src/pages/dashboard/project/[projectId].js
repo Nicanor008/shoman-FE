@@ -72,52 +72,56 @@ function SingleProject(props) {
           {loading ? (
             <CircularProgress />
           ) : (
-            <>
-              <div className={contentStyles.topBar}>
-                {content && (
-                  <>
-                    <Link
-                      to={
-                        user === "mentee"
-                          ? "/mentee/projects"
-                          : "/mentor/projects"
-                      }
-                    >
-                      <ArrowBackIcon className={contentStyles.arrow} />
-                    </Link>
+              <>
+                <div className={contentStyles.topBar}>
+                  {content && (
+                    <>
+                      <Link
+                        to={
+                          user === "mentee"
+                            ? "/mentee/projects"
+                            : "/mentor/projects"
+                        }
+                      >
+                        <ArrowBackIcon className={contentStyles.arrow} />
+                      </Link>
                     &nbsp;&nbsp;&nbsp;
                     {content?.track && (
-                      <>
-                        <span className={contentStyles.topBarContent}>
-                          {content?.track?.name}
-                        </span>{" "}
+                        <>
+                          <span className={contentStyles.topBarContent}>
+                            {content?.track?.name}
+                          </span>{" "}
                         |&nbsp;&nbsp;&nbsp;
                       </>
-                    )}
-                    {content?.team && (
-                      <>
-                        <span className={contentStyles.topBarContent}>
-                          {content?.team?.team_name}
-                        </span>{" "}
+                      )}
+                      {content?.team && (
+                        <>
+                          <span className={contentStyles.topBarContent}>
+                            {content?.team?.team_name}
+                          </span>{" "}
                         |&nbsp;&nbsp;&nbsp;{" "}
-                      </>
-                    )}
-                    <span className={contentStyles.topBarContent}>
-                      Appr. Duration - {content?.duration}
-                    </span>
-                  </>
-                )}
-              </div>
-              <div className={classes.secondBar}>
-                {error && <p>{error.message}</p>}
-
-                <div>
-                  <h1>{content?.topic}</h1>
-                  <p>{content?.projectDescription}</p>
+                        </>
+                      )}
+                      <span className={contentStyles.topBarContent}>
+                        Appr. Duration - {content?.duration}
+                      </span>
+                    </>
+                  )}
                 </div>
-              </div>
-            </>
-          )}
+                <div className={classes.secondBar}>
+                  {error && <p>{error.message}</p>}
+
+                  <div>
+                    <h1>{content?.topic}</h1>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: content?.projectDescription,
+                      }}
+                    />
+                  </div>
+                </div>
+              </>
+            )}
         </DashboardLayout>
       </div>
     </UserContextProvider>

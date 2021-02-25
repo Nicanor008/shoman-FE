@@ -5,9 +5,9 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  TextareaAutosize,
   TextField,
 } from "@material-ui/core"
+import ReactQuill from 'react-quill'
 import AddIcon from "@material-ui/icons/Add"
 import React, { useState, useEffect } from "react"
 import DashboardLayout from "../../components/dashboard/layout/dashboard_layout"
@@ -17,6 +17,8 @@ import { ApplyFormStyles } from "../../components/auth/apply/applyForm"
 import { NewProjectStyles } from "../../components/dashboard/projects/styles/new-project-styles"
 import { toastNotification } from "../../utils/helpers/toaster"
 import { GetData, PostWithToken } from "../../utils/services/api"
+import { formats, modules } from '../../utils/helpers/textAreaFormats'
+import 'react-quill/dist/quill.snow.css'; 
 
 function NewLearningContent() {
   const classes = NewProjectStyles()
@@ -51,9 +53,17 @@ function NewLearningContent() {
 
   //   handle input change
   const handleInputChange = (e) => {
-    return setData({
+    setData({
       ...data,
       [e.target.name]: e.target.value,
+    })
+  }
+
+  // textarea/Quill input
+  const handleTextAreaOnChange = (html) => {
+    setData({
+      ...data,
+      content: html
     })
   }
 
@@ -189,14 +199,14 @@ function NewLearningContent() {
               </Grid>
             </Grid>
             <FormControl>
-              <TextareaAutosize
-                aria-label="Learning Content Description"
-                rowsMin={3}
+              <ReactQuill
                 placeholder="Learning Content Description"
                 className={classes.textArea}
                 name="content"
-                onChange={handleInputChange}
-                required
+                onChange={handleTextAreaOnChange}
+                theme="snow"
+                modules={modules}
+                formats={formats}
               />
             </FormControl>
 

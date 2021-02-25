@@ -70,7 +70,13 @@ export function ProjectCard({
         {/* body */}
         <div className={classes.body}>
           <h3>{title}</h3>
-          <p>{content.substr(0, 75).concat("...")}</p>
+          {/* {SetInnerHTML(props.message.substr(0, 90))} */}
+          <p
+            dangerouslySetInnerHTML={{
+              __html: content.substr(0, 75).concat("..."),
+            }}
+          />
+          {/* <p>{content.substr(0, 75).concat("...")}</p> */}
           <div>
             {userType !== "mentee" && (
               <span className={classes.publicAccessStatus}>

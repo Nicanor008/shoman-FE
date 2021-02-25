@@ -37,12 +37,6 @@ function ShomanTracks() {
     return null
   }, [])
 
-  useEffect(() => {
-    if (teams && teams.length === 0) {
-      window.location.href = "/login"
-    }
-  }, [teams])
-
   console.log(error)
 
   return (

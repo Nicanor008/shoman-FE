@@ -88,6 +88,11 @@ function SidebarMenuItems({ userRole }) {
                   menuText="Mentee Applications"
                   url="/apply/applications"
                 />
+                <SidebarSingleMenuItems
+                  icon={TeamsIcon}
+                  menuText="Users"
+                  url="/admin/users"
+                />
               </>
             )}
           </>

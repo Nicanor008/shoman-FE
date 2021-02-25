@@ -63,7 +63,7 @@ function SingleLearningContent(props) {
         }
         setLoading(false)
       })
-  }, [user,learningContentId])
+  }, [user, learningContentId])
 
   return (
     <UserContextProvider>
@@ -74,49 +74,53 @@ function SingleLearningContent(props) {
           {loading ? (
             <CircularProgress />
           ) : (
-            <>
-              <div className={contentStyles.topBar}>
-                {content && (
-                  <>
-                    <Link
-                      to={
-                        user === "mentee"
-                          ? "/mentee/learning-content"
-                          : "/mentor/learning-content"
-                      }
-                    >
-                      <ArrowBackIcon className={contentStyles.arrow} />
-                    </Link>
-                    {content?.category && (
-                      <>
-                        &nbsp;&nbsp;&nbsp;
+              <>
+                <div className={contentStyles.topBar}>
+                  {content && (
+                    <>
+                      <Link
+                        to={
+                          user === "mentee"
+                            ? "/mentee/learning-content"
+                            : "/mentor/learning-content"
+                        }
+                      >
+                        <ArrowBackIcon className={contentStyles.arrow} />
+                      </Link>
+                      {content?.category && (
+                        <>
+                          &nbsp;&nbsp;&nbsp;
                         <span className={contentStyles.topBarContent}>
-                          {content?.category?.name}
-                        </span>{" "}|
+                            {content?.category?.name}
+                          </span>{" "}|
                       </>
-                    )}
+                      )}
                     &nbsp;&nbsp;&nbsp;
                     <span className={contentStyles.topBarContent}>
-                      Appr. Duration - {content?.estimatedDuration}
-                    </span>{" "}
+                        Appr. Duration - {content?.estimatedDuration}
+                      </span>{" "}
                     | &nbsp;&nbsp;&nbsp;
                     <span className={contentStyles.topBarContent}>
-                      Due Date -{" "}
-                      {new Date(content?.deadline).toLocaleDateString()}
-                    </span>
-                  </>
-                )}
-              </div>
-              <div className={classes.secondBar}>
-                {error && <p>{error.message}</p>}
-
-                <div>
-                  <h1>{content?.topic}</h1>
-                  <p>{content?.content}</p>
+                        Due Date -{" "}
+                        {new Date(content?.deadline).toLocaleDateString()}
+                      </span>
+                    </>
+                  )}
                 </div>
-              </div>
-            </>
-          )}
+                <div className={classes.secondBar}>
+                  {error && <p>{error.message}</p>}
+
+                  <div>
+                    <h1>{content?.topic}</h1>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: content?.content,
+                      }}
+                    />
+                  </div>
+                </div>
+              </>
+            )}
         </DashboardLayout>
       </div>
     </UserContextProvider>

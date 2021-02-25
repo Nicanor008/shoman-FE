@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core"
 import AddIcon from "@material-ui/icons/Add"
 import React, { useState, useEffect } from "react"
+import ReactQuill from 'react-quill'
 import DashboardLayout from "../../components/dashboard/layout/dashboard_layout"
 import SEO from "../../components/seo"
 import { UserContextProvider } from "../../state/users/user.context"
@@ -18,6 +19,8 @@ import { CheckboxInput } from "../../components/commons/inputs/checkbox"
 import { NewProjectStyles } from "../../components/dashboard/projects/styles/new-project-styles"
 import { toastNotification } from "../../utils/helpers/toaster"
 import { GetData, PostWithToken } from "../../utils/services/api"
+import { formats, modules } from '../../utils/helpers/textAreaFormats'
+import 'react-quill/dist/quill.snow.css'; 
 
 function NewProject() {
   const classes = NewProjectStyles()
@@ -95,6 +98,14 @@ function NewProject() {
         } else if (error.request)
           return toastNotification("error", "Connection Broken. Try again.")
       })
+  }
+
+  // textarea/Quill input
+  const handleTextAreaOnChange = (html) => {
+    setData({
+      ...data,
+      projectDescription: html
+    })
   }
 
   return (
@@ -202,7 +213,7 @@ function NewProject() {
               </Grid>
             </Grid>
             <FormControl>
-              <TextareaAutosize
+              {/* <TextareaAutosize
                 aria-label="project description"
                 rowsMin={3}
                 placeholder="Project Description"
@@ -210,6 +221,16 @@ function NewProject() {
                 name="projectDescription"
                 onChange={handleInputChange}
                 required
+              /> */}
+
+              <ReactQuill
+                placeholder="Project Description"
+                className={classes.textArea}
+                name="projectDescription"
+                onChange={handleTextAreaOnChange}
+                theme="snow"
+                modules={modules}
+                formats={formats}
               />
             </FormControl>
 
