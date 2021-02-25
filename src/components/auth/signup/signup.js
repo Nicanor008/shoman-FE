@@ -77,7 +77,7 @@ export default function SignUpComponent() {
         false
       )
       if (payload?.message && window !== "undefined") {
-        window.location.href = "/auth/steps/"
+        window.location.href = "/auth/login/"
       } else {
         setEmailErrors(payload?.email)
         setPassErrors(payload?.password)
