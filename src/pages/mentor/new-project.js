@@ -5,12 +5,13 @@ import {
   Grid,
   MenuItem,
   Select,
-  TextareaAutosize,
   TextField,
 } from "@material-ui/core"
 import AddIcon from "@material-ui/icons/Add"
 import React, { useState, useEffect } from "react"
-import ReactQuill from 'react-quill'
+import FroalaEditorComponent from 'react-froala-wysiwyg';
+import 'froala-editor/css/froala_style.min.css';
+import 'froala-editor/css/froala_editor.pkgd.min.css';
 import DashboardLayout from "../../components/dashboard/layout/dashboard_layout"
 import SEO from "../../components/seo"
 import { UserContextProvider } from "../../state/users/user.context"
@@ -19,8 +20,7 @@ import { CheckboxInput } from "../../components/commons/inputs/checkbox"
 import { NewProjectStyles } from "../../components/dashboard/projects/styles/new-project-styles"
 import { toastNotification } from "../../utils/helpers/toaster"
 import { GetData, PostWithToken } from "../../utils/services/api"
-import { formats, modules } from '../../utils/helpers/textAreaFormats'
-import 'react-quill/dist/quill.snow.css'; 
+
 
 function NewProject() {
   const classes = NewProjectStyles()
@@ -101,10 +101,10 @@ function NewProject() {
   }
 
   // textarea/Quill input
-  const handleTextAreaOnChange = (html) => {
+  const handleTextAreaOnChange = (model) => {
     setData({
       ...data,
-      projectDescription: html
+      projectDescription: model
     })
   }
 
@@ -213,24 +213,11 @@ function NewProject() {
               </Grid>
             </Grid>
             <FormControl>
-              {/* <TextareaAutosize
-                aria-label="project description"
-                rowsMin={3}
+              <FroalaEditorComponent
+                tag='textarea'
                 placeholder="Project Description"
-                className={classes.textArea}
                 name="projectDescription"
-                onChange={handleInputChange}
-                required
-              /> */}
-
-              <ReactQuill
-                placeholder="Project Description"
-                className={classes.textArea}
-                name="projectDescription"
-                onChange={handleTextAreaOnChange}
-                theme="snow"
-                modules={modules}
-                formats={formats}
+                onModelChange={handleTextAreaOnChange}
               />
             </FormControl>
 

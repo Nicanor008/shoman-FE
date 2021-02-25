@@ -1,113 +1,123 @@
 import {
-    Button,
-    CircularProgress,
-    FormControl,
-    Grid,
-    InputLabel,
-    MenuItem,
-    Select,
-    TextareaAutosize,
-    TextField,
-  } from "@material-ui/core"
-  import AddIcon from "@material-ui/icons/Add"
-  import React, { useState, useEffect } from "react"
-  import SEO from "../../../../components/seo"
-  import { UserContextProvider } from "../../../../state/users/user.context"
-  import { ApplyFormStyles } from "../../../../components/auth/apply/applyForm"
-  import { NewProjectStyles } from "../../../../components/dashboard/projects/styles/new-project-styles"
-  import { toastNotification } from "../../../../utils/helpers/toaster"
-  import { GetData, PostWithToken } from "../../../../utils/services/api"
-  import DashboardLayout from "../../../../components/dashboard/layout/dashboard_layout"
-  
-  function NewLearningContent(props) {
-    const classes = NewProjectStyles()
-    const externalClasses = ApplyFormStyles()
-    const [tracks, setTracks] = useState(null)
-    const [learningContent, setLearningContent] = useState(null)
-    const [loading, setLoading] = useState(null)
-    const [data, setData] = useState({
-      focusGroup: "",
-      category: "",
-    })
-    const [error, setPostErrors] = useState(null)
-  
-    let height
-    if (typeof window !== "undefined") {
-      height = window.innerHeight
-    }
+  Button,
+  CircularProgress,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextareaAutosize,
+  TextField,
+} from "@material-ui/core"
+import AddIcon from "@material-ui/icons/Add"
+import React, { useState, useEffect } from "react"
+import FroalaEditorComponent from 'react-froala-wysiwyg';
+import 'froala-editor/css/froala_style.min.css';
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+import SEO from "../../../../components/seo"
+import { UserContextProvider } from "../../../../state/users/user.context"
+import { ApplyFormStyles } from "../../../../components/auth/apply/applyForm"
+import { NewProjectStyles } from "../../../../components/dashboard/projects/styles/new-project-styles"
+import { toastNotification } from "../../../../utils/helpers/toaster"
+import { GetData, PostWithToken } from "../../../../utils/services/api"
+import DashboardLayout from "../../../../components/dashboard/layout/dashboard_layout"
 
-    const learningContentId = props.params.learningContentId
+function NewLearningContent(props) {
+  const classes = NewProjectStyles()
+  const externalClasses = ApplyFormStyles()
+  const [tracks, setTracks] = useState(null)
+  const [learningContent, setLearningContent] = useState(null)
+  const [loading, setLoading] = useState(null)
+  const [data, setData] = useState({
+    focusGroup: "",
+    category: "",
+  })
+  const [error, setPostErrors] = useState(null)
 
-    useEffect(() => {
-        setLoading(true)
-        GetData(`/contents/${learningContentId}`).then(content => {
-            if(content.status === "error") window.location.href = "/mentor/learning-content"
-            setLoading(false)
-            setLearningContent(content.data)
-            setData({
-                ...data,
-                focusGroup: content.data.focusGroup,
-                category: content.data.category,
-                topic: content.data.topic,
-                estimatedDuration: content.data.estimatedDuration,
-                deadline:content.data.deadline,
-                content: content.data.content
-            })
-        }).catch(error => {
-            setLoading(false)
-            if(error) window.location.href = "/mentor/learning-content"
+  let height
+  if (typeof window !== "undefined") {
+    height = window.innerHeight
+  }
 
-        })
-        return null
-    }, [])
-  
-    useEffect(() => {
-      GetData("/tracks").then((tracks) => {
-        setTracks(tracks.tracks)
-      })
-    }, [])
-  
-    //   handle input change
-    const handleInputChange = (e) => {
-      return setData({
+  const learningContentId = props.params.learningContentId
+
+  useEffect(() => {
+    setLoading(true)
+    GetData(`/contents/${learningContentId}`).then(content => {
+      if (content.status === "error") window.location.href = "/mentor/learning-content"
+      setLoading(false)
+      setLearningContent(content.data)
+      setData({
         ...data,
-        [e.target.name]: e.target.value,
+        focusGroup: content.data.focusGroup,
+        category: content.data.category,
+        topic: content.data.topic,
+        estimatedDuration: content.data.estimatedDuration,
+        deadline: content.data.deadline,
+        content: content.data.content
       })
-    }
-  
-    //   submit data
-    const submitProject = () => {
-      PostWithToken(`/contents/${learningContentId}`, "patch", data)
-        .then((response) => {
-          if (response.status === "error") {
-            setPostErrors(response.errors)
-            return toastNotification("error", response.message)
-          }
-          toastNotification("success", response.message)
-          setTimeout(() => {
-            window.location.href = "/mentor/learning-content"
-          }, 2000)
-        })
-        .catch((error) => {
-          if (error.response) {
-            setPostErrors(error.response.data)
-            return toastNotification("error", error.response.data.message)
-          } else if (error.request)
-            return toastNotification("error", "Connection Broken. Try again.")
-        })
-    }
-  
-    const focusGroup = ["my mentees", "shoman"]
+    }).catch(error => {
+      setLoading(false)
+      if (error) window.location.href = "/mentor/learning-content"
 
-    console.log(learningContent);
-  
-    return (
-      <UserContextProvider>
-        <SEO title="Dashboard" />
-  
-        <div className={classes.root} style={{ minHeight: height }}>
-          <DashboardLayout userRole="mentor">
-              {loading ? <CircularProgress /> : <>
+    })
+    return null
+  }, [])
+
+  useEffect(() => {
+    GetData("/tracks").then((tracks) => {
+      setTracks(tracks.tracks)
+    })
+  }, [])
+
+  //   handle input change
+  const handleInputChange = (e) => {
+    return setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleTextAreaOnChange = (model) => {
+    setData({
+      ...data,
+      content: model
+    })
+  }
+
+  //   submit data
+  const submitProject = () => {
+    PostWithToken(`/contents/${learningContentId}`, "patch", data)
+      .then((response) => {
+        if (response.status === "error") {
+          setPostErrors(response.errors)
+          return toastNotification("error", response.message)
+        }
+        toastNotification("success", response.message)
+        setTimeout(() => {
+          window.location.href = "/mentor/learning-content"
+        }, 2000)
+      })
+      .catch((error) => {
+        if (error.response) {
+          setPostErrors(error.response.data)
+          return toastNotification("error", error.response.data.message)
+        } else if (error.request)
+          return toastNotification("error", "Connection Broken. Try again.")
+      })
+  }
+
+  const focusGroup = ["my mentees", "shoman"]
+
+  console.log(learningContent);
+
+  return (
+    <UserContextProvider>
+      <SEO title="Dashboard" />
+
+      <div className={classes.root} style={{ minHeight: height }}>
+        <DashboardLayout userRole="mentor">
+          {loading ? <CircularProgress /> : <>
             <h3 className={classes.title}>Edit Learning Content</h3>
             <div className={classes.body}>
               <FormControl className={externalClasses.formControl}>
@@ -135,7 +145,7 @@ import {
               </FormControl>
               <br />
               <br />
-  
+
               {/* topic */}
               <FormControl>
                 <TextField
@@ -149,7 +159,7 @@ import {
                   error={error && error.topic && true}
                 />
               </FormControl>
-  
+
               <Grid className={classes.groupedInputs}>
                 {/* Estimated Duration */}
                 <Grid item xs={12} md={4}>
@@ -158,15 +168,15 @@ import {
                       id="duration"
                       label="Estimated Duration"
                       variant="outlined"
-                  value={data?.estimatedDuration}
-                  onChange={handleInputChange}
+                      value={data?.estimatedDuration}
+                      onChange={handleInputChange}
                       name="estimatedDuration"
                       required
                       error={error && error.duration && true}
                     />
                   </FormControl>
                 </Grid>
-  
+
                 <Grid item xs={12} md={3}>
                   <FormControl className={classes.container} noValidate>
                     <TextField
@@ -183,7 +193,7 @@ import {
                     />
                   </FormControl>
                 </Grid>
-  
+
                 <Grid item xs={12} md={5}>
                   {/* team */}
                   <FormControl className={externalClasses.formControl}>
@@ -212,18 +222,14 @@ import {
                 </Grid>
               </Grid>
               <FormControl>
-                <TextareaAutosize
-                  aria-label="Learning Content Description"
-                  rowsMin={3}
+                <FroalaEditorComponent
+                  tag='textarea'
                   placeholder="Learning Content Description"
-                  className={classes.textArea}
                   name="content"
-                  value={data?.content}
-                  onChange={handleInputChange}
-                  required
+                  onModelChange={handleTextAreaOnChange}
                 />
               </FormControl>
-  
+
               {/* submit button */}
               <Button
                 variant="contained"
@@ -236,11 +242,10 @@ import {
               </Button>
             </div>
           </>}
-          </DashboardLayout>
-        </div>
-      </UserContextProvider>
-    )
-  }
-  
-  export default NewLearningContent
-  
+        </DashboardLayout>
+      </div>
+    </UserContextProvider>
+  )
+}
+
+export default NewLearningContent
