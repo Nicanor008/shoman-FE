@@ -121,7 +121,7 @@ function NewTeam() {
                 id="category"
                 className={externalClasses.label}
                 onChange={handleInputChange}
-                name="category"
+                name="trackId"
                 value={currentTrack || data.trackId}
               >
                 {tracks?.map((track) => (
