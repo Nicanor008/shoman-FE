@@ -86,7 +86,7 @@ function NewTeam() {
     PostWithToken(
       "/teams",
       "post",
-      Object.assign({}, data, { trackId: currentTrack === null ? currentTrack : data.trackId })
+      Object.assign({}, data, { trackId: currentTrack !== null ? currentTrack : data.trackId })
     )
       .then((response) => {
         if (response.status === "error") {
@@ -122,7 +122,7 @@ function NewTeam() {
                 className={externalClasses.label}
                 onChange={handleInputChange}
                 name="trackId"
-                value={currentTrack || data.trackId}
+                value={currentTrack !== null ? currentTrack : data.trackId}
               >
                 {tracks?.map((track) => (
                   <MenuItem value={track?._id} key={Math.random()}>
