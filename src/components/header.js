@@ -41,7 +41,7 @@ const Header = ({ siteTitle, dashboard, userRole }) => {
               {/* unathorised user */}
               {!dashboard && (
                 <>
-                  <Link
+                  {/* <Link
                     to={`${
                       userRole === "mentee"
                         ? "/mentee/overview"
@@ -50,16 +50,16 @@ const Header = ({ siteTitle, dashboard, userRole }) => {
                     className="menuItem"
                   >
                     Dashboard
-                  </Link>
-                  <span className="menuItem">| </span>
+                  </Link> */}
+                  {/* <span className="menuItem">| </span>
                   <Link to="/auth/login" className="menuItem">
                     Login
-                  </Link>
-                  <span className="menuItem">| </span>
+                  </Link> */}
+                  {/* <span className="menuItem">| </span>
                   <Link to="/apply" className="menuItem">
                     Apply <span className="applyingText">As a Mentee</span>
-                  </Link>
-                  <span className="menuItem">| </span>
+                  </Link> */}
+                  {/* <span className="menuItem">| </span> */}
                   <Link to="/about" className="menuItem">
                     About
                   </Link>

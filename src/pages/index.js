@@ -18,8 +18,8 @@ const IndexPage = () => (
     {/* description */}
     <HomeDescription
       title="Software Development Mentorship"
-      durationDescription="Cohort 2 in Progress."
-      startedDate="Cohort 2 applications open"
+      durationDescription="."
+      startedDate="Applications Closed"
       content={<SubContent />}
     />
 
